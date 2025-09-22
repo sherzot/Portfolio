@@ -317,7 +317,7 @@ class LanguageSwitcher {
         "skills-description":
           "Frontend dan backend va infratuzilma gacha keng texnologik sohalarda ishlab chiqish tajribasiga egaman. Yangi texnologiyalarni o'rganish va amaliy ilovalar yaratishda davom etaman.",
         "skills-tab-1": "Texnik ko'nikmalar",
-        "skills-tab-2": "Tajribasi",
+        "skills-tab-2": "Tajriba",
         "skills-tab-3": "Ta'lim",
         "skills-experience-1-title": "Full Stack Muhandis",
         "skills-experience-1-period": "2021 - Hozirgi",
