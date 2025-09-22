@@ -51,38 +51,54 @@
         <a href="index.html" class="navbar-brand d-flex align-items-center">
             <img src="./images/logo/logo-no-background.png" alt="logo" style="width: 120px; height: auto;">
         </a>
-
-        <!-- Mobile menu toggle -->
-        <button type="button" class="navbar-toggler ms-auto" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-            aria-label="メニューを開く">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <!-- Menu elementlari o'ng tomonda -->
+        
+        <!-- Hamburger menu va Language Switcher yonma-yon -->
+        <div class="d-flex align-items-center">
+            <!-- Hamburger menu toggle -->
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-label="メニューを開く">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <!-- Menu elementlari (hamburger ichida) -->
         <div class="collapse navbar-collapse py-4 py-lg-0" id="navbarCollapse">
-            <div class="navbar-nav ms-auto py-0">
-                <a href="#home" class="nav-item nav-link active">ホーム</a>
-                <a href="#about" class="nav-item nav-link">アバウト</a>
-                <a href="#skill" class="nav-item nav-link">スキル</a>
-                <a href="#service" class="nav-item nav-link">サービス</a>
-                <a href="#project" class="nav-item nav-link">プロジェクト</a>
-                <a href="#testimonial" class="nav-item nav-link">お客様の声</a>
-                <a href="#contact" class="nav-item nav-link">お問い合わせ</a>
+            <div class="navbar-nav ms-auto py-0 d-flex align-items-center">
+                <a href="#home" class="nav-item nav-link active" data-translate="nav-home">ホーム</a>
+                <a href="#about" class="nav-item nav-link" data-translate="nav-about">アバウト</a>
+                <a href="#skill" class="nav-item nav-link" data-translate="nav-skills">スキル</a>
+                <a href="#service" class="nav-item nav-link" data-translate="nav-services">サービス</a>
+                <a href="#project" class="nav-item nav-link" data-translate="nav-projects">プロジェクト</a>
+                <a href="#testimonial" class="nav-item nav-link" data-translate="nav-testimonials">お客様の声</a>
+                <a href="#contact" class="nav-item nav-link" data-translate="nav-contact">お問い合わせ</a>
+            </div>
+        </div>
+        <!-- Language Switcher -->
+        <div class="language-switcher">
+            <div class="dropdown">
+                <button class="btn btn-outline-primary btn-sm dropdown-toggle" type="button" id="languageDropdown"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-globe me-1"></i>
+                    <span id="currentLang">日本語</span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                    <li><a class="dropdown-item" href="#" data-lang="ja">🇯🇵 日本語</a></li>
+                    <li><a class="dropdown-item" href="#" data-lang="en">🇺🇸 English</a></li>
+                    <li><a class="dropdown-item" href="#" data-lang="uz">🇺🇿 O'zbek</a></li>
+                </ul>
             </div>
         </div>
     </nav>
     <!-- Navbar End -->
 
-
     <!-- Header Start -->
-    <div class="container-fluid bg-light my-6 mt-0" id="home">
+    <div class="container-fluid bg-light my-6 pt-6" id="home">
         <div class="container">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6 py-6 pb-0 pt-lg-0">
                     <h3 class="text-primary mb-3">MUSURMONOV SHERZOT</h3>
-                    <h1 class="display-3 mb-3" style="font-size: 44px;">ムスルモノフ シェルゾト</h1>
+                    <h1 class="display-3 mb-3" style="font-size: 44px;" data-translate="hero-name">ムスルモノフ シェルゾト</h1>
                     <h2 class="typed-text-output d-inline"></h2>
-                    <div class="typed-text d-none">フルスタックエンジニア</div>
+                    <div class="typed-text d-none" data-translate="hero-title">フルスタックエンジニア</div>
                     <!-- <div class="d-flex align-items-center pt-5">
                         <a href="" class="btn btn-primary py-3 px-4 me-5">ダウンロード CV</a>
                         <button type="button" class="btn-play" data-bs-toggle="modal"
@@ -131,20 +147,24 @@
                             <h1 class="display-1 mb-0">３</h1>
                             <h5 class="mb-0">年</h5>
                         </div>
-                        <h3 class="lh-base mb-0">フルスタックエンジニアとしての実務経験</h3>
+                        <h3 class="lh-base mb-0" data-translate="about-title">フルスタックエンジニアとしての実務経験</h3>
                     </div>
-                    <p class="mb-4">
+                    <p class="mb-4" data-translate="about-description">
                         フロントエンドからバックエンドまで、Webアプリケーションの開発全工程を担当できるフルスタックエンジニアです。ユーザーエクスペリエンスを重視した設計と、スケーラブルなシステム構築を得意としています。
                     </p>
-                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>フロントエンド開発（React, TypeScript,
-                        JavaScript, Tailwind CSS, Bootstrap, HTML, CSS）</p>
-                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>バックエンド開発（PHP, Laravel, Node.js,
-                        Golang）
+                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i><span
+                            data-translate="about-service-1">フロントエンド開発（React, TypeScript,
+                            JavaScript, Tailwind CSS, Bootstrap, HTML, CSS）</span></p>
+                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i><span
+                            data-translate="about-service-2">バックエンド開発（PHP, Laravel, Node.js,
+                            Golang）</span>
                     </p>
-                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>データベース設計・最適化（MySQL, SQL Server）
+                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i><span
+                            data-translate="about-service-3">データベース設計・最適化（MySQL, SQL Server）</span>
                     </p>
-                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>インフラ設計・運用（AWS, GitHub Actions,
-                        Docker, Kubernetes）
+                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i><span
+                            data-translate="about-service-4">インフラ設計・運用（AWS, GitHub Actions,
+                            Docker, Kubernetes）</span>
                     </p>
                     <!-- <a class="btn btn-primary py-3 px-5 mt-3" href="#contact">詳しく見る</a> -->
                 </div>
@@ -158,15 +178,16 @@
                         </div>
                     </div>
                     <div class="d-flex align-items-center mb-3">
-                        <h5 class="border-end pe-3 me-3 mb-0">満足いただいたクライアント</h5>
+                        <h5 class="border-end pe-3 me-3 mb-0" data-translate="about-stats-1">満足いただいたクライアント</h5>
                         <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">4</h2>
                     </div>
-                    <p class="mb-4">お客様のニーズに応じた高品質なWebアプリケーションを提供し、多くの方からご満足いただいております。</p>
+                    <p class="mb-4" data-translate="about-stats-1-desc">
+                        お客様のニーズに応じた高品質なWebアプリケーションを提供し、多くの方からご満足いただいております。</p>
                     <div class="d-flex align-items-center mb-3">
-                        <h5 class="border-end pe-3 me-3 mb-0">完了したプロジェクト</h5>
+                        <h5 class="border-end pe-3 me-3 mb-0" data-translate="about-stats-2">完了したプロジェクト</h5>
                         <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">6</h2>
                     </div>
-                    <p class="mb-0">フロントエンドからバックエンドまで、多様なプロジェクトを成功に導いてきました。</p>
+                    <p class="mb-0" data-translate="about-stats-2-desc">フロントエンドからバックエンドまで、多様なプロジェクトを成功に導いてきました。</p>
                 </div>
             </div>
         </div>
@@ -179,9 +200,10 @@
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <h1 class="display-5 mb-5">スキル & 経験</h1>
-                    <p class="mb-4">フロントエンドからバックエンド、インフラまで幅広い技術領域での開発経験があります。最新技術の習得と実践的なアプリケーション開発を継続的に行っています。</p>
-                    <h3 class="mb-4">技術スキル</h3>
+                    <h1 class="display-5 mb-5" data-translate="skills-title">スキル & 経験</h1>
+                    <p class="mb-4" data-translate="skills-description">
+                        フロントエンドからバックエンド、インフラまで幅広い技術領域での開発経験があります。最新技術の習得と実践的なアプリケーション開発を継続的に行っています。</p>
+                    <h3 class="mb-4" data-translate="skills-tab-1">技術スキル</h3>
                     <div class="row align-items-center">
                         <div class="col-md-6">
                             <div class="skill mb-4">
@@ -312,67 +334,76 @@
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                     <ul class="nav nav-pills rounded border border-2 border-primary mb-5">
                         <li class="nav-item w-50">
-                            <button class="nav-link w-100 py-3 fs-5 active" data-bs-toggle="pill"
-                                href="#tab-1">経験</button>
+                            <button class="nav-link w-100 py-3 fs-5 active" data-bs-toggle="pill" href="#tab-1"
+                                data-translate="skills-tab-2">経験</button>
                         </li>
                         <li class="nav-item w-50">
-                            <button class="nav-link w-100 py-3 fs-5" data-bs-toggle="pill" href="#tab-2">学歴</button>
+                            <button class="nav-link w-100 py-3 fs-5" data-bs-toggle="pill" href="#tab-2"
+                                data-translate="skills-tab-3">学歴</button>
                         </li>
                     </ul>
                     <div class="tab-content">
                         <div id="tab-1" class="tab-pane fade show p-0 active">
                             <div class="row gy-5 gx-4">
                                 <div class="col-sm-6">
-                                    <h5>フルスタックエンジニア</h5>
+                                    <h5 data-translate="skills-experience-1-title">フルスタックエンジニア</h5>
                                     <hr class="text-primary my-2">
-                                    <p class="text-primary mb-1">2021 - 現在</p>
-                                    <h6 class="mb-0">フリーランス</h6>
+                                    <p class="text-primary mb-1" data-translate="skills-experience-1-period">2021 - 現在
+                                    </p>
+                                    <h6 class="mb-0" data-translate="skills-experience-1-company">フリーランス</h6>
                                 </div>
                                 <div class="col-sm-6">
-                                    <h5>Web開発者</h5>
+                                    <h5 data-translate="skills-experience-2-title">Web開発者</h5>
                                     <hr class="text-primary my-2">
-                                    <p class="text-primary mb-1">2020 - 2021</p>
-                                    <h6 class="mb-0">テクノロジー会社</h6>
+                                    <p class="text-primary mb-1" data-translate="skills-experience-2-period">2020 - 2021
+                                    </p>
+                                    <h6 class="mb-0" data-translate="skills-experience-2-company">テクノロジー会社</h6>
                                 </div>
                                 <div class="col-sm-6">
-                                    <h5>フロントエンド開発者</h5>
+                                    <h5 data-translate="skills-experience-3-title">フロントエンド開発者</h5>
                                     <hr class="text-primary my-2">
-                                    <p class="text-primary mb-1">2019 - 2020</p>
-                                    <h6 class="mb-0">デジタルエージェンシー</h6>
+                                    <p class="text-primary mb-1" data-translate="skills-experience-3-period">2019 - 2020
+                                    </p>
+                                    <h6 class="mb-0" data-translate="skills-experience-3-company">デジタルエージェンシー</h6>
                                 </div>
                                 <div class="col-sm-6">
-                                    <h5>システム開発者</h5>
+                                    <h5 data-translate="skills-experience-4-title">システム開発者</h5>
                                     <hr class="text-primary my-2">
-                                    <p class="text-primary mb-1">2018 - 2019</p>
-                                    <h6 class="mb-0">IT企業</h6>
+                                    <p class="text-primary mb-1" data-translate="skills-experience-4-period">2018 - 2019
+                                    </p>
+                                    <h6 class="mb-0" data-translate="skills-experience-4-company">IT企業</h6>
                                 </div>
                             </div>
                         </div>
                         <div id="tab-2" class="tab-pane fade show p-0">
                             <div class="row gy-5 gx-4">
                                 <div class="col-sm-6">
-                                    <h5>コンピュータサイエンス</h5>
+                                    <h5 data-translate="skills-education-1-title">コンピュータサイエンス</h5>
                                     <hr class="text-primary my-2">
-                                    <p class="text-primary mb-1">2016 - 2020</p>
-                                    <h6 class="mb-0">工科大学</h6>
+                                    <p class="text-primary mb-1" data-translate="skills-education-1-period">2016 - 2020
+                                    </p>
+                                    <h6 class="mb-0" data-translate="skills-education-1-institution">工科大学</h6>
                                 </div>
                                 <div class="col-sm-6">
-                                    <h5>Web開発コース</h5>
+                                    <h5 data-translate="skills-education-2-title">Web開発コース</h5>
                                     <hr class="text-primary my-2">
-                                    <p class="text-primary mb-1">2019 - 2020</p>
-                                    <h6 class="mb-0">オンライン教育機関</h6>
+                                    <p class="text-primary mb-1" data-translate="skills-education-2-period">2019 - 2020
+                                    </p>
+                                    <h6 class="mb-0" data-translate="skills-education-2-institution">オンライン教育機関</h6>
                                 </div>
                                 <div class="col-sm-6">
-                                    <h5>データベース設計</h5>
+                                    <h5 data-translate="skills-education-3-title">データベース設計</h5>
                                     <hr class="text-primary my-2">
-                                    <p class="text-primary mb-1">2018 - 2019</p>
-                                    <h6 class="mb-0">技術研修センター</h6>
+                                    <p class="text-primary mb-1" data-translate="skills-education-3-period">2018 - 2019
+                                    </p>
+                                    <h6 class="mb-0" data-translate="skills-education-3-institution">技術研修センター</h6>
                                 </div>
                                 <div class="col-sm-6">
-                                    <h5>クラウド技術認定</h5>
+                                    <h5 data-translate="skills-education-4-title">クラウド技術認定</h5>
                                     <hr class="text-primary my-2">
-                                    <p class="text-primary mb-1">2020 - 2021</p>
-                                    <h6 class="mb-0">AWS認定プログラム</h6>
+                                    <p class="text-primary mb-1" data-translate="skills-education-4-period">2020 - 2021
+                                    </p>
+                                    <h6 class="mb-0" data-translate="skills-education-4-institution">AWS認定プログラム</h6>
                                 </div>
                             </div>
                         </div>
@@ -389,10 +420,10 @@
         <div class="container">
             <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="col-lg-6">
-                    <h1 class="display-5 mb-0">提供サービス</h1>
+                    <h1 class="display-5 mb-0" data-translate="services-title">提供サービス</h1>
                 </div>
                 <div class="col-lg-6 text-lg-end">
-                    <a class="btn btn-primary py-3 px-5" href="#contact">お問い合わせ</a>
+                    <a class="btn btn-primary py-3 px-5" href="#contact" data-translate="services-hire-btn">お問い合わせ</a>
                 </div>
             </div>
             <div class="row g-4">
@@ -402,9 +433,11 @@
                             <i class="fa fa-code fa-2x text-dark"></i>
                         </div>
                         <div class="ms-sm-4">
-                            <h4 class="mb-3">フロントエンド開発</h4>
-                            <h6 class="mb-3">料金は <span class="text-primary">要相談</span></h6>
-                            <span>React、TypeScript、JavaScriptを使用してモダンでレスポンシブなWebアプリケーションを開発します。ユーザーエクスペリエンスを重視したUI/UXデザインを提供いたします。</span>
+                            <h4 class="mb-3" data-translate="services-service-1-title">フロントエンド開発</h4>
+                            <h6 class="mb-3" data-translate="services-price">料金は <span class="text-primary">要相談</span>
+                            </h6>
+                            <span
+                                data-translate="services-service-1-desc">React、TypeScript、JavaScriptを使用してモダンでレスポンシブなWebアプリケーションを開発します。ユーザーエクスペリエンスを重視したUI/UXデザインを提供いたします。</span>
                         </div>
                     </div>
                 </div>
@@ -414,9 +447,11 @@
                             <i class="fa fa-server fa-2x text-dark"></i>
                         </div>
                         <div class="ms-sm-4">
-                            <h4 class="mb-3">バックエンド開発</h4>
-                            <h6 class="mb-3">料金は <span class="text-primary">要相談</span></h6>
-                            <span>PHP、Laravel、Node.js、Golangを使用してスケーラブルで安全なサーバーサイドアプリケーションを開発します。API設計からデータベース設計まで対応いたします。</span>
+                            <h4 class="mb-3" data-translate="services-service-2-title">バックエンド開発</h4>
+                            <h6 class="mb-3" data-translate="services-price">料金は <span class="text-primary">要相談</span>
+                            </h6>
+                            <span
+                                data-translate="services-service-2-desc">PHP、Laravel、Node.js、Golangを使用してスケーラブルで安全なサーバーサイドアプリケーションを開発します。API設計からデータベース設計まで対応いたします。</span>
                         </div>
                     </div>
                 </div>
@@ -426,9 +461,11 @@
                             <i class="fa fa-database fa-2x text-dark"></i>
                         </div>
                         <div class="ms-sm-4">
-                            <h4 class="mb-3">データベース設計</h4>
-                            <h6 class="mb-3">料金は <span class="text-primary">要相談</span></h6>
-                            <span>MySQL、SQL Serverを使用して効率的でスケーラブルなデータベース設計を行います。データの整合性とパフォーマンスを重視した最適化を提供いたします。</span>
+                            <h4 class="mb-3" data-translate="services-service-3-title">データベース設計</h4>
+                            <h6 class="mb-3" data-translate="services-price">料金は <span class="text-primary">要相談</span>
+                            </h6>
+                            <span data-translate="services-service-3-desc">MySQL、SQL
+                                Serverを使用して効率的でスケーラブルなデータベース設計を行います。データの整合性とパフォーマンスを重視した最適化を提供いたします。</span>
                         </div>
                     </div>
                 </div>
@@ -438,9 +475,10 @@
                             <i class="fa fa-cloud fa-2x text-dark"></i>
                         </div>
                         <div class="ms-sm-4">
-                            <h4 class="mb-3">インフラ・運用</h4>
-                            <h6 class="mb-3">料金は <span class="text-primary">要相談</span></h6>
-                            <span>AWS、Docker、Kubernetes、GitHub
+                            <h4 class="mb-3" data-translate="services-service-4-title">インフラ・運用</h4>
+                            <h6 class="mb-3" data-translate="services-price">料金は <span class="text-primary">要相談</span>
+                            </h6>
+                            <span data-translate="services-service-4-desc">AWS、Docker、Kubernetes、GitHub
                                 Actionsを使用してクラウドインフラの設計・構築・運用を行います。CI/CDパイプラインの構築からスケーラブルなシステム運用まで対応いたします。</span>
                         </div>
                     </div>
@@ -456,14 +494,14 @@
         <div class="container">
             <div class="row g-5 mb-5 align-items-center wow fadeInUp" data-wow-delay="0.1s">
                 <div class="col-lg-6">
-                    <h1 class="display-5 mb-0">プロジェクト</h1>
+                    <h1 class="display-5 mb-0" data-translate="projects-title">プロジェクト</h1>
                 </div>
                 <div class="col-lg-6 text-lg-end">
                     <ul class="list-inline mx-n3 mb-0" id="portfolio-flters">
-                        <li class="mx-3 active" data-filter="*">全てのプロジェクト</li>
-                        <li class="mx-3" data-filter=".frontend">フロントエンド</li>
-                        <li class="mx-3" data-filter=".backend">バックエンド</li>
-                        <li class="mx-3" data-filter=".fullstack">フルスタック</li>
+                        <li class="mx-3 active" data-filter="*" data-translate="projects-filter-all">全てのプロジェクト</li>
+                        <li class="mx-3" data-filter=".frontend" data-translate="projects-filter-frontend">フロントエンド</li>
+                        <li class="mx-3" data-filter=".backend" data-translate="projects-filter-backend">バックエンド</li>
+                        <li class="mx-3" data-filter=".fullstack" data-translate="projects-filter-fullstack">フルスタック</li>
                     </ul>
                 </div>
             </div>
@@ -549,7 +587,8 @@
     <!-- Testimonial Start -->
     <div class="container-fluid bg-light py-5 my-5" id="testimonial">
         <div class="container-fluid py-5">
-            <h1 class="display-5 text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">お客様の声</h1>
+            <h1 class="display-5 text-center mb-5 wow fadeInUp" data-wow-delay="0.1s"
+                data-translate="testimonials-title">お客様の声</h1>
             <div class="row justify-content-center">
                 <div class="col-lg-3 d-none d-lg-block">
                     <div class="testimonial-left h-100">
@@ -568,12 +607,12 @@
                                     <i class="fa fa-quote-left text-primary"></i>
                                 </div>
                             </div>
-                            <p class="fs-5 fst-italic">
+                            <p class="fs-5 fst-italic" data-translate="testimonial-1">
                                 ReactとLaravelを使用したフルスタック開発で、私たちのビジネス要件を完璧に満たすWebアプリケーションを作成していただきました。技術力とコミュニケーション能力の高さに大変満足しています。
                             </p>
                             <hr class="w-25 mx-auto">
-                            <h5>田中 太郎</h5>
-                            <span>IT企業 CEO</span>
+                            <h5 data-translate="testimonial-1-name">田中 太郎</h5>
+                            <span data-translate="testimonial-1-position">IT企業 CEO</span>
                         </div>
                         <div class="testimonial-item text-center">
                             <div class="position-relative mb-5">
@@ -583,12 +622,12 @@
                                     <i class="fa fa-quote-left text-primary"></i>
                                 </div>
                             </div>
-                            <p class="fs-5 fst-italic">
+                            <p class="fs-5 fst-italic" data-translate="testimonial-2">
                                 AWSとDockerを使用したクラウドインフラの構築から、TypeScriptでのフロントエンド開発まで、幅広い技術領域で高品質なサービスを提供していただきました。プロジェクト管理も非常に優秀です。
                             </p>
                             <hr class="w-25 mx-auto">
-                            <h5>佐藤 花子</h5>
-                            <span>スタートアップ CTO</span>
+                            <h5 data-translate="testimonial-2-name">佐藤 花子</h5>
+                            <span data-translate="testimonial-2-position">スタートアップ CTO</span>
                         </div>
                         <div class="testimonial-item text-center">
                             <div class="position-relative mb-5">
@@ -598,12 +637,12 @@
                                     <i class="fa fa-quote-left text-primary"></i>
                                 </div>
                             </div>
-                            <p class="fs-5 fst-italic">
+                            <p class="fs-5 fst-italic" data-translate="testimonial-3">
                                 Node.jsとMySQLを使用したAPI開発から、Kubernetesでのデプロイメントまで、エンドツーエンドの開発を担当していただきました。パフォーマンスとセキュリティの両面で期待を上回る結果でした。
                             </p>
                             <hr class="w-25 mx-auto">
-                            <h5>山田 次郎</h5>
-                            <span>エンタープライズ 開発責任者</span>
+                            <h5 data-translate="testimonial-3-name">山田 次郎</h5>
+                            <span data-translate="testimonial-3-position">エンタープライズ 開発責任者</span>
                         </div>
                     </div>
                 </div>
@@ -625,24 +664,25 @@
         <div class="container py-5">
             <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="col-lg-6">
-                    <h1 class="display-5 mb-0">お問い合わせ</h1>
+                    <h1 class="display-5 mb-0" data-translate="contact-title">お問い合わせ</h1>
                 </div>
                 <div class="col-lg-6 text-lg-end">
-                    <a class="btn btn-primary py-3 px-5" href="mailto:sherzoddeveloper@gmail.com">メール送信</a>
+                    <a class="btn btn-primary py-3 px-5" href="mailto:sherzoddeveloper@gmail.com"
+                        data-translate="contact-email-btn">メール送信</a>
                 </div>
             </div>
             <div class="row g-5">
                 <div class="col-lg-5 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <p class="mb-2">所在地:</p>
-                    <h3 class="fw-bold">東京都板橋区</h3>
+                    <p class="mb-2" data-translate="contact-location">所在地:</p>
+                    <h3 class="fw-bold" data-translate="contact-location-value">東京都板橋区</h3>
                     <hr class="w-100">
-                    <p class="mb-2">電話番号:</p>
-                    <h3 class="fw-bold">+81 70-9099-9894</h3>
+                    <p class="mb-2" data-translate="contact-phone">電話番号:</p>
+                    <h3 class="fw-bold" data-translate="contact-phone-value">+81 70-9099-9894</h3>
                     <hr class="w-100">
-                    <p class="mb-2">メールアドレス:</p>
-                    <h3 class="fw-bold">sherzoddeveloper@gmail.com</h3>
+                    <p class="mb-2" data-translate="contact-email">メールアドレス:</p>
+                    <h3 class="fw-bold" data-translate="contact-email-value">sherzoddeveloper@gmail.com</h3>
                     <hr class="w-100">
-                    <p class="mb-2">SNS:</p>
+                    <p class="mb-2" data-translate="contact-sns">SNS:</p>
                     <div class="d-flex pt-2">
                         <a class="btn btn-square btn-primary me-2" href="https://github.com/sherzot"><i
                                 class="fab fa-github"></i></a>
@@ -656,7 +696,8 @@
                     </div>
                 </div>
                 <div class="col-lg-7 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <p class="mb-4">フルスタック開発に関するご相談やお見積もりをご希望の方は、以下のフォームよりお気軽にお問い合わせください。24時間以内にご返信いたします。</p>
+                    <p class="mb-4" data-translate="contact-form-desc">
+                        フルスタック開発に関するご相談やお見積もりをご希望の方は、以下のフォームよりお気軽にお問い合わせください。24時間以内にご返信いたします。</p>
                     <form id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field"
                         novalidate>
                         <div style="display: none;">
@@ -665,33 +706,36 @@
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" name="name" placeholder="お名前">
-                                    <label for="name">お名前</label>
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="お名前"
+                                        data-placeholder="contact-form-name">
+                                    <label for="name" data-translate="contact-form-name">お名前</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
                                     <input type="email" class="form-control" id="email" name="email"
-                                        placeholder="メールアドレス">
-                                    <label for="email">メールアドレス</label>
+                                        placeholder="メールアドレス" data-placeholder="contact-form-email">
+                                    <label for="email" data-translate="contact-form-email">メールアドレス</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="subject" name="subject"
-                                        placeholder="件名">
-                                    <label for="subject">件名</label>
+                                    <input type="text" class="form-control" id="subject" name="subject" placeholder="件名"
+                                        data-placeholder="contact-form-subject">
+                                    <label for="subject" data-translate="contact-form-subject">件名</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
                                     <textarea class="form-control" placeholder="プロジェクトの詳細をお聞かせください" id="message"
-                                        name="message" style="height: 100px"></textarea>
-                                    <label for="message">メッセージ</label>
+                                        name="message" style="height: 100px"
+                                        data-placeholder="contact-form-message"></textarea>
+                                    <label for="message" data-translate="contact-form-message">メッセージ</label>
                                 </div>
                             </div>
                             <div class="col-12">
-                                <button class="btn btn-primary py-3 px-5" type="submit" id="submitBtn">送信する</button>
+                                <button class="btn btn-primary py-3 px-5" type="submit" id="submitBtn"
+                                    data-translate="contact-form-submit">送信する</button>
                             </div>
                         </div>
                     </form>
@@ -731,7 +775,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a class="border-bottom text-secondary" href="/">Sher_Dev</a>, All Right Reserved.
+                    &copy; <a class="border-bottom text-secondary" href="/">Sher_Dev</a>, <span
+                        data-translate="footer-copyright">All Right Reserved.</span>
                 </div>
             </div>
         </div>
@@ -760,6 +805,7 @@
     <script src="js/main.js"></script>
     <script src="js/contact.js"></script>
     <script src="js/contact-form.js"></script>
+    <script src="js/language-switcher.js"></script>
 </body>
 
 </html>
