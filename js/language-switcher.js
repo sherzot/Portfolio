@@ -135,7 +135,7 @@ class LanguageSwitcher {
         "contact-email-value": "sherzoddeveloper@gmail.com",
 
         // Footer
-        "footer-copyright": "Sher_Dev, All Right Reserved.",
+        "footer-copyright": "All Right Reserved.",
       },
 
       en: {
@@ -269,7 +269,7 @@ class LanguageSwitcher {
         "contact-email-value": "sherzoddeveloper@gmail.com",
 
         // Footer
-        "footer-copyright": "Sher_Dev, All Right Reserved.",
+        "footer-copyright": "All Right Reserved.",
       },
 
       uz: {
@@ -404,7 +404,7 @@ class LanguageSwitcher {
         "contact-email-value": "sherzoddeveloper@gmail.com",
 
         // Footer
-        "footer-copyright": "Sher_Dev, Barcha huquqlar himoyalangan.",
+        "footer-copyright": "Barcha huquqlar himoyalangan.",
       },
     };
 
