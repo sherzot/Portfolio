@@ -20,6 +20,13 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
+      // メールアドレスの形式チェック
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        showMessage("error");
+        return;
+      }
+
       // メール本文を作成
       const emailBody = `
 お名前: ${name}
@@ -55,20 +62,19 @@ ${message}
       const input = e.target;
       const value = input.value.trim();
 
+      // カスタムバリデーションメッセージをクリア
+      input.setCustomValidity("");
+
       // 基本的なバリデーション
       if (input.type === "email" && value) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(value)) {
           input.setCustomValidity("有効なメールアドレスを入力してください");
-        } else {
-          input.setCustomValidity("");
         }
       }
 
       if (input.required && !value) {
         input.setCustomValidity("この項目は必須です");
-      } else if (input.required) {
-        input.setCustomValidity("");
       }
     });
 });
