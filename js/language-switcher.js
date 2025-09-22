@@ -48,8 +48,8 @@ class LanguageSwitcher {
         "skills-description":
           "フロントエンドからバックエンド、インフラまで幅広い技術領域での開発経験があります。最新技術の習得と実践的なアプリケーション開発を継続的に行っています。",
         "skills-tab-1": "技術スキル",
-        "skills-tab-2": "実務経験",
-        "skills-tab-3": "教育・資格",
+        "skills-tab-2": "職歴",
+        "skills-tab-3": "学歴",
         "skills-experience-1-title": "フルスタックエンジニア",
         "skills-experience-1-period": "2021 - 現在",
         "skills-experience-1-company": "フリーランス",
@@ -182,7 +182,7 @@ class LanguageSwitcher {
         "skills-description":
           "I have development experience in a wide range of technical areas from frontend to backend and infrastructure. I continuously learn new technologies and develop practical applications.",
         "skills-tab-1": "Technical Skills",
-        "skills-tab-2": "Work Experience",
+        "skills-tab-2": "Experience",
         "skills-tab-3": "Education",
         "skills-experience-1-title": "Full Stack Engineer",
         "skills-experience-1-period": "2021 - Present",
@@ -317,8 +317,8 @@ class LanguageSwitcher {
         "skills-description":
           "Frontend dan backend va infratuzilma gacha keng texnologik sohalarda ishlab chiqish tajribasiga egaman. Yangi texnologiyalarni o'rganish va amaliy ilovalar yaratishda davom etaman.",
         "skills-tab-1": "Texnik ko'nikmalar",
-        "skills-tab-2": "Ish tajribasi",
-        "skills-tab-3": "Ta'lim va sertifikatlar",
+        "skills-tab-2": "Tajribasi",
+        "skills-tab-3": "Ta'lim",
         "skills-experience-1-title": "Full Stack Muhandis",
         "skills-experience-1-period": "2021 - Hozirgi",
         "skills-experience-1-company": "Freelance",
