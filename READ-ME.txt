@@ -1,9 +1,94 @@
-  =>  Template Name    : ProMan - Personal Portfolio HTML Template
+# Sherzod Musurmonov - Full Stack Engineer Portfolio
 
-  =>  Template Link    : https://htmlcodex.com/personal-portfolio-html-template
+## 🌟 About This Portfolio
 
-  =>  Template License : https://htmlcodex.com/license (or read the LICENSE.txt file)
+This is a modern, responsive portfolio website showcasing the skills and projects of Sherzod Musurmonov, a Full Stack Engineer specializing in web application development.
 
-  =>  Template Author  : HTML Codex
+## 🚀 Features
 
-  =>  Author Website   : https://htmlcodex.com
+### Multi-Language Support
+- **Japanese (日本語)** - Primary language
+- **English** - International accessibility  
+- **Uzbek (O'zbek)** - Native language
+- Dynamic language switching with localStorage persistence
+
+### Responsive Design
+- Mobile-first approach
+- Sticky navigation bar
+- Hamburger menu for all screen sizes
+- Optimized for all devices (mobile, tablet, desktop)
+
+### Sections
+- **Hero Section** - Introduction with animated typing effect
+- **About** - Professional background and statistics
+- **Skills & Experience** - Technical skills with progress bars and work history
+- **Services** - Offered development services
+- **Projects** - Portfolio showcase with filtering
+- **Testimonials** - Client feedback
+- **Contact** - Contact form with client-side validation
+
+### Technical Stack
+- **Frontend**: HTML5, CSS3, JavaScript (ES6+)
+- **Styling**: Bootstrap 5, Custom CSS
+- **Animations**: WOW.js, Typed.js, AOS
+- **Icons**: Font Awesome 6.5.1
+- **Form Handling**: Client-side validation with mailto integration
+
+## 🛠️ Technologies Used
+
+### Frontend Technologies
+- React, TypeScript, JavaScript
+- Tailwind CSS, Bootstrap, HTML, CSS
+- Node.js, Express.js
+- MongoDB, PostgreSQL, MySQL
+- Docker, AWS, Vercel
+
+### Development Tools
+- Git & GitHub
+- VS Code
+- Responsive design principles
+- Cross-browser compatibility
+
+## 📱 Responsive Breakpoints
+
+- **Mobile**: < 576px
+- **Tablet**: 576px - 991px  
+- **Desktop**: 992px - 1399px
+- **Large Desktop**: 1400px+
+
+## 🎨 Design Features
+
+- Clean, modern interface
+- Smooth animations and transitions
+- Brand-specific color schemes for skill progress bars
+- Professional typography
+- Optimized images and assets
+
+## 📧 Contact Information
+
+- **Email**: sherzoddeveloper@gmail.com
+- **Location**: Itabashi City, Tokyo, Japan
+- **Phone**: +81 70-9099-9894
+
+## 🔧 Setup Instructions
+
+1. Clone or download the repository
+2. Open `index.html` in a web browser
+3. No build process required - pure HTML/CSS/JS
+
+## 📄 License
+
+This portfolio is licensed under the MIT License. See LICENSE.txt for details.
+
+## 🌐 Live Demo
+
+The portfolio is designed to be deployed on any static hosting service:
+- GitHub Pages
+- Netlify
+- Vercel
+- Any web server
+
+---
+
+**Created with ❤️ by Sherzod Musurmonov**
+**Last Updated**: January 2024
