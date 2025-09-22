@@ -139,7 +139,7 @@ class LanguageSwitcher {
       },
 
       en: {
-        // Navigation
+        // Navigations
         "nav-home": "Home",
         "nav-about": "About",
         "nav-skills": "Skills",
