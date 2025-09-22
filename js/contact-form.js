@@ -14,6 +14,12 @@ document.addEventListener("DOMContentLoaded", function () {
       const subject = formData.get("subject");
       const message = formData.get("message");
 
+      // バリデーション
+      if (!name || !email || !subject || !message) {
+        showMessage("error");
+        return;
+      }
+
       // メール本文を作成
       const emailBody = `
 お名前: ${name}
