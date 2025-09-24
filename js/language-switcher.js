@@ -26,6 +26,7 @@ class LanguageSwitcher {
 
         // About Section
         "about-title": "フルスタックエンジニアとしての実務経験",
+        "about-year": "年"
         "about-description":
           "フロントエンドからバックエンドまで、Webアプリケーションの開発全工程を担当できるフルスタックエンジニアです。ユーザーエクスペリエンスを重視した設計と、スケーラブルなシステム構築を得意としています。",
         "about-services-title": "提供サービス",
@@ -159,6 +160,7 @@ class LanguageSwitcher {
 
         // About Section
         "about-title": "Professional Experience as a Full Stack Engineer",
+        "about-year": "Year"
         "about-description":
           "I am a Full Stack Engineer who can handle all aspects of web application development from frontend to backend. I specialize in user experience-focused design and scalable system construction.",
         "about-services-title": "Services Offered",
@@ -293,6 +295,7 @@ class LanguageSwitcher {
 
         // About Section
         "about-title": "Full Stack Muhandis sifatida professional tajriba",
+        "about-year": "Yil"
         "about-description":
           "Men frontend dan backend gacha, web ilovalarini ishlab chiqishning barcha bosqichlarini boshqarishga qodir Full Stack Muhandisiman. Foydalanuvchi tajribasiga e'tibor qaratgan dizayn va kengaytiriladigan tizimlar qurishda ixtisoslashganman.",
         "about-services-title": "Taqdim etiladigan xizmatlar",
