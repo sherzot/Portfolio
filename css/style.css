@@ -264,7 +264,7 @@
     }
 
     .navbar-collapse:not(.show) {
-        display: none !important;
+        display: block !important;
     }
 
     .navbar-collapse.show {
