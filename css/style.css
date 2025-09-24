@@ -258,13 +258,12 @@
     }
 }
 @media (max-width: 1919.98px) {
-    .navbar .navbar-nav .nav-link {
-        padding: 10px 0;
+     .navbar .navbar-nav .nav-link {
         display: block !important;
     }
 
     .navbar-collapse:not(.show) {
-        display: block !important;
+        display: none !important;
     }
 
     .navbar-collapse.show {
@@ -293,15 +292,6 @@
 
     .navbar-collapse.show .nav-link:last-child {
         border-bottom: none;
-    }
-
-    .language-switcher {
-        margin-right: 10px !important;
-    }
-
-    .language-switcher .dropdown-toggle {
-        padding: 6px 12px;
-        font-size: 12px;
     }
 }
 @media (max-width: 991.98px) {
