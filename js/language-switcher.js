@@ -17,12 +17,21 @@ class LanguageSwitcher {
 
         // Hero Section
         "hero-greeting": "こんにちは、私は",
-        "hero-name": "シェルゾド",
+        "hero-name": "ムスルモノフ　シェルゾト",
+        "hero-location": "日本＆ウズベキスタン",
         "hero-title": "フルスタックエンジニア",
         "hero-description":
           "フロントエンドからバックエンドまで、Webアプリケーションの開発全工程を担当できるフルスタックエンジニアです。",
         "hero-hire-btn": "お問い合わせ",
         "hero-download-btn": "履歴書ダウンロード",
+
+        // Technology Categories
+        "tech-frontend": "フロントエンド技術",
+        "tech-backend": "バックエンド技術",
+        "tech-database": "データベース技術",
+        "tech-cloud": "クラウド・DevOps",
+        "tech-ai": "AI・ツール",
+        "tech-design": "デザイン・OS",
 
         // About Section
         "about-title": "フルスタックエンジニアとしての実務経験",
@@ -151,12 +160,21 @@ class LanguageSwitcher {
 
         // Hero Section
         "hero-greeting": "Hello, I am",
-        "hero-name": "Sherzot",
+        "hero-name": "MUSURMONOV SHERZOT",
+        "hero-location": "Japan & Uzbekistan",
         "hero-title": "Full Stack Engineer",
         "hero-description":
           "I am a Full Stack Engineer who can handle all aspects of web application development from frontend to backend. I specialize in user experience-focused design and scalable system construction.",
         "hero-hire-btn": "Contact Me",
         "hero-download-btn": "Download CV",
+
+        // Technology Categories
+        "tech-frontend": "Frontend Technologies",
+        "tech-backend": "Backend Technologies",
+        "tech-database": "Database Technologies",
+        "tech-cloud": "Cloud & DevOps",
+        "tech-ai": "AI & Tools",
+        "tech-design": "Design & OS",
 
         // About Section
         "about-title": "Professional Experience as a Full Stack Engineer",
@@ -286,12 +304,21 @@ class LanguageSwitcher {
 
         // Hero Section
         "hero-greeting": "Salom, men",
-        "hero-name": "Sherzot",
+        "hero-name": "MUSURMONOV SHERZOT",
+        "hero-location": "Yaponiya & O'zbekiston",
         "hero-title": "Full Stack Muhandis",
         "hero-description":
           "Men frontend dan backend gacha, web ilovalarini ishlab chiqishning barcha bosqichlarini boshqarishga qodir Full Stack Muhandisiman. Foydalanuvchi tajribasiga e'tibor qaratgan dizayn va kengaytiriladigan tizimlar qurishda ixtisoslashganman.",
         "hero-hire-btn": "Men bilan bog'lanish",
         "hero-download-btn": "Rezyume yuklab olish",
+
+        // Technology Categories
+        "tech-frontend": "Frontend texnologiyalari",
+        "tech-backend": "Backend texnologiyalari",
+        "tech-database": "Ma'lumotlar bazasi texnologiyalari",
+        "tech-cloud": "Bulut va DevOps",
+        "tech-ai": "AI va vositalar",
+        "tech-design": "Dizayn va OS",
 
         // About Section
         "about-title": "Full Stack Muhandis sifatida professional tajriba",
