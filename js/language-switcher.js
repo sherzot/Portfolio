@@ -60,30 +60,51 @@ class LanguageSwitcher {
         "skills-tab-1": "技術スキル",
         "skills-tab-2": "職歴",
         "skills-tab-3": "学歴",
-        "skills-experience-1-title": "フルスタックエンジニア",
-        "skills-experience-1-period": "2021 - 現在",
-        "skills-experience-1-company": "フリーランス",
-        "skills-experience-2-title": "Web開発者",
-        "skills-experience-2-period": "2020 - 2021",
-        "skills-experience-2-company": "テクノロジー会社",
-        "skills-experience-3-title": "フロントエンド開発者",
-        "skills-experience-3-period": "2019 - 2020",
-        "skills-experience-3-company": "デジタルエージェンシー",
-        "skills-experience-4-title": "システム開発者",
-        "skills-experience-4-period": "2018 - 2019",
-        "skills-experience-4-company": "IT企業",
-        "skills-education-1-title": "コンピュータサイエンス",
-        "skills-education-1-period": "2016 - 2020",
-        "skills-education-1-institution": "工科大学",
-        "skills-education-2-title": "Web開発コース",
-        "skills-education-2-period": "2019 - 2020",
-        "skills-education-2-institution": "オンライン教育機関",
-        "skills-education-3-title": "データベース設計",
-        "skills-education-3-period": "2018 - 2019",
-        "skills-education-3-institution": "技術研修センター",
-        "skills-education-4-title": "クラウド技術認定",
-        "skills-education-4-period": "2020 - 2021",
-        "skills-education-4-institution": "AWS認定プログラム",
+        "skills-experience-1-title": "情報技術部門主任専門家",
+        "skills-experience-1-period": "2021年6月1日 - 2022年4月13日",
+        "skills-experience-1-company":
+          "サマルカンド市「イシュガ・マルハマット」モノセンター",
+        "skills-experience-1-achievements": "主な成果とプロジェクト:",
+        "skills-experience-1-achievement-1":
+          "3名のチームを管理し、会社のITインフラをゼロから構築",
+        "skills-experience-1-achievement-2":
+          "公式ウェブサイト開発（2021.07-2021.09）- WordPress、モバイル対応、3ヶ月で訪問者5,000+人達成",
+        "skills-experience-1-achievement-3":
+          "オンライン教育プラットフォーム（2021.10-2022.01）- 100名同時利用、コース管理システム開発",
+        "skills-experience-1-achievement-4":
+          "「Job Matching」システム（2022.02-2022.03）- 求職者と求人企業のマッチング、200+応募処理、90%満足度",
+        "skills-experience-1-tech": "使用技術:",
+        "skills-experience-1-tech-list":
+          "WordPress, PHP, MySQL, Linux, Windows, HTML, CSS, JavaScript",
+        "skills-experience-2-title": "フルスタックエンジニア",
+        "skills-experience-2-period": "2024年4月1日 - 2025年10月16日",
+        "skills-experience-2-company": "株式会社リス（Ris Co., Ltd）",
+        "skills-experience-2-achievements": "主なプロジェクトと成果:",
+        "skills-experience-2-achievement-1":
+          "企業ウェブサイト更新・技術サポート - サイトトラフィック25%増加、データベース自動化",
+        "skills-experience-2-achievement-2":
+          "「Shigoto Navi」求人マッチングシステム刷新 - 日次応募数8件達成、99.9%システム安定性",
+        "skills-experience-2-achievement-3":
+          "レガシーシステム近代化 - SHIFT JISからUTF-8変換、内部業務30%効率化",
+        "skills-experience-2-tech": "使用技術:",
+        "skills-experience-2-tech-list":
+          "HTML5, CSS3, Bootstrap, JavaScript, ASP, PHP (Laravel), Node.js, MySQL, SQL Server, AWS (EC2, RDS), Docker, Kubernetes, Linux, Windows Server",
+        "skills-education-1-title": "レスリング・柔道",
+        "skills-education-1-period": "2012 - 2018",
+        "skills-education-1-institution":
+          "サマルカンド・オリンピック予備スポーツ専門学校",
+        "skills-education-2-title": "コンピュータ工学・技術",
+        "skills-education-2-period": "2020 - 2021",
+        "skills-education-2-institution":
+          "サマルカンド市職業訓練センター（KOICA）",
+        "skills-education-3-title": "日本語",
+        "skills-education-3-period": "2022 - 2023",
+        "skills-education-3-institution":
+          "春日日本語学院（Kasuga Nihongo Gakuin）",
+        "skills-education-4-title": "システム工学・ビジネス",
+        "skills-education-4-period": "2023 - 2025",
+        "skills-education-4-institution":
+          "中野スクールオブビジネス（Nakano School of Business）",
 
         // Services Section
         "services-title": "提供サービス",
@@ -105,9 +126,28 @@ class LanguageSwitcher {
         // Projects Section
         "projects-title": "プロジェクト",
         "projects-filter-all": "全てのプロジェクト",
-        "projects-filter-frontend": "フロントエンド",
-        "projects-filter-backend": "バックエンド",
-        "projects-filter-fullstack": "フルスタック",
+        "projects-filter-web": "ウェブサイト",
+        "projects-filter-platform": "プラットフォーム",
+        "projects-filter-system": "システム",
+
+        // Project Details
+        "project-1-title": "公式ウェブサイト",
+        "project-1-desc": "WordPress、モバイル対応、3ヶ月で訪問者5,000+人達成",
+        "project-2-title": "オンライン教育プラットフォーム",
+        "project-2-desc": "100名同時利用、コース管理システム開発",
+        "project-3-title": "求職者・求人企業マッチングシステム",
+        "project-3-desc": "200+応募処理、90%満足度達成",
+        "project-4-title": "「Shigoto Navi」求人マッチングシステム刷新",
+        "project-4-desc": "日次応募数8件達成、99.9%システム安定性",
+        "project-5-title": "企業ウェブサイト更新・技術サポート",
+        "project-5-desc": "サイトトラフィック25%増加、データベース自動化",
+        "project-6-title": "「Shigoto Navi」ランディングページ",
+        "project-6-desc":
+          "新しく構築された求人マッチングシステム用ランディングページ",
+        "project-7-title": "レガシーシステム近代化",
+        "project-7-desc": "SHIFT JISからUTF-8変換、内部業務30%効率化",
+        "project-8-title": "政府機関向け求職者・求人企業マッチングシステム",
+        "project-8-desc": "政府機関向けの求職者と求人企業を結ぶシステム",
 
         // Testimonials Section
         "testimonials-title": "お客様の声",
@@ -204,30 +244,49 @@ class LanguageSwitcher {
         "skills-tab-1": "Technical Skills",
         "skills-tab-2": "Experience",
         "skills-tab-3": "Education",
-        "skills-experience-1-title": "Full Stack Engineer",
-        "skills-experience-1-period": "2021 - Present",
-        "skills-experience-1-company": "Freelance",
-        "skills-experience-2-title": "Web Developer",
-        "skills-experience-2-period": "2020 - 2021",
-        "skills-experience-2-company": "Technology Company",
-        "skills-experience-3-title": "Frontend Developer",
-        "skills-experience-3-period": "2019 - 2020",
-        "skills-experience-3-company": "Digital Agency",
-        "skills-experience-4-title": "System Developer",
-        "skills-experience-4-period": "2018 - 2019",
-        "skills-experience-4-company": "IT Company",
-        "skills-education-1-title": "Computer Science",
-        "skills-education-1-period": "2016 - 2020",
-        "skills-education-1-institution": "Technical University",
-        "skills-education-2-title": "Web Development Course",
-        "skills-education-2-period": "2019 - 2020",
-        "skills-education-2-institution": "Online Education",
-        "skills-education-3-title": "Database Design",
-        "skills-education-3-period": "2018 - 2019",
-        "skills-education-3-institution": "Technical Training Center",
-        "skills-education-4-title": "Cloud Technology Certification",
-        "skills-education-4-period": "2020 - 2021",
-        "skills-education-4-institution": "AWS Certification Program",
+        "skills-experience-1-title": "Senior IT Specialist",
+        "skills-experience-1-period": "June 1, 2021 - April 13, 2022",
+        "skills-experience-1-company":
+          'Samarkand City "Ishga Marhamat" Monocenter',
+        "skills-experience-1-achievements": "Key Achievements and Projects:",
+        "skills-experience-1-achievement-1":
+          "Managed a 3-person team and built company IT infrastructure from scratch",
+        "skills-experience-1-achievement-2":
+          "Official Website Development (2021.07-2021.09) - WordPress, mobile responsive, achieved 5,000+ visitors in 3 months",
+        "skills-experience-1-achievement-3":
+          "Online Education Platform (2021.10-2022.01) - 100 concurrent users, course management system development",
+        "skills-experience-1-achievement-4":
+          '"Job Matching" System (2022.02-2022.03) - Job seeker and employer matching, processed 200+ applications, 90% satisfaction rate',
+        "skills-experience-1-tech": "Technologies Used:",
+        "skills-experience-1-tech-list":
+          "WordPress, PHP, MySQL, Linux, Windows, HTML, CSS, JavaScript",
+        "skills-experience-2-title": "Full Stack Engineer",
+        "skills-experience-2-period": "April 1, 2024 - October 16, 2025",
+        "skills-experience-2-company": "Ris Co., Ltd",
+        "skills-experience-2-achievements": "Key Projects and Results:",
+        "skills-experience-2-achievement-1":
+          "Corporate Website Update & Technical Support - 25% increase in site traffic, database automation",
+        "skills-experience-2-achievement-2":
+          '"Shigoto Navi" Job Matching System Renewal - Achieved 8 daily applications, 99.9% system stability',
+        "skills-experience-2-achievement-3":
+          "Legacy System Modernization - SHIFT JIS to UTF-8 conversion, 30% internal process efficiency improvement",
+        "skills-experience-2-tech": "Technologies Used:",
+        "skills-experience-2-tech-list":
+          "HTML5, CSS3, Bootstrap, JavaScript, ASP, PHP (Laravel), Node.js, MySQL, SQL Server, AWS (EC2, RDS), Docker, Kubernetes, Linux, Windows Server",
+        "skills-education-1-title": "Wrestling & Judo",
+        "skills-education-1-period": "2012 - 2018",
+        "skills-education-1-institution":
+          "Samarkand Olympic Reserve Sports College",
+        "skills-education-2-title": "Computer Engineering & Technology",
+        "skills-education-2-period": "2020 - 2021",
+        "skills-education-2-institution":
+          "Samarkand City Vocational Training Center (KOICA)",
+        "skills-education-3-title": "Japanese Language",
+        "skills-education-3-period": "2022 - 2023",
+        "skills-education-3-institution": "Kasuga Nihongo Gakuin",
+        "skills-education-4-title": "Systems Engineering & Business",
+        "skills-education-4-period": "2023 - 2025",
+        "skills-education-4-institution": "Nakano School of Business",
 
         // Services Section
         "services-title": "Services Offered",
@@ -249,9 +308,33 @@ class LanguageSwitcher {
         // Projects Section
         "projects-title": "Projects",
         "projects-filter-all": "All Projects",
-        "projects-filter-frontend": "Frontend",
-        "projects-filter-backend": "Backend",
-        "projects-filter-fullstack": "Full Stack",
+        "projects-filter-web": "Websites",
+        "projects-filter-platform": "Platforms",
+        "projects-filter-system": "Systems",
+
+        // Project Details
+        "project-1-title": "Official Website",
+        "project-1-desc":
+          "WordPress, mobile responsive, achieved 5,000+ visitors in 3 months",
+        "project-2-title": "Online Education Platform",
+        "project-2-desc":
+          "100 concurrent users, course management system development",
+        "project-3-title": "Job Seeker-Employer Matching System",
+        "project-3-desc":
+          "Processed 200+ applications, achieved 90% satisfaction rate",
+        "project-4-title": '"Shigoto Navi" Job Matching System Renewal',
+        "project-4-desc":
+          "Achieved 8 daily applications, 99.9% system stability",
+        "project-5-title": "Corporate Website Update & Technical Support",
+        "project-5-desc": "25% increase in site traffic, database automation",
+        "project-6-title": '"Shigoto Navi" Landing Page',
+        "project-6-desc": "Landing page for newly built job matching system",
+        "project-7-title": "Legacy System Modernization",
+        "project-7-desc":
+          "SHIFT JIS to UTF-8 conversion, 30% internal process efficiency improvement",
+        "project-8-title": "Government Job Seeker-Employer Matching System",
+        "project-8-desc":
+          "System connecting job seekers and employers for government institutions",
 
         // Testimonials Section
         "testimonials-title": "Client Testimonials",
@@ -349,30 +432,52 @@ class LanguageSwitcher {
         "skills-tab-1": "Texnik ko'nikmalar",
         "skills-tab-2": "Tajriba",
         "skills-tab-3": "Ta'lim",
-        "skills-experience-1-title": "Full Stack Muhandis",
-        "skills-experience-1-period": "2021 - Hozirgi",
-        "skills-experience-1-company": "Freelance",
-        "skills-experience-2-title": "Web dasturchi",
-        "skills-experience-2-period": "2020 - 2021",
-        "skills-experience-2-company": "Texnologiya kompaniyasi",
-        "skills-experience-3-title": "Frontend dasturchi",
-        "skills-experience-3-period": "2019 - 2020",
-        "skills-experience-3-company": "Raqamli agentlik",
-        "skills-experience-4-title": "Tizim dasturchi",
-        "skills-experience-4-period": "2018 - 2019",
-        "skills-experience-4-company": "IT kompaniya",
-        "skills-education-1-title": "Kompyuter fanlari",
-        "skills-education-1-period": "2016 - 2020",
-        "skills-education-1-institution": "Texnika universiteti",
-        "skills-education-2-title": "Web ishlab chiqish kursi",
-        "skills-education-2-period": "2019 - 2020",
-        "skills-education-2-institution": "Onlayn ta'lim",
-        "skills-education-3-title": "Ma'lumotlar bazasi dizayni",
-        "skills-education-3-period": "2018 - 2019",
-        "skills-education-3-institution": "Texnik o'quv markazi",
-        "skills-education-4-title": "Bulut texnologiyalari sertifikati",
-        "skills-education-4-period": "2020 - 2021",
-        "skills-education-4-institution": "AWS sertifikat dasturi",
+        "skills-experience-1-title":
+          "Axborot texnologiyalari bo'limi bosh mutaxassisi",
+        "skills-experience-1-period": "2021-yil 1-iyun - 2022-yil 13-aprel",
+        "skills-experience-1-company":
+          'Samarqand shahridagi "Ishga Marhamat" Monomarkaz',
+        "skills-experience-1-achievements": "Asosiy yutuqlar va loyihalar:",
+        "skills-experience-1-achievement-1":
+          "3 kishilik jamoani boshqarib, kompaniyaning IT infratuzilmasini 0 dan shakllantirgan",
+        "skills-experience-1-achievement-2":
+          "Rasmiy veb-sayt ishlab chiqish (2021.07-2021.09) - WordPress, mobil moslashuv, 3 oyda 5,000+ tashrif buyuruvchi",
+        "skills-experience-1-achievement-3":
+          "Onlayn ta'lim platformasi (2021.10-2022.01) - 100 nafar o'quvchi bir vaqtda, kurs boshqarish tizimi",
+        "skills-experience-1-achievement-4":
+          '"Job Matching" tizimi (2022.02-2022.03) - ish beruvchilar va talabalar moslashtirish, 200+ ariza, 90% qoniqish',
+        "skills-experience-1-tech": "Ishlatilgan texnologiyalar:",
+        "skills-experience-1-tech-list":
+          "WordPress, PHP, MySQL, Linux, Windows, HTML, CSS, JavaScript",
+        "skills-experience-2-title": "Full Stack muhandis",
+        "skills-experience-2-period": "2024-yil 1-aprel - 2025-yil 16-oktabr",
+        "skills-experience-2-company": "Ris Co., Ltd kompaniyasi",
+        "skills-experience-2-achievements": "Asosiy loyihalar va natijalar:",
+        "skills-experience-2-achievement-1":
+          "Korporativ veb-saytni yangilash va texnik xizmat - sayt trafigi 25% oshdi, ma'lumotlar bazasi avtomatlashtirildi",
+        "skills-experience-2-achievement-2":
+          '"Shigoto Navi" ish o\'rinlari moslashtirish tizimi yangilanishi - kunlik 8 ta ariza, 99.9% tizim barqarorligi',
+        "skills-experience-2-achievement-3":
+          "Eski tizimni modernizatsiya qilish - SHIFT JIS dan UTF-8 ga o'tkazish, ichki ish jarayoni 30% tezlashdi",
+        "skills-experience-2-tech": "Ishlatilgan texnologiyalar:",
+        "skills-experience-2-tech-list":
+          "HTML5, CSS3, Bootstrap, JavaScript, ASP, PHP (Laravel), Node.js, MySQL, SQL Server, AWS (EC2, RDS), Docker, Kubernetes, Linux, Windows Server",
+        "skills-education-1-title": "Kurash va Dzyudo",
+        "skills-education-1-period": "2012 - 2018",
+        "skills-education-1-institution":
+          "Samarqand Olimpiya zaxiralari sport kolleji",
+        "skills-education-2-title": "Kompyuter muhandisligi va texnologiyasi",
+        "skills-education-2-period": "2020 - 2021",
+        "skills-education-2-institution":
+          "Samarqand shahridagi kasb-hunarga o'gitish markazi (KOICA)",
+        "skills-education-3-title": "Yapon tili",
+        "skills-education-3-period": "2022 - 2023",
+        "skills-education-3-institution":
+          "春日日本語学院（Kasuga Nihongo Gakuin）",
+        "skills-education-4-title": "Tizim muhandisligi va biznes",
+        "skills-education-4-period": "2023 - 2025",
+        "skills-education-4-institution":
+          "中野スクールオブビジネス（Nakano School of Business）",
 
         // Services Section
         "services-title": "Taqdim etiladigan xizmatlar",
@@ -394,9 +499,36 @@ class LanguageSwitcher {
         // Projects Section
         "projects-title": "Loyihalar",
         "projects-filter-all": "Barcha loyihalar",
-        "projects-filter-frontend": "Frontend",
-        "projects-filter-backend": "Backend",
-        "projects-filter-fullstack": "Full Stack",
+        "projects-filter-web": "Veb-saytlar",
+        "projects-filter-platform": "Platformalar",
+        "projects-filter-system": "Tizimlar",
+
+        // Project Details
+        "project-1-title": "Rasmiy veb-sayt",
+        "project-1-desc":
+          "WordPress, mobil moslashuv, 3 oyda 5,000+ tashrif buyuruvchi",
+        "project-2-title": "Onlayn ta'lim platformasi",
+        "project-2-desc":
+          "100 nafar o'quvchi bir vaqtda, kurs boshqarish tizimi",
+        "project-3-title":
+          "Ish izlovchilar va ish beruvchilar moslashtirish tizimi",
+        "project-3-desc": "200+ ariza qayta ishlash, 90% qoniqish darajasi",
+        "project-4-title":
+          '"Shigoto Navi" ish o\'rinlari moslashtirish tizimi yangilanishi',
+        "project-4-desc": "Kunlik 8 ta ariza, 99.9% tizim barqarorligi",
+        "project-5-title": "Korporativ veb-sayt yangilanishi va texnik xizmat",
+        "project-5-desc":
+          "Sayt trafigi 25% oshdi, ma'lumotlar bazasi avtomatlashtirildi",
+        "project-6-title": '"Shigoto Navi" landing page',
+        "project-6-desc":
+          "Yangi qurilgan ish o'rinlari moslashtirish tizimi uchun landing page",
+        "project-7-title": "Eski tizimni modernizatsiya qilish",
+        "project-7-desc":
+          "SHIFT JIS dan UTF-8 ga o'tkazish, ichki ish jarayoni 30% tezlashdi",
+        "project-8-title":
+          "Hokimlik uchun ish izlovchilar va ish beruvchilarni bog'laydigan tizim",
+        "project-8-desc":
+          "Hokimlik uchun ish izlovchilar va ish beruvchilarni bog'laydigan tizim",
 
         // Testimonials Section
         "testimonials-title": "Mijozlar fikri",

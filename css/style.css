@@ -1839,3 +1839,286 @@
 .testimonial-carousel .owl-dot.active::after {
     background: var(--primary);
 }
+
+/* Portfolio Content Styles */
+.portfolio-content {
+    padding: 15px 0;
+}
+
+.portfolio-content h5 {
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.portfolio-content p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.tech-tags {
+    margin-top: 10px;
+}
+
+.tech-tags .badge {
+    font-size: 0.75rem;
+    padding: 5px 8px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+/* New Gradient Project Cards */
+.project-card {
+    position: relative;
+    padding: 40px 30px;
+    border-radius: 20px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    transition: all 0.4s ease;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom Scrollbar for Project Cards */
+.project-card::-webkit-scrollbar {
+    width: 6px;
+}
+
+.project-card::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+.project-card::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+}
+
+.project-card::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    transition: transform 0.4s ease;
+    z-index: -1;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.project-card:hover::before {
+    transform: scale(1.1);
+}
+
+/* Gradient Backgrounds */
+.gradient-card-1 {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.gradient-card-2 {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+}
+
+.gradient-card-3 {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+}
+
+.gradient-card-4 {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    color: white;
+}
+
+.gradient-card-5 {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    color: white;
+}
+
+.gradient-card-6 {
+    background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+    color: white;
+}
+
+.gradient-card-7 {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    color: #333;
+}
+
+.gradient-card-8 {
+    background: linear-gradient(135deg, #ff9a56 0%, #ff6a88 100%);
+    color: white;
+}
+
+/* Project Icon */
+.project-icon {
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-card:hover .project-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.project-icon i {
+    color: white;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.gradient-card-7 .project-icon i {
+    color: #333;
+}
+
+/* Project Info */
+.project-info {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 0;
+}
+
+.project-info h5 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: white;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    line-height: 1.4;
+}
+
+.gradient-card-7 .project-info h5 {
+    color: #333;
+    text-shadow: none;
+}
+
+.project-info p {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+}
+
+.gradient-card-7 .project-info p {
+    color: #666;
+}
+
+/* Tech Tags in Cards */
+.project-card .tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 6px;
+    margin-top: 20px;
+}
+
+.project-card .tech-tags .badge {
+    background: rgba(255, 255, 255, 0.25) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white !important;
+    font-size: 0.7rem;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.gradient-card-7 .tech-tags .badge {
+    background: rgba(0, 0, 0, 0.1) !important;
+    color: #333 !important;
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+.project-card .tech-tags .badge:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.35) !important;
+}
+
+/* Responsive Design for Project Cards */
+@media (max-width: 768px) {
+    .project-card {
+        height: 450px;
+        padding: 30px 20px;
+    }
+
+    .project-icon {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 15px;
+    }
+
+    .project-icon i {
+        font-size: 2rem !important;
+    }
+
+    .project-info h5 {
+        font-size: 1.05rem;
+    }
+
+    .project-info p {
+        font-size: 0.85rem;
+    }
+
+    .project-card .tech-tags .badge {
+        font-size: 0.65rem;
+        padding: 4px 8px;
+    }
+}
+
+@media (max-width: 576px) {
+    .project-card {
+        height: 420px;
+        padding: 25px 15px;
+    }
+
+    .project-icon {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 12px;
+    }
+
+    .project-icon i {
+        font-size: 1.5rem !important;
+    }
+
+    .project-info h5 {
+        font-size: 0.95rem;
+    }
+
+    .project-info p {
+        font-size: 0.8rem;
+    }
+
+    .project-card .tech-tags .badge {
+        font-size: 0.6rem;
+        padding: 3px 6px;
+    }
+}
