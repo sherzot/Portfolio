@@ -45,6 +45,8 @@ class LanguageSwitcher {
         "about-service-3": "データベース設計・最適化（MySQL, SQL Server）",
         "about-service-4":
           "インフラ設計・運用（AWS, GitHub Actions, Docker, Kubernetes）",
+        "about-service-5":
+          "AI・ツール（Vs Code, Cursor, Codex, ChatGPT）",
         "about-stats-1": "満足いただいたクライアント",
         "about-stats-2": "完了したプロジェクト",
         "about-stats-1-desc":
@@ -229,6 +231,8 @@ class LanguageSwitcher {
         "about-service-3": "Database Design & Optimization (MySQL, SQL Server)",
         "about-service-4":
           "Infrastructure Design & Operations (AWS, GitHub Actions, Docker, Kubernetes)",
+        "about-service-5":
+          "AI・Tools（Vs Code, Cursor, Codex, ChatGPT）",
         "about-stats-1": "Satisfied Clients",
         "about-stats-2": "Completed Projects",
         "about-stats-1-desc":
@@ -417,6 +421,8 @@ class LanguageSwitcher {
           "Ma'lumotlar bazasi dizayni va optimallashtirish (MySQL, SQL Server)",
         "about-service-4":
           "Infratuzilma dizayni va boshqaruvi (AWS, GitHub Actions, Docker, Kubernetes)",
+        "about-service-5":
+          "AI・Asboblar（Vs Code, Cursor, Codex, ChatGPT）",
         "about-stats-1": "Mamnun mijozlar",
         "about-stats-2": "Yakunlangan loyihalar",
         "about-stats-1-desc":
