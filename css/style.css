@@ -1871,18 +1871,19 @@
 /* New Gradient Project Cards */
 .project-card {
     position: relative;
-    padding: 40px 30px;
-    border-radius: 20px;
-    height: 500px;
+    padding: 20px;
+    border-radius: 12px;
+    min-height: 280px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
     text-align: left;
-    transition: all 0.4s ease;
-    overflow-y: auto;
-    overflow-x: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    background: #fff;
+    border: 1px solid #e9ecef;
 }
 
 /* Custom Scrollbar for Project Cards */
@@ -1917,92 +1918,58 @@
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    border-color: var(--primary);
 }
 
-.project-card:hover::before {
-    transform: scale(1.1);
-}
-
-/* Gradient Backgrounds */
-.gradient-card-1 {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-}
-
-.gradient-card-2 {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    color: white;
-}
-
-.gradient-card-3 {
-    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-    color: white;
-}
-
-.gradient-card-4 {
-    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-    color: white;
-}
-
-.gradient-card-5 {
-    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-    color: white;
-}
-
-.gradient-card-6 {
-    background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
-    color: white;
-}
-
-.gradient-card-7 {
-    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-    color: #333;
-}
-
-.gradient-card-8 {
-    background: linear-gradient(135deg, #ff9a56 0%, #ff6a88 100%);
-    color: white;
-}
-
-.gradient-card-9 {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-}
-
+/* Simple Card Styles - Clean and Minimal */
+.gradient-card-1,
+.gradient-card-2,
+.gradient-card-3,
+.gradient-card-4,
+.gradient-card-5,
+.gradient-card-6,
+.gradient-card-7,
+.gradient-card-8,
+.gradient-card-9,
 .gradient-card-10 {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    color: white;
+    background: #fff;
+    color: #333;
+    border-left: 4px solid var(--primary);
 }
+
+.gradient-card-1 { border-left-color: #667eea; }
+.gradient-card-2 { border-left-color: #f5576c; }
+.gradient-card-3 { border-left-color: #4facfe; }
+.gradient-card-4 { border-left-color: #43e97b; }
+.gradient-card-5 { border-left-color: #fa709a; }
+.gradient-card-6 { border-left-color: #30cfd0; }
+.gradient-card-7 { border-left-color: #a8edea; }
+.gradient-card-8 { border-left-color: #ff9a56; }
+.gradient-card-9 { border-left-color: #667eea; }
+.gradient-card-10 { border-left-color: #f093fb; }
 
 /* Project Icon */
 .project-icon {
-    width: 100px;
-    height: 100px;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background: var(--primary);
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
-    transition: all 0.4s ease;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 12px;
+    transition: all 0.3s ease;
 }
 
 .project-card:hover .project-icon {
-    transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
 }
 
 .project-icon i {
     color: white;
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
-}
-
-.gradient-card-7 .project-icon i {
-    color: #333;
+    font-size: 24px !important;
 }
 
 /* Project Info */
@@ -2016,23 +1983,18 @@
 }
 
 .project-info h5 {
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin-bottom: 12px;
-    color: white;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    line-height: 1.4;
-}
-
-.gradient-card-7 .project-info h5 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
     color: #333;
-    text-shadow: none;
+    line-height: 1.3;
 }
 
 .project-info p {
-    font-size: 0.9rem;
-    margin-bottom: 15px;
-    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+    color: #666;
+    line-height: 1.5;
     line-height: 1.6;
 }
 
@@ -2045,31 +2007,24 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    gap: 6px;
-    margin-top: 20px;
+    gap: 4px;
+    margin-top: 12px;
 }
 
 .project-card .tech-tags .badge {
-    background: rgba(255, 255, 255, 0.25) !important;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    color: white !important;
+    background: #f8f9fa !important;
+    border: 1px solid #e9ecef;
+    color: #495057 !important;
     font-size: 0.7rem;
-    padding: 6px 10px;
-    border-radius: 20px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.gradient-card-7 .tech-tags .badge {
-    background: rgba(0, 0, 0, 0.1) !important;
-    color: #333 !important;
-    border-color: rgba(0, 0, 0, 0.2);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: all 0.2s ease;
 }
 
 .project-card .tech-tags .badge:hover {
-    transform: scale(1.05);
-    background: rgba(255, 255, 255, 0.35) !important;
+    background: #e9ecef !important;
+    border-color: var(--primary);
 }
 
 /* Responsive Design for Project Cards */
