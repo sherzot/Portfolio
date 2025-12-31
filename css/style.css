@@ -1920,6 +1920,7 @@
     display: flex;
     justify-content: space-between;
     pointer-events: none;
+    z-index: 10;
 }
 
 .portfolio-carousel .owl-nav button {
@@ -1936,19 +1937,28 @@
     transition: all 0.3s ease;
     border: none;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    position: relative;
+    z-index: 100;
 }
 
 .portfolio-carousel .owl-nav button:hover {
     background: var(--secondary) !important;
     transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.portfolio-carousel .owl-nav button:active {
+    transform: scale(0.95);
 }
 
 .portfolio-carousel .owl-nav .owl-prev {
     left: -60px;
+    position: absolute;
 }
 
 .portfolio-carousel .owl-nav .owl-next {
     right: -60px;
+    position: absolute;
 }
 
 .portfolio-carousel .owl-dots {
@@ -1977,7 +1987,7 @@
     position: relative;
     padding: 20px;
     border-radius: 12px;
-    min-height: 280px;
+    height: 380px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -2084,8 +2094,9 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
     min-height: 0;
+    height: 100%;
 }
 
 .project-info h5 {
@@ -2100,8 +2111,8 @@
     font-size: 0.85rem;
     margin-bottom: 12px;
     color: #666;
-    line-height: 1.5;
     line-height: 1.6;
+    flex-grow: 1;
 }
 
 .gradient-card-7 .project-info p {
@@ -2114,7 +2125,8 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     gap: 4px;
-    margin-top: 12px;
+    margin-top: auto;
+    padding-top: 12px;
 }
 
 .project-card .tech-tags .badge {

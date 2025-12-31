@@ -131,11 +131,16 @@
     // Initialize carousel
     portfolioCarousel = $(".portfolio-carousel").owlCarousel({
       autoplay: false,
-      smartSpeed: 600,
+      smartSpeed: 1000,
+      fluidSpeed: true,
+      dragEndSpeed: 500,
       margin: 20,
       nav: true,
       dots: true,
       loop: false,
+      startPosition: 0,
+      animateOut: 'fadeOut',
+      animateIn: 'fadeIn',
       responsive: {
         0: { items: 1 },
         576: { items: 2 },
@@ -159,7 +164,17 @@
     $(this).addClass("active");
     
     const filter = $(this).data("filter");
-    initPortfolioCarousel(filter);
+    
+    // Destroy carousel first to reset position
+    if (portfolioCarousel) {
+      portfolioCarousel.trigger("destroy.owl.carousel");
+      portfolioCarousel = null;
+    }
+    
+    // Small delay to ensure destroy is complete, then reinitialize from start
+    setTimeout(function() {
+      initPortfolioCarousel(filter);
+    }, 100);
   });
 
   // Testimonials carousel
