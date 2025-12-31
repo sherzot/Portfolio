@@ -117,40 +117,37 @@
     if (portfolioCarousel) {
       try {
         portfolioCarousel.trigger("destroy.owl.carousel");
+        portfolioCarousel = null;
       } catch(e) {
         console.log("Carousel destroy error:", e);
       }
-      portfolioCarousel = null;
     }
     
-    // Clean up carousel container
+    // Clean up carousel container - remove owl classes and wrapper elements
     const $carousel = $(".portfolio-carousel");
     $carousel.removeClass('owl-carousel owl-loaded owl-drag owl-grab');
-    $carousel.find('.owl-stage-outer, .owl-stage, .owl-item').contents().unwrap();
+    
+    // Remove owl wrapper elements but keep the original items
+    $carousel.find('.owl-stage-outer').each(function() {
+      $(this).replaceWith($(this).children());
+    });
+    $carousel.find('.owl-stage').each(function() {
+      $(this).replaceWith($(this).children());
+    });
+    $carousel.find('.owl-item').each(function() {
+      $(this).replaceWith($(this).children());
+    });
     
     // Filter items - show/hide
     $(".portfolio-item").each(function() {
       const $item = $(this);
-      if (filter === "*" || $item.hasClass(filter.replace(".", ""))) {
+      const filterClass = filter.replace(".", "");
+      if (filter === "*" || $item.hasClass(filterClass)) {
         $item.show();
       } else {
         $item.hide();
       }
     });
-    
-    // Ensure items are in correct order in DOM
-    const visibleItems = [];
-    $(".portfolio-item:visible").each(function() {
-      visibleItems.push($(this));
-    });
-    
-    // Reorder DOM if needed
-    if (visibleItems.length > 0 && filter !== "*") {
-      $carousel.empty();
-      visibleItems.forEach(function($item) {
-        $carousel.append($item);
-      });
-    }
     
     // Initialize carousel
     portfolioCarousel = $(".portfolio-carousel").owlCarousel({
