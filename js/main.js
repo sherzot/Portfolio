@@ -2,7 +2,7 @@
   "use strict";
 
   // Spinner
-  const spinner = function () {
+  var spinner = function () {
     setTimeout(function () {
       if ($("#spinner").length > 0) {
         $("#spinner").removeClass("show");
@@ -14,59 +14,33 @@
   // Initiate the wowjs
   new WOW().init();
 
-  // Back-to-top on scroll (navbar doim ko'rinadi)
-  $(window).on("scroll.ui", function () {
-    const st = $(this).scrollTop();
-    if (st > 300) {
+  // Sticky Navbar
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 45) {
+      $(".navbar").addClass("sticky-top shadow-sm");
+    } else {
+      $(".navbar").removeClass("sticky-top shadow-sm");
+    }
+  });
+
+  // Back to top button
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 300) {
       $(".back-to-top").fadeIn("slow");
     } else {
       $(".back-to-top").fadeOut("slow");
     }
   });
-
-  // Smooth scrolling on the navbar links
-  $(".navbar-nav a").on("click", function (event) {
-    if (this.hash !== "") {
-      event.preventDefault();
-
-      $("html, body").animate(
-        {
-          scrollTop: $(this.hash).offset().top - 45,
-        },
-        1500,
-        "easeInOutExpo"
-      );
-
-      if ($(this).parents(".navbar-nav").length) {
-        $(".navbar-nav .active").removeClass("active");
-        $(this).closest("a").addClass("active");
-      }
-
-      // Collapse mobile menu after click
-      const $navCollapse = $(".navbar-collapse");
-      if ($navCollapse.hasClass("show")) {
-        $navCollapse.collapse("hide");
-      }
-    }
-  });
-
-  // Back to top button click
-  $(".back-to-top").on("click", function () {
+  $(".back-to-top").click(function () {
     $("html, body").animate({ scrollTop: 0 }, 1500, "easeInOutExpo");
     return false;
   });
 
   // Typed Initiate
-  if ($(".typed-text-output").length === 1 && $(".typed-text").length === 1) {
-    const typedStrings = $(".typed-text")
-      .text()
-      .split(",")
-      .map(function (s) {
-        return $.trim(s);
-      })
-      .filter(Boolean);
-    window.typedInstance = new Typed(".typed-text-output", {
-      strings: typedStrings,
+  if ($(".typed-text-output").length == 1) {
+    var typed_strings = $(".typed-text").text();
+    var typed = new Typed(".typed-text-output", {
+      strings: typed_strings.split(", "),
       typeSpeed: 100,
       backSpeed: 20,
       smartBackspace: false,
@@ -74,8 +48,8 @@
     });
   }
 
-  // Modal Video
-  let videoSrc;
+  // Video Modal
+  var videoSrc = "";
   $(".btn-play").on("click", function () {
     videoSrc = $(this).data("src");
   });
@@ -113,35 +87,39 @@
   let portfolioCarousel = null;
   
   function initPortfolioCarousel(filter = "*") {
+    const $carousel = $(".portfolio-carousel");
+    
     // Destroy existing carousel if it exists
-    if (portfolioCarousel) {
+    if (portfolioCarousel && $carousel.hasClass('owl-loaded')) {
       try {
         portfolioCarousel.trigger("destroy.owl.carousel");
-        portfolioCarousel = null;
       } catch(e) {
         console.log("Carousel destroy error:", e);
       }
+      portfolioCarousel = null;
     }
     
-    // Clean up carousel container - remove owl classes and wrapper elements
-    const $carousel = $(".portfolio-carousel");
+    // Clean up carousel container - remove owl classes
     $carousel.removeClass('owl-carousel owl-loaded owl-drag owl-grab');
     
-    // Remove owl wrapper elements but keep the original items
+    // Remove owl wrapper elements but preserve original items
     $carousel.find('.owl-stage-outer').each(function() {
-      $(this).replaceWith($(this).children());
-    });
-    $carousel.find('.owl-stage').each(function() {
-      $(this).replaceWith($(this).children());
-    });
-    $carousel.find('.owl-item').each(function() {
-      $(this).replaceWith($(this).children());
+      const $outer = $(this);
+      $outer.find('.owl-stage').each(function() {
+        const $stage = $(this);
+        $stage.find('.owl-item').each(function() {
+          const $item = $(this);
+          $item.replaceWith($item.contents());
+        });
+        $stage.replaceWith($stage.contents());
+      });
+      $outer.replaceWith($outer.contents());
     });
     
     // Filter items - show/hide
+    const filterClass = filter.replace(".", "");
     $(".portfolio-item").each(function() {
       const $item = $(this);
-      const filterClass = filter.replace(".", "");
       if (filter === "*" || $item.hasClass(filterClass)) {
         $item.show();
       } else {
@@ -149,33 +127,43 @@
       }
     });
     
-    // Initialize carousel
-    portfolioCarousel = $(".portfolio-carousel").owlCarousel({
-      autoplay: true,
-      autoplayTimeout: 3000,
-      autoplayHoverPause: true,
-      smartSpeed: 800,
-      fluidSpeed: true,
-      dragEndSpeed: 500,
-      margin: 20,
-      nav: true,
-      dots: true,
-      loop: true,
-      startPosition: 0,
-      animateOut: 'fadeOut',
-      animateIn: 'fadeIn',
-      responsive: {
-        0: { items: 1 },
-        576: { items: 2 },
-        768: { items: 2 },
-        992: { items: 3 },
-        1200: { items: 4 }
-      },
-      navText: [
-        '<i class="fa fa-angle-left"></i>',
-        '<i class="fa fa-angle-right"></i>'
-      ]
-    });
+    // Wait a bit to ensure DOM is ready
+    setTimeout(function() {
+      // Initialize carousel
+      portfolioCarousel = $carousel.owlCarousel({
+        autoplay: true,
+        autoplayTimeout: 3000,
+        autoplayHoverPause: true,
+        smartSpeed: 800,
+        fluidSpeed: true,
+        dragEndSpeed: 500,
+        margin: 20,
+        nav: true,
+        dots: true,
+        loop: true,
+        startPosition: 0,
+        animateOut: 'fadeOut',
+        animateIn: 'fadeIn',
+        responsive: {
+          0: { items: 1 },
+          576: { items: 2 },
+          768: { items: 2 },
+          992: { items: 3 },
+          1200: { items: 4 }
+        },
+        navText: [
+          '<i class="fa fa-angle-left"></i>',
+          '<i class="fa fa-angle-right"></i>'
+        ]
+      });
+      
+      // Force go to first slide
+      setTimeout(function() {
+        if (portfolioCarousel) {
+          portfolioCarousel.trigger('to.owl.carousel', 0);
+        }
+      }, 100);
+    }, 100);
   }
   
   // Initialize carousel on page load
@@ -190,20 +178,18 @@
     
     // Destroy carousel first to reset position
     if (portfolioCarousel) {
-      portfolioCarousel.trigger("destroy.owl.carousel");
+      try {
+        portfolioCarousel.trigger("destroy.owl.carousel");
+      } catch(e) {
+        console.log("Filter destroy error:", e);
+      }
       portfolioCarousel = null;
     }
     
     // Small delay to ensure destroy is complete, then reinitialize from start
     setTimeout(function() {
       initPortfolioCarousel(filter);
-      // Force go to first slide after initialization
-      setTimeout(function() {
-        if (portfolioCarousel) {
-          portfolioCarousel.trigger('to.owl.carousel', 0);
-        }
-      }, 200);
-    }, 150);
+    }, 300);
   });
 
   // Testimonials carousel
