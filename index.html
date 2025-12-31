@@ -57,7 +57,8 @@
                 <div class="dropdown">
                     <button class="btn btn-outline-primary btn-sm dropdown-toggle" type="button" id="languageDropdown"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        <img class="me-1" style="width: 20px; height: 20px; vertical-align: middle;" src="img/translate.png" alt="translate icon">
+                        <img class="me-1" style="width: 20px; height: 20px; vertical-align: middle;"
+                            src="img/translate.png" alt="translate icon">
                         <span id="currentLang">日本語</span>
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="languageDropdown">
@@ -883,29 +884,29 @@
                             <div class="col-md-6">
                                 <div class="form-floating">
                                     <input type="text" class="form-control" id="name" name="name" placeholder="お名前"
-                                        data-placeholder="contact-form-name">
+                                        data-placeholder="contact-form-name" required>
                                     <label for="name" data-translate="contact-form-name">お名前</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
                                     <input type="email" class="form-control" id="email" name="email"
-                                        placeholder="メールアドレス" data-placeholder="contact-form-email">
+                                        placeholder="メールアドレス" data-placeholder="contact-form-email" required>
                                     <label for="email" data-translate="contact-form-email">メールアドレス</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
                                     <input type="text" class="form-control" id="subject" name="subject" placeholder="件名"
-                                        data-placeholder="contact-form-subject">
+                                        data-placeholder="contact-form-subject" required>
                                     <label for="subject" data-translate="contact-form-subject">件名</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
                                     <textarea class="form-control" placeholder="プロジェクトの詳細をお聞かせください" id="message"
-                                        name="message" style="height: 100px"
-                                        data-placeholder="contact-form-message"></textarea>
+                                        name="message" style="height: 100px" data-placeholder="contact-form-message"
+                                        required></textarea>
                                     <label for="message" data-translate="contact-form-message">メッセージ</label>
                                 </div>
                             </div>
@@ -976,7 +977,6 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
     <script src="js/contact.js"></script>
-    <script src="js/contact-form.js"></script>
     <script src="js/language-switcher.js"></script>
 </body>
 
