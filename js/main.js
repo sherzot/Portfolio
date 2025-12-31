@@ -109,16 +109,57 @@
     { offset: "80%" }
   );
 
-  // Portfolio isotope and filter
-  const portfolioIsotope = $(".portfolio-container").isotope({
-    itemSelector: ".portfolio-item",
-    layoutMode: "fitRows",
-  });
+  // Portfolio carousel initialization
+  let portfolioCarousel = null;
+  
+  function initPortfolioCarousel(filter = "*") {
+    // Destroy existing carousel if it exists
+    if (portfolioCarousel) {
+      portfolioCarousel.trigger("destroy.owl.carousel");
+      portfolioCarousel = null;
+    }
+    
+    // Filter items
+    $(".portfolio-item").each(function() {
+      if (filter === "*" || $(this).hasClass(filter.replace(".", ""))) {
+        $(this).show();
+      } else {
+        $(this).hide();
+      }
+    });
+    
+    // Initialize carousel
+    portfolioCarousel = $(".portfolio-carousel").owlCarousel({
+      autoplay: false,
+      smartSpeed: 600,
+      margin: 20,
+      nav: true,
+      dots: true,
+      loop: false,
+      responsive: {
+        0: { items: 1 },
+        576: { items: 2 },
+        768: { items: 2 },
+        992: { items: 3 },
+        1200: { items: 4 }
+      },
+      navText: [
+        '<i class="fa fa-angle-left"></i>',
+        '<i class="fa fa-angle-right"></i>'
+      ]
+    });
+  }
+  
+  // Initialize carousel on page load
+  initPortfolioCarousel();
+  
+  // Portfolio filter
   $("#portfolio-flters li").on("click", function () {
     $("#portfolio-flters li").removeClass("active");
     $(this).addClass("active");
-
-    portfolioIsotope.isotope({ filter: $(this).data("filter") });
+    
+    const filter = $(this).data("filter");
+    initPortfolioCarousel(filter);
   });
 
   // Testimonials carousel

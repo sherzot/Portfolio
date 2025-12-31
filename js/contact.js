@@ -11,25 +11,34 @@
       const currentLang = localStorage.getItem("selectedLanguage") || "ja";
       const translations = {
         ja: {
-          "contact-form-success-message": "メッセージが正常に送信されました！24時間以内にご返信いたします。",
-          "contact-form-error-message": "エラーが発生しました。もう一度お試しください。",
-          "contact-form-validation-all-fields": "すべての項目を入力してください。",
-          "contact-form-validation-email": "有効なメールアドレスを入力してください。",
+          "contact-form-success-message":
+            "メッセージが正常に送信されました！24時間以内にご返信いたします。",
+          "contact-form-error-message":
+            "エラーが発生しました。もう一度お試しください。",
+          "contact-form-validation-all-fields":
+            "すべての項目を入力してください。",
+          "contact-form-validation-email":
+            "有効なメールアドレスを入力してください。",
           "contact-form-submitting": "送信中...",
           "contact-form-submit": "送信する",
         },
         en: {
-          "contact-form-success-message": "Message sent successfully! We will reply within 24 hours.",
+          "contact-form-success-message":
+            "Message sent successfully! We will reply within 24 hours.",
           "contact-form-error-message": "An error occurred. Please try again.",
           "contact-form-validation-all-fields": "Please fill in all fields.",
-          "contact-form-validation-email": "Please enter a valid email address.",
+          "contact-form-validation-email":
+            "Please enter a valid email address.",
           "contact-form-submitting": "Sending...",
           "contact-form-submit": "Send Message",
         },
         uz: {
-          "contact-form-success-message": "Xabar muvaffaqiyatli yuborildi! 24 soat ichida javob beramiz.",
-          "contact-form-error-message": "Xatolik yuz berdi. Qaytadan urinib ko'ring.",
-          "contact-form-validation-all-fields": "Barcha maydonlarni to'ldiring.",
+          "contact-form-success-message":
+            "Xabar muvaffaqiyatli yuborildi! 24 soat ichida javob beramiz.",
+          "contact-form-error-message":
+            "Xatolik yuz berdi. Qaytadan urinib ko'ring.",
+          "contact-form-validation-all-fields":
+            "Barcha maydonlarni to'ldiring.",
           "contact-form-validation-email": "To'g'ri email manzil kiriting.",
           "contact-form-submitting": "Yuborilmoqda...",
           "contact-form-submit": "Yuborish",
@@ -97,7 +106,10 @@
 
       // Basic validations - check if fields are actually filled
       if (name === "" || email === "" || subject === "" || message === "") {
-        showAlert("error", getTranslation("contact-form-validation-all-fields"));
+        showAlert(
+          "error",
+          getTranslation("contact-form-validation-all-fields")
+        );
         return false;
       }
       if (!isValidEmail(email)) {
@@ -111,7 +123,9 @@
       if (!$submitBtn.data("original-text")) {
         $submitBtn.data("original-text", $submitBtn.text());
       }
-      $submitBtn.prop("disabled", true).text(getTranslation("contact-form-submitting"));
+      $submitBtn
+        .prop("disabled", true)
+        .text(getTranslation("contact-form-submitting"));
 
       // Prepare FormData for Netlify Forms
       const formData = new FormData(this);
@@ -125,7 +139,10 @@
         .then((response) => {
           if (response.ok) {
             // Success - show success message
-            showAlert("success", getTranslation("contact-form-success-message"));
+            showAlert(
+              "success",
+              getTranslation("contact-form-success-message")
+            );
             // Reset form
             $form[0].reset();
           } else {
@@ -141,7 +158,9 @@
         .finally(() => {
           // Re-enable submit button
           $submitBtn.prop("disabled", false);
-          const submitText = $submitBtn.data("original-text") || getTranslation("contact-form-submit");
+          const submitText =
+            $submitBtn.data("original-text") ||
+            getTranslation("contact-form-submit");
           $submitBtn.text(submitText);
         });
     });
