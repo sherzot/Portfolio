@@ -7,13 +7,50 @@
     if (!$form.length) return;
 
     function showAlert(type, message) {
-      $contactSection.find(".contact-alert").remove();
-      const $alert = $("<div/>", {
-        class: "contact-alert alert alert-" + type,
-        role: "alert",
-        text: message,
-      });
-      $form.before($alert);
+      const $formMessage = $("#formMessage");
+      const $successMessage = $("#successMessage");
+      const $errorMessage = $("#errorMessage");
+
+      // Hide both messages first
+      $successMessage.hide();
+      $errorMessage.hide();
+
+      // Show the appropriate message
+      if (type === "success") {
+        // Update message text (keep the icon, replace text after it)
+        const iconHtml = '<i class="fas fa-check-circle me-2"></i>';
+        $successMessage.html(
+          iconHtml + (message || "メッセージが正常に送信されました！")
+        );
+        $successMessage.show();
+      } else {
+        // For error or warning types, show error message
+        // Update message text (keep the icon, replace text after it)
+        const iconHtml = '<i class="fas fa-exclamation-triangle me-2"></i>';
+        $errorMessage.html(
+          iconHtml +
+            (message || "エラーが発生しました。もう一度お試しください。")
+        );
+        $errorMessage.show();
+      }
+
+      // Show the message container
+      $formMessage.show();
+
+      // Scroll to message smoothly (only if element exists and is visible)
+      if ($formMessage.length && $formMessage.offset()) {
+        $("html, body").animate(
+          {
+            scrollTop: $formMessage.offset().top - 100,
+          },
+          500
+        );
+      }
+
+      // Hide message after 5 seconds
+      setTimeout(function () {
+        $formMessage.fadeOut();
+      }, 5000);
     }
 
     function isValidEmail(email) {
@@ -31,32 +68,38 @@
 
       // Basic validations - check if fields are actually filled
       if (name === "" || email === "" || subject === "" || message === "") {
-        showAlert("warning", "Please fill in all fields.");
+        showAlert("error", "すべての項目を入力してください。");
         return false;
       }
       if (!isValidEmail(email)) {
-        showAlert("warning", "Please enter a valid email address.");
+        showAlert("error", "有効なメールアドレスを入力してください。");
         return false;
       }
 
-      // Demo success (no backend). Replace with AJAX as needed.
-      showAlert("success", "Thanks! Your message has been prepared.");
+      // Prepare mailto link with form data
+      const emailBody = `お名前: ${name}\nメールアドレス: ${email}\n件名: ${subject}\n\nメッセージ:\n${message}\n\n---\nこのメッセージはポートフォリオサイトのコンタクトフォームから送信されました。`;
 
-      // Optional: prepare a mailto link to send via default client
       const mailto = [
         "mailto:sherzoddeveloper@gmail.com",
         "?subject=" + encodeURIComponent("[Portfolio] " + subject),
-        "&body=" +
-          encodeURIComponent(
-            "From: " + name + " <" + email + ">\n\n" + message
-          ),
+        "&body=" + encodeURIComponent(emailBody),
       ].join("");
 
-      // Open mail client in a new tab/window without navigating away
-      window.open(mailto, "_blank");
+      // Show success message
+      showAlert(
+        "success",
+        "メッセージの準備が完了しました！メールクライアントが開きます。"
+      );
 
-      // Reset form after preparing the email
-      this.reset();
+      // Open mail client (opens default email client with pre-filled data)
+      setTimeout(function () {
+        window.location.href = mailto;
+      }, 1000);
+
+      // Reset form after a delay
+      setTimeout(function () {
+        $form[0].reset();
+      }, 2000);
     });
   });
 })(jQuery);
