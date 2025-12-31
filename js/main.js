@@ -115,29 +115,46 @@
   function initPortfolioCarousel(filter = "*") {
     // Destroy existing carousel if it exists
     if (portfolioCarousel) {
-      portfolioCarousel.trigger("destroy.owl.carousel");
+      portfolioCarousel.trigger("destroy.owl.carousel").removeClass('owl-carousel owl-loaded');
       portfolioCarousel = null;
     }
     
-    // Filter items
+    // Reset carousel container
+    $(".portfolio-carousel").removeClass('owl-carousel owl-loaded owl-drag');
+    $(".portfolio-carousel").find('.owl-stage-outer, .owl-stage, .owl-item').remove();
+    
+    // Filter items - show/hide and reorder
+    const visibleItems = [];
     $(".portfolio-item").each(function() {
       if (filter === "*" || $(this).hasClass(filter.replace(".", ""))) {
         $(this).show();
+        visibleItems.push($(this).clone(true));
       } else {
         $(this).hide();
       }
     });
     
+    // Reorder items - put visible items first
+    if (visibleItems.length > 0) {
+      const $carousel = $(".portfolio-carousel");
+      $carousel.empty();
+      visibleItems.forEach(function(item) {
+        $carousel.append(item);
+      });
+    }
+    
     // Initialize carousel
     portfolioCarousel = $(".portfolio-carousel").owlCarousel({
-      autoplay: false,
-      smartSpeed: 1000,
+      autoplay: true,
+      autoplayTimeout: 3000,
+      autoplayHoverPause: true,
+      smartSpeed: 800,
       fluidSpeed: true,
       dragEndSpeed: 500,
       margin: 20,
       nav: true,
       dots: true,
-      loop: false,
+      loop: true,
       startPosition: 0,
       animateOut: 'fadeOut',
       animateIn: 'fadeIn',
@@ -174,7 +191,13 @@
     // Small delay to ensure destroy is complete, then reinitialize from start
     setTimeout(function() {
       initPortfolioCarousel(filter);
-    }, 100);
+      // Force go to first slide after initialization
+      setTimeout(function() {
+        if (portfolioCarousel) {
+          portfolioCarousel.trigger('to.owl.carousel', 0);
+        }
+      }, 200);
+    }, 150);
   });
 
   // Testimonials carousel
