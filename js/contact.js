@@ -76,30 +76,51 @@
         return false;
       }
 
-      // Prepare mailto link with form data
-      const emailBody = `お名前: ${name}\nメールアドレス: ${email}\n件名: ${subject}\n\nメッセージ:\n${message}\n\n---\nこのメッセージはポートフォリオサイトのコンタクトフォームから送信されました。`;
+      // Disable submit button to prevent double submission
+      const $submitBtn = $("#submitBtn");
+      // Save original text if not already saved
+      if (!$submitBtn.data("original-text")) {
+        $submitBtn.data("original-text", $submitBtn.text());
+      }
+      $submitBtn.prop("disabled", true).text("送信中...");
 
-      const mailto = [
-        "mailto:sherzoddeveloper@gmail.com",
-        "?subject=" + encodeURIComponent("[Portfolio] " + subject),
-        "&body=" + encodeURIComponent(emailBody),
-      ].join("");
+      // Prepare FormData for Netlify Forms
+      const formData = new FormData(this);
+      formData.append("form-name", "contact");
 
-      // Show success message
-      showAlert(
-        "success",
-        "メッセージの準備が完了しました！メールクライアントが開きます。"
-      );
-
-      // Open mail client (opens default email client with pre-filled data)
-      setTimeout(function () {
-        window.location.href = mailto;
-      }, 1000);
-
-      // Reset form after a delay
-      setTimeout(function () {
-        $form[0].reset();
-      }, 2000);
+      // Submit to Netlify Forms
+      fetch("/", {
+        method: "POST",
+        body: formData,
+      })
+        .then((response) => {
+          if (response.ok) {
+            // Success - show success message
+            showAlert(
+              "success",
+              "メッセージが正常に送信されました！24時間以内にご返信いたします。"
+            );
+            // Reset form
+            $form[0].reset();
+          } else {
+            // Error - show error message
+            showAlert(
+              "error",
+              "エラーが発生しました。もう一度お試しください。"
+            );
+          }
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          // Error - show error message
+          showAlert("error", "エラーが発生しました。もう一度お試しください。");
+        })
+        .finally(() => {
+          // Re-enable submit button
+          $submitBtn.prop("disabled", false);
+          const submitText = $submitBtn.data("original-text") || "送信する";
+          $submitBtn.text(submitText);
+        });
     });
   });
 })(jQuery);
