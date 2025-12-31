@@ -150,6 +150,10 @@ class LanguageSwitcher {
         "project-7-desc": "SHIFT JISからUTF-8変換、内部業務30%効率化",
         "project-8-title": "政府機関向け求職者・求人企業マッチングシステム",
         "project-8-desc": "政府機関向けの求職者と求人企業を結ぶシステム",
+        "project-9-title": "JobMatcher Platform",
+        "project-9-desc": "雇用主と求職者をつなぐプラットフォーム | Go microservices architecture",
+        "project-10-title": "TrustFlow CRM v3.0",
+        "project-10-desc": "AI-powered, multi-tenant CRM system | Laravel Filament PHP Docker",
 
         // Testimonials Section
         "testimonials-title": "お客様の声",
@@ -182,6 +186,11 @@ class LanguageSwitcher {
         "contact-form-submit": "送信する",
         "contact-success": "メッセージが正常に送信されました！",
         "contact-error": "エラーが発生しました。もう一度お試しください。",
+        "contact-form-submitting": "送信中...",
+        "contact-form-success-message": "メッセージが正常に送信されました！24時間以内にご返信いたします。",
+        "contact-form-error-message": "エラーが発生しました。もう一度お試しください。",
+        "contact-form-validation-all-fields": "すべての項目を入力してください。",
+        "contact-form-validation-email": "有効なメールアドレスを入力してください。",
         "contact-location-value": "東京都板橋区",
         "contact-phone-value": "+81 70-9099-9894",
         "contact-email-value": "sherzoddeveloper@gmail.com",
@@ -339,6 +348,12 @@ class LanguageSwitcher {
         "project-8-title": "Government Job Seeker-Employer Matching System",
         "project-8-desc":
           "System connecting job seekers and employers for government institutions",
+        "project-9-title": "JobMatcher Platform",
+        "project-9-desc":
+          "A platform connecting employers and job seekers | Go microservices architecture",
+        "project-10-title": "TrustFlow CRM v3.0",
+        "project-10-desc":
+          "AI-powered, multi-tenant CRM system | Laravel Filament PHP Docker",
 
         // Testimonials Section
         "testimonials-title": "Client Testimonials",
@@ -371,6 +386,11 @@ class LanguageSwitcher {
         "contact-form-submit": "Send Message",
         "contact-success": "Message sent successfully!",
         "contact-error": "An error occurred. Please try again.",
+        "contact-form-submitting": "Sending...",
+        "contact-form-success-message": "Message sent successfully! We will reply within 24 hours.",
+        "contact-form-error-message": "An error occurred. Please try again.",
+        "contact-form-validation-all-fields": "Please fill in all fields.",
+        "contact-form-validation-email": "Please enter a valid email address.",
         "contact-location-value": "Itabashi City, Tokyo",
         "contact-phone-value": "+81 70-9099-9894",
         "contact-email-value": "sherzoddeveloper@gmail.com",
@@ -535,6 +555,12 @@ class LanguageSwitcher {
           "Hokimlik uchun ish izlovchilar va ish beruvchilarni bog'laydigan tizim",
         "project-8-desc":
           "Hokimlik uchun ish izlovchilar va ish beruvchilarni bog'laydigan tizim",
+        "project-9-title": "JobMatcher Platform",
+        "project-9-desc":
+          "Ish beruvchilar va ish izlovchilarni bog'laydigan platforma | Go microservices arxitektura",
+        "project-10-title": "TrustFlow CRM v3.0",
+        "project-10-desc":
+          "AI bilan ishlaydigan, multi-tenant CRM tizimi | Laravel Filament PHP Docker",
 
         // Testimonials Section
         "testimonials-title": "Mijozlar fikri",
@@ -567,6 +593,11 @@ class LanguageSwitcher {
         "contact-form-submit": "Yuborish",
         "contact-success": "Xabar muvaffaqiyatli yuborildi!",
         "contact-error": "Xatolik yuz berdi. Qaytadan urinib ko'ring.",
+        "contact-form-submitting": "Yuborilmoqda...",
+        "contact-form-success-message": "Xabar muvaffaqiyatli yuborildi! 24 soat ichida javob beramiz.",
+        "contact-form-error-message": "Xatolik yuz berdi. Qaytadan urinib ko'ring.",
+        "contact-form-validation-all-fields": "Barcha maydonlarni to'ldiring.",
+        "contact-form-validation-email": "To'g'ri email manzil kiriting.",
         "contact-location-value": "Itabashi shahri, Tokyo",
         "contact-phone-value": "+81 70-9099-9894",
         "contact-email-value": "sherzoddeveloper@gmail.com",
