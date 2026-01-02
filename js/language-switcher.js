@@ -690,21 +690,24 @@ class LanguageSwitcher {
 
       // Reinitialize typed with new text
       if (typeof Typed !== "undefined") {
-        window.typedInstance = new Typed(".typed-text-output", {
-          strings: [translations["hero-title"]],
-          typeSpeed: 80,
-          backSpeed: 50,
-          smartBackspace: true,
-          loop: true,
-          showCursor: true,
-          cursorChar: "|",
-          startDelay: 500,
-          backDelay: 1000,
-          fadeOut: false,
-          fadeOutClass: "typed-fade-out",
-          fadeOutDelay: 500,
-          shuffle: true,
-        });
+        // Clear existing text first
+        typedOutputElement.textContent = "";
+        
+        // Small delay to ensure element is cleared
+        setTimeout(function() {
+          window.typedInstance = new Typed(".typed-text-output", {
+            strings: [translations["hero-title"]],
+            typeSpeed: 100,
+            backSpeed: 60,
+            smartBackspace: false,
+            loop: true,
+            showCursor: true,
+            cursorChar: "|",
+            startDelay: 1000,
+            backDelay: 1500,
+            fadeOut: false,
+          });
+        }, 100);
       }
     }
   }
