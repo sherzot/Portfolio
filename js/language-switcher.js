@@ -34,6 +34,7 @@ class LanguageSwitcher {
         "tech-design": "デザイン・OS",
 
         // About Section
+        "about-title1": "私について",
         "about-title": "フルスタックエンジニアとしての実務経験",
         "about-year": "年",
         "about-description":
@@ -233,7 +234,8 @@ class LanguageSwitcher {
         "tech-design": "Design & OS",
 
         // About Section
-        "about-title": "Professional Experience as a Full Stack Engineer",
+        "about-title1": "About Me",
+        "about-title": "Full Stack Engineer with Practical Experience",
         "about-year": "Year",
         "about-description":
           "I am a Full Stack Engineer who can handle all aspects of web application development from frontend to backend. I specialize in user experience-focused design and scalable system construction.",
@@ -433,6 +435,7 @@ class LanguageSwitcher {
         "tech-design": "Dizayn va OS",
 
         // About Section
+        "about-title1": "Men haqimda",
         "about-title": "Full Stack Muhandis sifatida professional tajriba",
         "about-year": "Yil",
         "about-description":
@@ -692,9 +695,9 @@ class LanguageSwitcher {
       if (typeof Typed !== "undefined") {
         // Clear existing text first
         typedOutputElement.textContent = "";
-        
+
         // Small delay to ensure element is cleared
-        setTimeout(function() {
+        setTimeout(function () {
           window.typedInstance = new Typed(".typed-text-output", {
             strings: [translations["hero-title"]],
             typeSpeed: 100,
