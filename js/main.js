@@ -36,20 +36,7 @@
     return false;
   });
 
-  // Typed Initiate
-  if ($(".typed-text-output").length == 1) {
-    var typed_strings = $(".typed-text").text();
-    var typed = new Typed(".typed-text-output", {
-      strings: [typed_strings],
-      typeSpeed: 80,
-      backSpeed: 30,
-      smartBackspace: true,
-      loop: true,
-      showCursor: true,
-      cursorChar: '|',
-      autoInsertCss: true,
-    });
-  }
+  // Typed text removed - using static text instead
 
   // Video Modal
   var videoSrc = "";

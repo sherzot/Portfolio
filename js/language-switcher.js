@@ -558,32 +558,8 @@ class LanguageSwitcher {
   }
 
   updateTypedText(translations) {
-    const typedTextElement = document.querySelector(".typed-text");
-    const typedOutputElement = document.querySelector(".typed-text-output");
-
-    if (typedTextElement && typedOutputElement && translations["hero-title"]) {
-      // Update the hidden typed-text element
-      typedTextElement.textContent = translations["hero-title"];
-
-      // Destroy existing typed instance if it exists
-      if (window.typedInstance) {
-        window.typedInstance.destroy();
-      }
-
-      // Reinitialize typed with new text
-      if (typeof Typed !== "undefined") {
-        window.typedInstance = new Typed(".typed-text-output", {
-          strings: [translations["hero-title"]],
-          typeSpeed: 80,
-          backSpeed: 30,
-          smartBackspace: true,
-          loop: true,
-          showCursor: true,
-          cursorChar: '|',
-          autoInsertCss: true,
-        });
-      }
-    }
+    // Typed text removed - using static text instead
+    // The hero-title is now updated via data-translate attribute
   }
 }
 
