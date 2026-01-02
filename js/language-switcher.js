@@ -689,20 +689,20 @@ class LanguageSwitcher {
       }
 
       // Reinitialize typed with new text
-      if (typeof Typed !== "undefined") {
-        window.typedInstance = new Typed(".typed-text-output", {
-          strings: [translations["hero-title"]],
-          typeSpeed: 80,
-          backSpeed: 50,
-          smartBackspace: true,
-          loop: true,
-          showCursor: true,
-          cursorChar: '|',
-          startDelay: 500,
-          backDelay: 1000,
-          fadeOut: false,
-        });
-      }
+      // if (typeof Typed !== "undefined") {
+      //   window.typedInstance = new Typed(".typed-text-output", {
+      //     strings: [translations["hero-title"]],
+      //     typeSpeed: 80,
+      //     backSpeed: 50,
+      //     smartBackspace: true,
+      //     loop: true,
+      //     showCursor: true,
+      //     cursorChar: "|",
+      //     startDelay: 500,
+      //     backDelay: 1000,
+      //     fadeOut: false,
+      //   });
+      // }
     }
   }
 }

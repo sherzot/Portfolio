@@ -46,11 +46,11 @@
       smartBackspace: true,
       loop: true,
       showCursor: true,
-      cursorChar: '|',
+      cursorChar: "|",
       startDelay: 500,
       backDelay: 1000,
       fadeOut: false,
-      fadeOutClass: 'typed-fade-out',
+      fadeOutClass: "typed-fade-out",
       fadeOutDelay: 500,
     });
   }
