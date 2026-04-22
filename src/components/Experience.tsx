@@ -1,6 +1,6 @@
 "use client";
 
-import { Briefcase, CheckCircle2, Calendar, Building2 } from "lucide-react";
+import { Briefcase, CheckCircle2, Calendar } from "lucide-react";
 import { useLang } from "@/context/LanguageContext";
 import { experienceData } from "@/lib/data";
 import type { Lang } from "@/lib/i18n";
@@ -65,7 +65,7 @@ export function Experience() {
                               {exp.company[l]}
                             </p>
                             <p className="text-slate-400 text-xs mt-0.5 flex items-center gap-1">
-                              <Building2 size={11} />
+                              ●
                               {exp.companyInfo[l]}
                             </p>
                           </div>
