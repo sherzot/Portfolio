@@ -301,11 +301,11 @@
                         フロントエンドからバックエンドまで、Webアプリケーションの開発全工程を担当できるフルスタックエンジニアです。ユーザーエクスペリエンスを重視した設計と、スケーラブルなシステム構築を得意としています。
                     </p>
                     <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i><span
-                            data-translate="about-service-1">フロントエンド開発（React, TypeScript,
+                            data-translate="about-service-1">フロントエンド開発（React, Next.js,
                             JavaScript, Tailwind CSS, Bootstrap, HTML, CSS）</span></p>
                     <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i><span
-                            data-translate="about-service-2">バックエンド開発（PHP, Laravel, Node.js,
-                            Golang）</span>
+                            data-translate="about-service-2">バックエンド開発（Supabase, PHP, Laravel, Node.js,
+                            TypeScript）</span>
                     </p>
                     <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i><span
                             data-translate="about-service-3">データベース設計・最適化（MySQL, SQL Server）</span>
@@ -315,7 +315,7 @@
                             Docker, Kubernetes）</span>
                     </p>
                     <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i><span
-                            data-translate="about-service-5">ツール（Vs Code, Cursor, Codex, ChatGPT）</span>
+                            data-translate="about-service-5">ツール（Vs Code, Cursor, Codex, Claude Code</span>
                     </p>
                     <!-- <a class="btn btn-primary py-3 px-5 mt-3" href="#contact">詳しく見る</a> -->
                 </div>
@@ -327,6 +327,15 @@
                         <div class="col-sm-6">
                             <img class="img-fluid rounded" src="img/lis.png" alt="">
                         </div>
+                    </div>
+                    <div class="hr-highlight mb-4">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <i class="fas fa-language text-primary"></i>
+                            <h5 class="mb-0" data-translate="jp-title">日本語力</h5>
+                        </div>
+                        <p class="mb-0" data-translate="jp-desc">
+                            日本での就業経験があり、要件定義・仕様調整・社内外ステークホルダーとのコミュニケーションを日本語にて円滑に実施してまいりました。読み書き・会話ともにビジネスレベルで対応可能です。
+                        </p>
                     </div>
                     <div class="d-flex align-items-center mb-3">
                         <h5 class="border-end pe-3 me-3 mb-0" data-translate="about-stats-1">満足いただいたクライアント</h5>
@@ -408,11 +417,11 @@
                             </div>
                             <div class="skill mb-4">
                                 <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">Golang</h6>
+                                    <h6 class="font-weight-bold">Supabase</h6>
                                     <h6 class="font-weight-bold">50%</h6>
                                 </div>
                                 <div class="progress">
-                                    <div class="progress-bar" style="background-color: #00ADD8;" role="progressbar"
+                                    <div class="progress-bar" style="background-color: #207220;" role="progressbar"
                                         aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </div>
@@ -635,7 +644,7 @@
                             <h6 class="mb-3" data-translate="services-price">料金は <span class="text-primary">要相談</span>
                             </h6>
                             <span
-                                data-translate="services-service-2-desc">PHP、Laravel、Node.js、Golangを使用してスケーラブルで安全なサーバーサイドアプリケーションを開発します。API設計からデータベース設計まで対応いたします。</span>
+                                data-translate="services-service-2-desc">Supabase、PHP、Laravel、Node.jsを使用してスケーラブルで安全なサーバーサイドアプリケーションを開発します。API設計からデータベース設計まで対応いたします。</span>
                         </div>
                     </div>
                 </div>
@@ -1142,6 +1151,31 @@
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- Tech Stack Modal Start -->
+    <div class="modal fade" id="techMoreModal" tabindex="-1" aria-labelledby="techMoreModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div>
+                        <h5 class="modal-title" id="techMoreModalLabel" data-translate="projects-tech-modal-title">
+                            Tech stack
+                        </h5>
+                        <div class="text-muted small" id="techMoreModalProject"></div>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex flex-wrap gap-2" id="techMoreModalBody"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal"
+                        data-translate="projects-tech-modal-close">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Tech Stack Modal End -->
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

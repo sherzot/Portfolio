@@ -45,7 +45,8 @@ class LanguageSwitcher {
         "about-services-title": "提供サービス",
         "about-service-1":
           "フロントエンド開発（React, TypeScript, JavaScript, Tailwind CSS, Bootstrap, HTML, CSS）",
-        "about-service-2": "バックエンド開発（PHP, Laravel, Node.js, Golang）",
+        "about-service-2":
+          "バックエンド開発（Supabase, PHP, Laravel, Node.js, TypeScript）",
         "about-service-3": "データベース設計・最適化（MySQL, SQL Server）",
         "about-service-4":
           "インフラ設計・運用（AWS, GitHub Actions, Docker, Kubernetes）",
@@ -119,7 +120,7 @@ class LanguageSwitcher {
           "React、TypeScript、JavaScriptを使用してモダンでレスポンシブなWebアプリケーションを開発します。ユーザーエクスペリエンスを重視したUI/UXデザインを提供いたします。",
         "services-service-2-title": "バックエンド開発",
         "services-service-2-desc":
-          "PHP、Laravel、Node.js、Golangを使用してスケーラブルで安全なサーバーサイドアプリケーションを開発します。API設計からデータベース設計まで対応いたします。",
+          "Supabase、PHP、Laravel、Node.jsを使用してスケーラブルで安全なサーバーサイドアプリケーションを開発します。API設計からデータベース設計まで対応いたします。",
         "services-service-3-title": "データベース設計",
         "services-service-3-desc":
           "MySQL、SQL Serverを使用して効率的でスケーラブルなデータベース設計を行います。データの整合性とパフォーマンスを重視した最適化を提供いたします。",
@@ -136,6 +137,9 @@ class LanguageSwitcher {
         "projects-filter-system": "システム",
         "projects-show-more": "もっと見る",
         "projects-show-less": "閉じる",
+        "projects-more-template": "+{n}件",
+        "projects-tech-modal-title": "技術スタック",
+        "projects-tech-modal-close": "閉じる",
         "projects-featured-title": "注目プロジェクト",
         "projects-featured-subtitle":
           "HR向けに、最も重要なプロジェクトを先に表示しています。",
@@ -226,6 +230,11 @@ class LanguageSwitcher {
 
         // Footer
         "footer-copyright": "All Right Reserved.",
+
+        // HR Highlight
+        "jp-title": "日本語力",
+        "jp-desc":
+          "日本での就業経験があり、要件定義・仕様調整・社内外ステークホルダーとのコミュニケーションを日本語にて円滑に実施してまいりました。読み書き・会話ともにビジネスレベルで対応可能です。",
       },
 
       en: {
@@ -269,7 +278,7 @@ class LanguageSwitcher {
         "about-service-1":
           "Frontend Development (React, TypeScript, JavaScript, Tailwind CSS, Bootstrap, HTML, CSS)",
         "about-service-2":
-          "Backend Development (PHP, Laravel, Node.js, Golang)",
+          "Backend Development (Supabase, PHP, Laravel, Node.js, TypeScript)",
         "about-service-3": "Database Design & Optimization (MySQL, SQL Server)",
         "about-service-4":
           "Infrastructure Design & Operations (AWS, GitHub Actions, Docker, Kubernetes)",
@@ -341,7 +350,7 @@ class LanguageSwitcher {
           "I develop modern and responsive web applications using React, TypeScript, and JavaScript. I provide UI/UX design that prioritizes user experience.",
         "services-service-2-title": "Backend Development",
         "services-service-2-desc":
-          "I develop scalable and secure server-side applications using PHP, Laravel, Node.js, and Golang. I handle everything from API design to database design.",
+          "I develop scalable and secure server-side applications using Supabase, PHP, Laravel, and Node.js. I handle everything from API design to database design.",
         "services-service-3-title": "Database Design",
         "services-service-3-desc":
           "I design efficient and scalable databases using MySQL and SQL Server. I provide optimization that prioritizes data integrity and performance.",
@@ -358,6 +367,9 @@ class LanguageSwitcher {
         "projects-filter-system": "Systems",
         "projects-show-more": "Show more",
         "projects-show-less": "Show less",
+        "projects-more-template": "+{n} more",
+        "projects-tech-modal-title": "Tech stack",
+        "projects-tech-modal-close": "Close",
         "projects-featured-title": "Featured Projects",
         "projects-featured-subtitle":
           "A quick view of the strongest projects for HR.",
@@ -450,6 +462,11 @@ class LanguageSwitcher {
 
         // Footer
         "footer-copyright": "All Right Reserved.",
+
+        // HR Highlight
+        "jp-title": "Japanese proficiency",
+        "jp-desc":
+          "I have work experience in Japan and have smoothly handled requirement definition, specification coordination, and communication with internal and external stakeholders in Japanese. I can support reading/writing and conversations at a business level.",
       },
 
       uz: {
@@ -493,7 +510,7 @@ class LanguageSwitcher {
         "about-service-1":
           "Frontend ishlab chiqish (React, TypeScript, JavaScript, Tailwind CSS, Bootstrap, HTML, CSS)",
         "about-service-2":
-          "Backend ishlab chiqish (PHP, Laravel, Node.js, Golang)",
+          "Backend ishlab chiqish (Supabase, PHP, Laravel, Node.js, TypeScript)",
         "about-service-3":
           "Ma'lumotlar bazasi dizayni va optimallashtirish (MySQL, SQL Server)",
         "about-service-4":
@@ -569,7 +586,7 @@ class LanguageSwitcher {
           "React, TypeScript, JavaScript ishlatib zamonaviy va responsive web ilovalar yarataman. Foydalanuvchi tajribasiga e'tibor qaratgan UI/UX dizayn taqdim etaman.",
         "services-service-2-title": "Backend ishlab chiqish",
         "services-service-2-desc":
-          "PHP, Laravel, Node.js, Golang ishlatib kengaytiriladigan va xavfsiz server-side ilovalar yarataman. API dizaynidan ma'lumotlar bazasi dizaynigacha barchasini boshqaraman.",
+          "Supabase, PHP, Laravel, Node.js ishlatib kengaytiriladigan va xavfsiz server-side ilovalar yarataman. API dizaynidan ma'lumotlar bazasi dizaynigacha barchasini boshqaraman.",
         "services-service-3-title": "Ma'lumotlar bazasi dizayni",
         "services-service-3-desc":
           "MySQL, SQL Server ishlatib samarali va kengaytiriladigan ma'lumotlar bazalari yarataman. Ma'lumotlar yaxlitligi va ishlash tezligiga e'tibor qaratgan optimallashtirish taqdim etaman.",
@@ -586,6 +603,9 @@ class LanguageSwitcher {
         "projects-filter-system": "Tizimlar",
         "projects-show-more": "Ko'proq ko'rish",
         "projects-show-less": "Yopish",
+        "projects-more-template": "+{n} ta",
+        "projects-tech-modal-title": "Texnologiyalar",
+        "projects-tech-modal-close": "Yopish",
         "projects-featured-title": "Top loyihalar",
         "projects-featured-subtitle":
           "HR uchun eng kuchli loyihalarni tez ko'rish.",
@@ -682,6 +702,11 @@ class LanguageSwitcher {
 
         // Footer
         "footer-copyright": "Barcha huquqlar himoyalangan.",
+
+        // HR Highlight
+        "jp-title": "Yapon tili (biznes daraja)",
+        "jp-desc":
+          "Yaponiyada ish tajribam bor: talablarni aniqlash, spesifikatsiya kelishish va ichki/tashqi stakeholderlar bilan yapon tilida samarali muloqot qilganman. O‘qish-yozish hamda suhbatda biznes darajada ishlay olaman.",
       },
     };
 
@@ -748,6 +773,11 @@ class LanguageSwitcher {
 
     // Update page direction for RTL languages if needed
     document.documentElement.setAttribute("lang", this.currentLanguage);
+
+    // Update "+N more" badges in projects
+    if (typeof window.updateProjectMoreBadges === "function") {
+      window.updateProjectMoreBadges(this.currentLanguage);
+    }
 
     // Update projects toggle button label based on current state
     const toggleBtn = document.getElementById("toggleProjectsBtn");

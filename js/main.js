@@ -124,6 +124,106 @@
     });
   }
 
+  // Projects tech tags: show key tech chips + "+N more"
+  function formatMoreLabel(lang, count) {
+    const translations = window.__portfolioTranslations?.[lang] || {};
+    const template =
+      translations["projects-more-template"] ||
+      (lang === "ja"
+        ? "+{n}件"
+        : lang === "uz"
+        ? "+{n} ta"
+        : "+{n} more");
+    return template.replace("{n}", String(count));
+  }
+
+  function compactProjectTechTags() {
+    const lang = localStorage.getItem("selectedLanguage") || "ja";
+    const keyTechCount = 4;
+
+    $(".project-card .tech-tags").each(function () {
+      const $container = $(this);
+
+      // Reset any previous run
+      $container.find(".badge-more").remove();
+      const $badges = $container.find(".badge").not(".badge-more");
+      $badges.show();
+
+      // Store full list for modal/popover use
+      const allTech = $badges
+        .map(function () {
+          return $(this).text().trim();
+        })
+        .get()
+        .filter(Boolean);
+      $container.attr("data-all-tech", JSON.stringify(allTech));
+
+      if ($badges.length <= keyTechCount) return;
+
+      const hiddenCount = $badges.length - keyTechCount;
+      $badges.slice(keyTechCount).hide();
+
+      const $more = $("<span/>", {
+        class: "badge badge-more",
+        "data-more-count": String(hiddenCount),
+        text: formatMoreLabel(lang, hiddenCount),
+      });
+      $container.append($more);
+    });
+  }
+
+  // Expose updater for language switcher
+  window.updateProjectMoreBadges = function (lang) {
+    $(".project-card .tech-tags .badge-more").each(function () {
+      const count = Number($(this).attr("data-more-count") || "0");
+      $(this).text(formatMoreLabel(lang || "ja", count));
+    });
+  };
+
+  // Run once on load
+  compactProjectTechTags();
+
+  // Click "+N more" to open modal with full tech stack
+  $(document).on("click", ".project-card .tech-tags .badge-more", function () {
+    const $more = $(this);
+    const $container = $more.closest(".tech-tags");
+    const raw = $container.attr("data-all-tech") || "[]";
+    let allTech = [];
+    try {
+      allTech = JSON.parse(raw);
+    } catch (e) {
+      allTech = [];
+    }
+
+    const projectTitle =
+      $more.closest(".project-card").find(".project-info h5").first().text() || "";
+
+    const modalEl = document.getElementById("techMoreModal");
+    const bodyEl = document.getElementById("techMoreModalBody");
+    const projectEl = document.getElementById("techMoreModalProject");
+
+    if (!modalEl || !bodyEl) return;
+
+    // Populate project name
+    if (projectEl) {
+      projectEl.textContent = projectTitle.trim();
+    }
+
+    // Populate chips
+    bodyEl.innerHTML = "";
+    allTech.forEach((t) => {
+      const span = document.createElement("span");
+      span.className = "badge bg-light text-dark";
+      span.textContent = t;
+      bodyEl.appendChild(span);
+    });
+
+    if (typeof bootstrap !== "undefined" && bootstrap.Modal) {
+      const instance = bootstrap.Modal.getOrCreateInstance(modalEl);
+      instance.show();
+    }
+  });
+
   // Testimonials carousel
   $(".testimonial-carousel").owlCarousel({
     autoplay: true,
