@@ -5,8 +5,24 @@
     <meta charset="utf-8">
     <title>Sher_Dev</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+    <meta name="keywords" content="Full Stack Engineer, Web Developer, React, TypeScript, Laravel, Go, AWS, Portfolio">
+    <meta name="description"
+        content="Sherzod Musurmonov — Full Stack Engineer. I build user-focused web apps, APIs, and scalable systems with React, TypeScript, Laravel, Go, and AWS.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Sher_Dev | Full Stack Engineer Portfolio">
+    <meta property="og:description"
+        content="Projects, experience, and skills — Full Stack Engineer (React, TypeScript, Laravel, Go, AWS).">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="./images/logo/no_back2.png">
+    <meta property="og:url" content="https://sherdev.netlify.app/">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Sher_Dev | Full Stack Engineer Portfolio">
+    <meta name="twitter:description"
+        content="Projects, experience, and skills — Full Stack Engineer (React, TypeScript, Laravel, Go, AWS).">
+    <meta name="twitter:image" content="./images/logo/no_back2.png">
 
     <!-- Favicon -->
     <link href="./images/logo/no_back2.png" rel="icon">
@@ -43,17 +59,15 @@
     <!-- Spinner End -->
 
     <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-xxl bg-white navbar-light sticky-top shadow py-lg-0 px-4 px-lg-5 wow fadeIn"
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top shadow py-lg-0 px-4 px-lg-5 wow fadeIn"
         data-wow-delay="0.1s">
-        <!-- Logo chap tomonda -->
         <a href="index.html" class="navbar-brand d-flex align-items-center">
-            <img src="./images/logo/logo-no-background.png" alt="logo" style="width: 120px; height: auto;">
+            <img src="./images/logo/logo-no-background.png" alt="Sher_Dev logo" style="width: 120px; height: auto;">
         </a>
 
-        <!-- Hamburger menu va Language Switcher yonma-yon -->
-        <div class="d-flex align-items-center">
+        <div class="d-flex align-items-center gap-2 ms-auto">
             <!-- Language Switcher -->
-            <div class="language-switcher me-3">
+            <div class="language-switcher">
                 <div class="dropdown">
                     <button class="btn btn-outline-primary btn-sm dropdown-toggle" type="button" id="languageDropdown"
                         data-bs-toggle="dropdown" aria-expanded="false">
@@ -61,7 +75,7 @@
                             src="img/translate.png" alt="translate icon">
                         <span id="currentLang">日本語</span>
                     </button>
-                    <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
                         <li><a class="dropdown-item" href="#" data-lang="ja">🇯🇵 日本語</a></li>
                         <li><a class="dropdown-item" href="#" data-lang="en">🇺🇸 English</a></li>
                         <li><a class="dropdown-item" href="#" data-lang="uz">🇺🇿 O'zbek</a></li>
@@ -69,25 +83,45 @@
                 </div>
             </div>
 
-            <!-- Hamburger menu toggle -->
-            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-                aria-label="メニューを開く">
+            <!-- Desktop nav -->
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="#home" class="nav-item nav-link active" data-translate="nav-home">ホーム</a>
+                    <a href="#about" class="nav-item nav-link" data-translate="nav-about">アバウト</a>
+                    <a href="#skill" class="nav-item nav-link" data-translate="nav-skills">スキル</a>
+                    <a href="#service" class="nav-item nav-link" data-translate="nav-services">サービス</a>
+                    <a href="#project" class="nav-item nav-link" data-translate="nav-projects">プロジェクト</a>
+                    <a href="#contact" class="nav-item nav-link" data-translate="nav-contact">お問い合わせ</a>
+                </div>
+            </div>
+
+            <!-- Mobile hamburger (offcanvas) -->
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav"
+                aria-controls="mobileNav" aria-label="Open menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div>
-        <!-- Menu elementlari (hamburger ichida) -->
-        <div class="collapse navbar-collapse py-4 py-lg-0" id="navbarCollapse">
-            <div class="navbar-nav ms-auto py-0 d-flex align-items-center">
-                <a href="#home" class="nav-item nav-link active" data-translate="nav-home">ホーム</a>
-                <a href="#about" class="nav-item nav-link" data-translate="nav-about">アバウト</a>
-                <a href="#skill" class="nav-item nav-link" data-translate="nav-skills">スキル</a>
-                <a href="#service" class="nav-item nav-link" data-translate="nav-services">サービス</a>
-                <a href="#project" class="nav-item nav-link" data-translate="nav-projects">プロジェクト</a>
-                <a href="#contact" class="nav-item nav-link" data-translate="nav-contact">お問い合わせ</a>
-            </div>
-        </div>
     </nav>
     <!-- Navbar End -->
+
+    <!-- Mobile Offcanvas Menu Start -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileNav" aria-labelledby="mobileNavLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="mobileNavLabel" data-translate="nav-menu">Menu</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <nav class="nav flex-column mobile-nav-links">
+                <a href="#home" class="nav-link" data-translate="nav-home" data-bs-dismiss="offcanvas">ホーム</a>
+                <a href="#about" class="nav-link" data-translate="nav-about" data-bs-dismiss="offcanvas">アバウト</a>
+                <a href="#skill" class="nav-link" data-translate="nav-skills" data-bs-dismiss="offcanvas">スキル</a>
+                <a href="#service" class="nav-link" data-translate="nav-services" data-bs-dismiss="offcanvas">サービス</a>
+                <a href="#project" class="nav-link" data-translate="nav-projects" data-bs-dismiss="offcanvas">プロジェクト</a>
+                <a href="#contact" class="nav-link" data-translate="nav-contact" data-bs-dismiss="offcanvas">お問い合わせ</a>
+            </nav>
+        </div>
+    </div>
+    <!-- Mobile Offcanvas Menu End -->
 
     <!-- Header Start -->
     <div class="container-fluid bg-light pt-6" id="home">
@@ -98,6 +132,14 @@
                     <h1 class="display-3 mb-3" style="font-size: 32px;" data-translate="hero-location">日本＆ウズベキスタン</h1>
                     <h2 class="typed-text-output d-inline"></h2>
                     <div class="typed-text d-none" data-translate="hero-title">フルスタックエンジニア</div>
+                    <p class="text-muted mt-3 mb-4" data-translate="hero-description">
+                        フロントエンドからバックエンドまで、Webアプリケーションの開発全工程を担当できるフルスタックエンジニアです。
+                    </p>
+                    <div class="d-flex flex-wrap gap-2">
+                        <a class="btn btn-primary py-2 px-4" href="#contact" data-translate="hero-cta-contact">お問い合わせ</a>
+                        <a class="btn btn-outline-primary py-2 px-4" href="https://github.com/sherzot" target="_blank"
+                            rel="noopener" data-translate="hero-cta-github">GitHubを見る</a>
+                    </div>
                 </div>
                 <div class="col-lg-6 pt-5">
                     <div class="hero-visual-container-4">
@@ -644,8 +686,86 @@
                         <li class="mx-3" data-filter=".platform" data-translate="projects-filter-platform">プラットフォーム</li>
                         <li class="mx-3" data-filter=".system" data-translate="projects-filter-system">システム</li>
                     </ul>
+                    <button class="btn btn-outline-primary btn-sm ms-3 mt-3 mt-lg-0" id="toggleProjectsBtn"
+                        type="button" data-expanded="false" data-translate="projects-show-more">
+                        もっと見る
+                    </button>
                 </div>
             </div>
+
+            <!-- Featured Projects Start -->
+            <div class="row g-3 mb-4 featured-projects wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-12 d-flex align-items-end justify-content-between flex-wrap gap-2">
+                    <div>
+                        <h3 class="mb-1" data-translate="projects-featured-title">注目プロジェクト</h3>
+                        <p class="text-muted mb-0" data-translate="projects-featured-subtitle">
+                            HR向けに、最も重要なプロジェクトを先に表示しています。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="featured-project-card">
+                        <div class="featured-project-top">
+                            <h5 class="mb-1" data-translate="featured-1-title">AI Business Concierge</h5>
+                            <p class="mb-0" data-translate="featured-1-desc">
+                                Multi-tenant ops dashboard + Supabase Edge Functions API
+                            </p>
+                        </div>
+                        <div class="featured-project-actions">
+                            <a class="btn btn-sm btn-primary" href="https://github.com/sherzot/ai-business-concierge"
+                                target="_blank" rel="noopener" data-translate="project-btn-github">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="featured-project-card">
+                        <div class="featured-project-top">
+                            <h5 class="mb-1" data-translate="featured-2-title">JobMatcher Platform</h5>
+                            <p class="mb-0" data-translate="featured-2-desc">
+                                Career OS + ATS workflow + AI matching (Production-grade)
+                            </p>
+                        </div>
+                        <div class="featured-project-actions">
+                            <a class="btn btn-sm btn-primary" href="https://github.com/sherzot/jobmatcher-platform"
+                                target="_blank" rel="noopener" data-translate="project-btn-github">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="featured-project-card">
+                        <div class="featured-project-top">
+                            <h5 class="mb-1" data-translate="featured-3-title">TrustFlow CRM</h5>
+                            <p class="mb-0" data-translate="featured-3-desc">
+                                Laravel + Filament enterprise CRM (Docker-ready)
+                            </p>
+                        </div>
+                        <div class="featured-project-actions">
+                            <a class="btn btn-sm btn-primary" href="https://github.com/sherzot/TrustFlowCRM"
+                                target="_blank" rel="noopener" data-translate="project-btn-github">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="featured-project-card">
+                        <div class="featured-project-top">
+                            <h5 class="mb-1" data-translate="featured-4-title">CoffeeShop</h5>
+                            <p class="mb-0" data-translate="featured-4-desc">
+                                Modern, calm, clean landing page (HTML/CSS)
+                            </p>
+                        </div>
+                        <div class="featured-project-actions">
+                            <a class="btn btn-sm btn-primary" href="https://github.com/sherzot/CoffeeShop"
+                                target="_blank" rel="noopener" data-translate="project-btn-github">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Featured Projects End -->
+
             <div class="row g-3 portfolio-container wow fadeInUp" data-wow-delay="0.1s">
                 <!-- Official Website Project -->
                 <div class="col-lg-3 col-md-6 portfolio-item web">
@@ -787,7 +907,7 @@
                 </div>
 
                 <!-- Legacy System Modernization -->
-                <div class="col-lg-3 col-md-6 portfolio-item system">
+                <div class="col-lg-3 col-md-6 portfolio-item system project-extra">
                     <div class="project-card gradient-card-7">
                         <div class="project-icon">
                             <i class="fas fa-sync-alt "></i>
@@ -812,7 +932,7 @@
                 </div>
 
                 <!-- Government Job Matching System -->
-                <div class="col-lg-3 col-md-6 portfolio-item system">
+                <div class="col-lg-3 col-md-6 portfolio-item system project-extra">
                     <div class="project-card gradient-card-8">
                         <div class="project-icon">
                             <i class="fas fa-building "></i>
@@ -835,7 +955,7 @@
                 </div>
 
                 <!-- JobMatcher Platform -->
-                <div class="col-lg-3 col-md-6 portfolio-item platform">
+                <div class="col-lg-3 col-md-6 portfolio-item platform project-extra">
                     <div class="project-card gradient-card-9">
                         <div class="project-icon">
                             <i class="fas fa-users "></i>
@@ -844,6 +964,10 @@
                             <h5 data-translate="project-9-title">JobMatcher Platform</h5>
                             <p data-translate="project-9-desc">雇用主と求職者をつなぐプラットフォーム | Go microservices architecture
                             </p>
+                            <div class="project-actions">
+                                <a class="btn btn-sm btn-primary" href="https://github.com/sherzot/jobmatcher-platform"
+                                    target="_blank" rel="noopener" data-translate="project-btn-github">GitHub</a>
+                            </div>
                             <div class="tech-tags">
                                 <span class="badge bg-light text-dark me-1">Go</span>
                                 <span class="badge bg-light text-dark me-1">Microservices</span>
@@ -857,7 +981,7 @@
                 </div>
 
                 <!-- TrustFlow CRM v3.0 -->
-                <div class="col-lg-3 col-md-6 portfolio-item system">
+                <div class="col-lg-3 col-md-6 portfolio-item system project-extra">
                     <div class="project-card gradient-card-10">
                         <div class="project-icon">
                             <i class="fas fa-chart-line "></i>
@@ -867,6 +991,10 @@
                             <p data-translate="project-10-desc">AI-powered, multi-tenant CRM system | Laravel
                                 Filament
                                 PHP Docker</p>
+                            <div class="project-actions">
+                                <a class="btn btn-sm btn-primary" href="https://github.com/sherzot/TrustFlowCRM"
+                                    target="_blank" rel="noopener" data-translate="project-btn-github">GitHub</a>
+                            </div>
                             <div class="tech-tags">
                                 <span class="badge bg-light text-dark me-1">Laravel 11</span>
                                 <span class="badge bg-light text-dark me-1">Filament 3.2+</span>

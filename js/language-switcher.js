@@ -14,6 +14,7 @@ class LanguageSwitcher {
         "nav-projects": "プロジェクト",
         "nav-testimonials": "お客様の声",
         "nav-contact": "お問い合わせ",
+        "nav-menu": "メニュー",
 
         // Hero Section
         "hero-greeting": "こんにちは、私は",
@@ -22,6 +23,8 @@ class LanguageSwitcher {
         "hero-title": "フルスタックエンジニア",
         "hero-description":
           "フロントエンドからバックエンドまで、Webアプリケーションの開発全工程を担当できるフルスタックエンジニアです。",
+        "hero-cta-contact": "お問い合わせ",
+        "hero-cta-github": "GitHubを見る",
         "hero-hire-btn": "お問い合わせ",
         "hero-download-btn": "履歴書ダウンロード",
 
@@ -131,8 +134,28 @@ class LanguageSwitcher {
         "projects-filter-web": "ウェブサイト",
         "projects-filter-platform": "プラットフォーム",
         "projects-filter-system": "システム",
+        "projects-show-more": "もっと見る",
+        "projects-show-less": "閉じる",
+        "projects-featured-title": "注目プロジェクト",
+        "projects-featured-subtitle":
+          "HR向けに、最も重要なプロジェクトを先に表示しています。",
+
+        // Featured projects
+        "featured-1-title": "AI Business Concierge",
+        "featured-1-desc":
+          "マルチテナント運用ダッシュボード + Supabase Edge Functions API",
+        "featured-2-title": "JobMatcher Platform",
+        "featured-2-desc":
+          "Career OS + ATSワークフロー + AIマッチング（本番品質）",
+        "featured-3-title": "TrustFlow CRM",
+        "featured-3-desc":
+          "Laravel + Filament のエンタープライズCRM（Docker対応）",
+        "featured-4-title": "CoffeeShop",
+        "featured-4-desc":
+          "モダンで落ち着いたクリーンなLP（HTML/CSS）",
 
         // Project Details
+        "project-btn-github": "GitHub",
         "project-1-title": "公式ウェブサイト",
         "project-1-desc": "WordPress、モバイル対応、3ヶ月で訪問者5,000+人達成",
         "project-2-title": "オンライン教育プラットフォーム",
@@ -214,6 +237,7 @@ class LanguageSwitcher {
         "nav-projects": "Projects",
         "nav-testimonials": "Testimonials",
         "nav-contact": "Contact",
+        "nav-menu": "Menu",
 
         // Hero Section
         "hero-greeting": "Hello, I am",
@@ -222,6 +246,8 @@ class LanguageSwitcher {
         "hero-title": "Full Stack Engineer",
         "hero-description":
           "I am a Full Stack Engineer who can handle all aspects of web application development from frontend to backend. I specialize in user experience-focused design and scalable system construction.",
+        "hero-cta-contact": "Contact",
+        "hero-cta-github": "View GitHub",
         "hero-hire-btn": "Contact Me",
         "hero-download-btn": "Download CV",
 
@@ -330,8 +356,28 @@ class LanguageSwitcher {
         "projects-filter-web": "Websites",
         "projects-filter-platform": "Platforms",
         "projects-filter-system": "Systems",
+        "projects-show-more": "Show more",
+        "projects-show-less": "Show less",
+        "projects-featured-title": "Featured Projects",
+        "projects-featured-subtitle":
+          "A quick view of the strongest projects for HR.",
+
+        // Featured projects
+        "featured-1-title": "AI Business Concierge",
+        "featured-1-desc":
+          "Multi-tenant ops dashboard + Supabase Edge Functions API",
+        "featured-2-title": "JobMatcher Platform",
+        "featured-2-desc":
+          "Career OS + ATS workflow + AI matching (production-grade)",
+        "featured-3-title": "TrustFlow CRM",
+        "featured-3-desc":
+          "Laravel + Filament enterprise CRM (Docker-ready)",
+        "featured-4-title": "CoffeeShop",
+        "featured-4-desc":
+          "Modern, calm, clean landing page (HTML/CSS)",
 
         // Project Details
+        "project-btn-github": "GitHub",
         "project-1-title": "Official Website",
         "project-1-desc":
           "WordPress, mobile responsive, achieved 5,000+ visitors in 3 months",
@@ -415,6 +461,7 @@ class LanguageSwitcher {
         "nav-projects": "Loyihalar",
         "nav-testimonials": "Mijozlar fikri",
         "nav-contact": "Aloqa",
+        "nav-menu": "Menyu",
 
         // Hero Section
         "hero-greeting": "Salom, men",
@@ -423,6 +470,8 @@ class LanguageSwitcher {
         "hero-title": "Full Stack Muhandis",
         "hero-description":
           "Men frontend dan backend gacha, web ilovalarini ishlab chiqishning barcha bosqichlarini boshqarishga qodir Full Stack Muhandisiman. Foydalanuvchi tajribasiga e'tibor qaratgan dizayn va kengaytiriladigan tizimlar qurishda ixtisoslashganman.",
+        "hero-cta-contact": "Bog'lanish",
+        "hero-cta-github": "GitHub'ni ko'rish",
         "hero-hire-btn": "Men bilan bog'lanish",
         "hero-download-btn": "Rezyume yuklab olish",
 
@@ -535,8 +584,28 @@ class LanguageSwitcher {
         "projects-filter-web": "Veb-saytlar",
         "projects-filter-platform": "Platformalar",
         "projects-filter-system": "Tizimlar",
+        "projects-show-more": "Ko'proq ko'rish",
+        "projects-show-less": "Yopish",
+        "projects-featured-title": "Top loyihalar",
+        "projects-featured-subtitle":
+          "HR uchun eng kuchli loyihalarni tez ko'rish.",
+
+        // Featured projects
+        "featured-1-title": "AI Business Concierge",
+        "featured-1-desc":
+          "Multi-tenant ops dashboard + Supabase Edge Functions API",
+        "featured-2-title": "JobMatcher Platform",
+        "featured-2-desc":
+          "Career OS + ATS workflow + AI matching (production-grade)",
+        "featured-3-title": "TrustFlow CRM",
+        "featured-3-desc":
+          "Laravel + Filament enterprise CRM (Docker-ready)",
+        "featured-4-title": "CoffeeShop",
+        "featured-4-desc":
+          "Modern, sokin va toza landing page (HTML/CSS)",
 
         // Project Details
+        "project-btn-github": "GitHub",
         "project-1-title": "Rasmiy veb-sayt",
         "project-1-desc":
           "WordPress, mobil moslashuv, 3 oyda 5,000+ tashrif buyuruvchi",
@@ -616,6 +685,9 @@ class LanguageSwitcher {
       },
     };
 
+    // Expose translations for other scripts (e.g., main.js)
+    window.__portfolioTranslations = this.translations;
+
     this.init();
   }
 
@@ -676,6 +748,16 @@ class LanguageSwitcher {
 
     // Update page direction for RTL languages if needed
     document.documentElement.setAttribute("lang", this.currentLanguage);
+
+    // Update projects toggle button label based on current state
+    const toggleBtn = document.getElementById("toggleProjectsBtn");
+    if (toggleBtn) {
+      const expanded = toggleBtn.getAttribute("data-expanded") === "true";
+      const key = expanded ? "projects-show-less" : "projects-show-more";
+      if (translations[key]) {
+        toggleBtn.textContent = translations[key];
+      }
+    }
   }
 
   updateTypedText(translations) {

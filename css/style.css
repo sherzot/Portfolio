@@ -82,37 +82,7 @@
     justify-content: space-between;
 }
 
-.navbar-collapse {
-    display: none !important;
-}
-
-.navbar-collapse.show {
-    display: block !important;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background: white;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    min-width: 220px;
-    z-index: 1000;
-    padding: 15px 0;
-}
-
-.navbar-collapse.show .navbar-nav {
-    flex-direction: column;
-    width: 100%;
-}
-
-.navbar-collapse.show .nav-link {
-    padding: 10px 20px;
-    text-align: left;
-    border-bottom: 1px solid #f0f0f0;
-}
-
-.navbar-collapse.show .nav-link:last-child {
-    border-bottom: none;
-}
+/* Let Bootstrap handle .collapse behavior */
 
 /*** Navbar ***/
 .navbar.sticky-top {
@@ -204,7 +174,6 @@
 
 /* Hamburger menu stillari */
 .navbar-toggler {
-    display: block !important;
     border: none;
     padding: 8px;
     border-radius: 8px;
@@ -258,119 +227,9 @@
     width: 80%;
 }
 
-/* Katta ekranlarda navigation links yashirin, lekin hamburger ishlaydi */
-@media (min-width: 992px) {
-    .navbar .navbar-nav .nav-link {
-        display: block !important;
-    }
-
-    .navbar-collapse:not(.show) {
-        display: none !important;
-    }
-
-    .navbar-collapse.show {
-        display: block !important;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        background: white;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-        min-width: 200px;
-        z-index: 1000;
-        padding: 15px 0;
-    }
-
-    .navbar-collapse.show .navbar-nav {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .navbar-collapse.show .nav-link {
-        padding: 8px 20px;
-        text-align: left;
-        border-bottom: 1px solid #f0f0f0;
-    }
-
-    .navbar-collapse.show .nav-link:last-child {
-        border-bottom: none;
-    }
-}
-
-@media (max-width: 1919.98px) {
-    .navbar .navbar-nav .nav-link {
-        display: block !important;
-    }
-
-    .navbar-collapse:not(.show) {
-        display: none !important;
-    }
-
-    .navbar-collapse.show {
-        display: block !important;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        background: white;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-        min-width: 200px;
-        z-index: 1000;
-        padding: 15px 0;
-    }
-
-    .navbar-collapse.show .navbar-nav {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .navbar-collapse.show .nav-link {
-        padding: 8px 20px;
-        text-align: left;
-        border-bottom: 1px solid #f0f0f0;
-    }
-
-    .navbar-collapse.show .nav-link:last-child {
-        border-bottom: none;
-    }
-}
-
 @media (max-width: 991.98px) {
     .navbar .navbar-nav .nav-link {
         padding: 10px 0;
-        display: block !important;
-    }
-
-    .navbar-collapse:not(.show) {
-        display: none !important;
-    }
-
-    .navbar-collapse.show {
-        display: block !important;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        background: white;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-        min-width: 200px;
-        z-index: 1000;
-        padding: 15px 0;
-    }
-
-    .navbar-collapse.show .navbar-nav {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .navbar-collapse.show .nav-link {
-        padding: 8px 20px;
-        text-align: left;
-        border-bottom: 1px solid #f0f0f0;
-    }
-
-    .navbar-collapse.show .nav-link:last-child {
-        border-bottom: none;
     }
 
     .language-switcher {
@@ -392,6 +251,93 @@
     .language-switcher .dropdown-toggle i {
         display: none;
     }
+}
+
+/* Offcanvas mobile nav polish */
+.offcanvas .offcanvas-header {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.mobile-nav-links .nav-link {
+    padding: 12px 12px;
+    border-radius: 10px;
+    color: var(--dark);
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.mobile-nav-links .nav-link:hover {
+    background: rgba(98, 68, 197, 0.08);
+    color: var(--primary);
+}
+
+/* Projects "Show more" behavior */
+.project-extra {
+    display: none;
+}
+
+.projects-expanded .project-extra {
+    display: block;
+}
+
+/* Make project cards more compact and scannable */
+.project-card {
+    height: 340px;
+}
+
+.project-info p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Featured Projects */
+.featured-projects {
+    padding: 16px;
+    border: 1px solid #eef0f3;
+    border-radius: 16px;
+    background: linear-gradient(180deg, rgba(98, 68, 197, 0.04), rgba(255, 255, 255, 1));
+}
+
+.featured-project-card {
+    height: 180px;
+    border-radius: 14px;
+    border: 1px solid #eef0f3;
+    background: #fff;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.featured-project-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(98, 68, 197, 0.45);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+}
+
+.featured-project-top h5 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.featured-project-top p {
+    color: #6c757d;
+    font-size: 0.88rem;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.featured-project-actions .btn {
+    border-radius: 10px;
+    font-weight: 700;
 }
 
 
@@ -2003,6 +1949,17 @@
 
 .gradient-card-7 .project-info p {
     color: #666;
+}
+
+.project-actions {
+    display: flex;
+    gap: 8px;
+    margin: 6px 0 10px;
+}
+
+.project-actions .btn {
+    border-radius: 10px;
+    font-weight: 600;
 }
 
 /* Tech Tags in Cards */

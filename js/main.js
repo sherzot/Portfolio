@@ -100,6 +100,30 @@
     portfolioIsotope.isotope({ filter: $(this).data("filter") });
   });
 
+  // Projects show more / show less (compact by default)
+  const $toggleProjectsBtn = $("#toggleProjectsBtn");
+  if ($toggleProjectsBtn.length) {
+    $("body").removeClass("projects-expanded");
+    $toggleProjectsBtn.on("click", function () {
+      const expanded = $(this).attr("data-expanded") === "true";
+      const nextExpanded = !expanded;
+      $(this).attr("data-expanded", String(nextExpanded));
+      $("body").toggleClass("projects-expanded", nextExpanded);
+
+      // Update button text with translations if available
+      const currentLang = localStorage.getItem("selectedLanguage") || "ja";
+      const labelKey = nextExpanded ? "projects-show-less" : "projects-show-more";
+      const fallback = nextExpanded ? "Show less" : "Show more";
+      const translations = window.__portfolioTranslations?.[currentLang] || {};
+      $(this).text(translations[labelKey] || fallback);
+
+      // Re-layout isotope after DOM visibility changes
+      setTimeout(function () {
+        portfolioIsotope.isotope("layout");
+      }, 50);
+    });
+  }
+
   // Testimonials carousel
   $(".testimonial-carousel").owlCarousel({
     autoplay: true,
