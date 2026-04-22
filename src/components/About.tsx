@@ -3,73 +3,106 @@
 import { BookOpen, Target, Zap } from "lucide-react";
 import { useLang } from "@/context/LanguageContext";
 
+const aboutContent = {
+  ja: {
+    body: "ウズベキスタン出身のフルスタックエンジニアです。サマルカンドの政府支援ITセンターでバックエンド・インフラリーダーとしてキャリアをスタートさせ（2021〜2022年）、その後来日。リス株式会社・株式会社renueにて約2年間、レガシーシステム近代化・マイクロサービス設計・AI業務自動化に従事してきました。技術的な課題解決だけでなく、チームプロセスの改善にも積極的に取り組んでいます。",
+    vision:
+      "エンジニアとして培った技術力を基盤に、30歳までにPL/PMとしてプロダクト全体を牽引できるポジションを目指しています。現在は自社開発のSaaSプロダクトで設計・実装の両面を経験中です。",
+    learning: ["Kubernetes（進捗 30%）", "RAG / MCP パターン", "Go言語（マイクロサービス）"],
+    stats: [
+      { label: "4+ years", sub: "総実務経験" },
+      { label: "3 languages", sub: "JP / EN / UZ" },
+      { label: "99.9% SLA", sub: "本番環境で達成" },
+      { label: "CI/CD", sub: "GitHub Actions" },
+    ],
+  },
+  en: {
+    body: "Full Stack Engineer from Uzbekistan. Started my career as Backend & Infrastructure Lead at a government-supported IT center in Samarkand (2021–2022), then moved to Japan. Over the past ~2 years at Risu Co. and renue Inc., I've specialized in legacy system modernization, microservices architecture, and AI-powered business automation.",
+    vision:
+      "Building on my engineering foundation, I aim to grow into a PL/PM role by age 30 — leading product development end-to-end. Currently deepening both design and implementation experience through independent SaaS projects.",
+    learning: ["Kubernetes (30% progress)", "RAG / MCP patterns", "Go (microservices)"],
+    stats: [
+      { label: "4+ years", sub: "Total exp." },
+      { label: "3 languages", sub: "JP / EN / UZ" },
+      { label: "99.9% SLA", sub: "Achieved in prod" },
+      { label: "CI/CD", sub: "GitHub Actions" },
+    ],
+  },
+  uz: {
+    body: "O'zbekistondan Full Stack dasturchi. Samarqanddagi hukumat qo'llab-quvvatlagan IT markazida Backend va Infra rahbari sifatida (2021-2022) ishlab, keyin Yaponiyaga ko'chib keldim. Risu va renue kompaniyalarida ~2 yil davomida eski tizimlarni modernizatsiya, mikroservis arxitekturasi va AI avtomatizatsiya bilan shug'ullandim.",
+    vision:
+      "30 yoshgacha PL/PM sifatida mahsulot ishlanmasini to'liq boshqarish maqsadim bor. Hozir mustaqil SaaS loyihalarda dizayn va implementatsiya tajribasini oshirmoqdaman.",
+    learning: ["Kubernetes (30% tayyorlik)", "RAG / MCP naqshlari", "Go tili (mikroservislar)"],
+    stats: [
+      { label: "4+ yil", sub: "Jami tajriba" },
+      { label: "3 til", sub: "JP / EN / UZ" },
+      { label: "99.9% SLA", sub: "Ishlab chiqarishda" },
+      { label: "CI/CD", sub: "GitHub Actions" },
+    ],
+  },
+};
+
 export function About() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
+  const content = aboutContent[lang as keyof typeof aboutContent];
 
   return (
     <section id="about" className="py-24 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-start">
-          {/* Left: About text */}
+          {/* Left */}
           <div>
             <h2 className="section-title mb-4">{t.about.title}</h2>
-            <p className="text-slate-300 leading-relaxed text-base mb-8">
-              {t.about.body}
+            <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-base mb-8">
+              {content.body}
             </p>
 
             {/* Career Vision */}
             <div className="card p-6 mb-4">
               <div className="flex items-center gap-3 mb-3">
-                <div className="w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center">
-                  <Target size={16} className="text-blue-400" />
+                <div className="w-8 h-8 rounded-lg bg-blue-50 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/20 flex items-center justify-center">
+                  <Target size={16} className="text-blue-600 dark:text-blue-400" />
                 </div>
-                <h3 className="font-semibold text-white text-sm">
+                <h3 className="font-semibold text-slate-900 dark:text-white text-sm">
                   {t.about.vision_title}
                 </h3>
               </div>
-              <p className="text-slate-400 text-sm leading-relaxed">
-                {t.about.vision_body}
+              <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+                {content.vision}
               </p>
             </div>
           </div>
 
-          {/* Right: Currently Learning */}
+          {/* Right */}
           <div className="space-y-4">
+            {/* Learning */}
             <div className="card p-6">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-8 h-8 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center">
-                  <BookOpen size={16} className="text-indigo-400" />
+                <div className="w-8 h-8 rounded-lg bg-indigo-50 dark:bg-indigo-500/10 border border-indigo-200 dark:border-indigo-500/20 flex items-center justify-center">
+                  <BookOpen size={16} className="text-indigo-600 dark:text-indigo-400" />
                 </div>
-                <h3 className="font-semibold text-white text-sm">
+                <h3 className="font-semibold text-slate-900 dark:text-white text-sm">
                   {t.about.learning_title}
                 </h3>
               </div>
               <ul className="space-y-3">
-                {t.about.learning.map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-sm text-slate-300">
-                    <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 shrink-0" />
+                {content.learning.map((item, i) => (
+                  <li key={i} className="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
+                    <span className="w-1.5 h-1.5 rounded-full bg-indigo-500 dark:bg-indigo-400 shrink-0" />
                     {item}
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* Quick stats — without vanity numbers */}
+            {/* Stats */}
             <div className="grid grid-cols-2 gap-4">
-              {[
-                { icon: Zap, label: "3+ years", sublabel: "Production exp." },
-                { icon: Zap, label: "3 languages", sublabel: "JP / EN / UZ" },
-                { icon: Zap, label: "99.9% SLA", sublabel: "Achieved in prod" },
-                { icon: Zap, label: "CI/CD", sublabel: "GitHub Actions" },
-              ].map((stat, i) => (
-                <div
-                  key={i}
-                  className="card p-4 text-center"
-                >
-                  <div className="text-lg font-bold text-white mb-0.5">
+              {content.stats.map((stat, i) => (
+                <div key={i} className="card p-4 text-center">
+                  <div className="text-lg font-bold text-slate-900 dark:text-white mb-0.5">
                     {stat.label}
                   </div>
-                  <div className="text-xs text-slate-500">{stat.sublabel}</div>
+                  <div className="text-xs text-slate-400 dark:text-slate-500">{stat.sub}</div>
                 </div>
               ))}
             </div>

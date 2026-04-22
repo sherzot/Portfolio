@@ -5,120 +5,144 @@
 @tailwind utilities;
 
 @layer base {
+  /* ─── Dark mode (default) ─── */
   :root {
     --bg-primary: #060b18;
     --bg-card: #0d1525;
-    --bg-card-hover: #111d35;
     --border: rgba(255, 255, 255, 0.08);
-    --border-accent: rgba(96, 165, 250, 0.3);
     --accent: #60a5fa;
-    --accent-glow: rgba(96, 165, 250, 0.15);
   }
 
-  * {
-    @apply border-slate-800;
+  /* ─── Light mode ─── */
+  :root.light,
+  html:not(.dark) {
+    --bg-primary: #f8fafc;
+    --bg-card: #ffffff;
+    --border: rgba(0, 0, 0, 0.08);
+    --accent: #2563eb;
   }
 
   html {
     scroll-behavior: smooth;
   }
 
+  /* Dark mode body */
+  .dark body {
+    @apply bg-[#060b18] text-slate-100;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(96, 165, 250, 0.08), transparent),
+      radial-gradient(ellipse 60% 40% at 90% 80%, rgba(99, 102, 241, 0.05), transparent);
+    background-attachment: fixed;
+  }
+
+  /* Light mode body */
   body {
-    @apply bg-[#060b18] text-slate-100 font-sans antialiased;
-    background-image: radial-gradient(
-        ellipse 80% 50% at 50% -20%,
-        rgba(96, 165, 250, 0.08),
-        transparent
-      ),
-      radial-gradient(
-        ellipse 60% 40% at 90% 80%,
-        rgba(99, 102, 241, 0.05),
-        transparent
-      );
+    @apply font-sans antialiased transition-colors duration-300;
+  }
+
+  html:not(.dark) body {
+    @apply bg-slate-50 text-slate-900;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(37, 99, 235, 0.04), transparent),
+      radial-gradient(ellipse 60% 40% at 90% 80%, rgba(99, 102, 241, 0.03), transparent);
     background-attachment: fixed;
   }
 
   ::selection {
-    @apply bg-blue-500/30 text-white;
+    @apply bg-blue-500/30 text-current;
   }
 
-  ::-webkit-scrollbar {
-    width: 6px;
-  }
-
-  ::-webkit-scrollbar-track {
-    @apply bg-slate-950;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    @apply bg-slate-700 rounded-full;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    @apply bg-slate-600;
-  }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { @apply bg-slate-950 dark:bg-slate-950; }
+  ::-webkit-scrollbar-thumb { @apply bg-slate-700 rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-slate-600; }
 }
 
 @layer components {
   .section-title {
-    @apply text-3xl md:text-4xl font-bold text-white tracking-tight;
+    @apply text-3xl md:text-4xl font-bold tracking-tight
+           text-slate-900 dark:text-white;
   }
 
   .section-subtitle {
-    @apply text-slate-400 mt-3 text-base md:text-lg leading-relaxed;
+    @apply mt-3 text-base md:text-lg leading-relaxed
+           text-slate-500 dark:text-slate-400;
   }
 
+  /* Card — light & dark */
   .card {
-    @apply rounded-2xl border border-slate-800/60 bg-slate-900/40 backdrop-blur-sm
-           transition-all duration-300 hover:border-slate-700/80 hover:bg-slate-900/60;
+    @apply rounded-2xl border transition-all duration-300
+           bg-white border-slate-200 hover:border-slate-300 hover:shadow-md
+           dark:bg-slate-900/40 dark:border-slate-800/60 dark:backdrop-blur-sm
+           dark:hover:border-slate-700/80 dark:hover:bg-slate-900/60;
   }
 
   .badge {
     @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium
-           bg-blue-500/10 text-blue-400 border border-blue-500/20;
+           bg-blue-50 text-blue-700 border border-blue-200
+           dark:bg-blue-500/10 dark:text-blue-400 dark:border-blue-500/20;
   }
 
   .badge-green {
     @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium
-           bg-emerald-500/10 text-emerald-400 border border-emerald-500/20;
+           bg-emerald-50 text-emerald-700 border border-emerald-200
+           dark:bg-emerald-500/10 dark:text-emerald-400 dark:border-emerald-500/20;
   }
 
   .badge-amber {
     @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium
-           bg-amber-500/10 text-amber-400 border border-amber-500/20;
+           bg-amber-50 text-amber-700 border border-amber-200
+           dark:bg-amber-500/10 dark:text-amber-400 dark:border-amber-500/20;
   }
 
   .btn-primary {
     @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm
-           bg-blue-500 hover:bg-blue-400 text-white transition-all duration-200
-           hover:shadow-lg hover:shadow-blue-500/25 active:scale-95;
+           bg-blue-600 hover:bg-blue-500 text-white transition-all duration-200
+           hover:shadow-lg hover:shadow-blue-500/25 active:scale-95
+           dark:bg-blue-500 dark:hover:bg-blue-400;
   }
 
   .btn-secondary {
     @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm
-           border border-slate-700 hover:border-slate-600 text-slate-300 hover:text-white
-           transition-all duration-200 hover:bg-slate-800/60 active:scale-95;
+           border transition-all duration-200 active:scale-95
+           border-slate-300 text-slate-700 hover:border-slate-400 hover:bg-slate-100
+           dark:border-slate-700 dark:text-slate-300 dark:hover:text-white
+           dark:hover:border-slate-600 dark:hover:bg-slate-800/60;
   }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent
+           dark:from-blue-400 dark:to-indigo-400;
+  }
+
+  /* Section alternate bg */
+  .section-alt {
+    @apply bg-slate-100/60 dark:bg-white/[0.01];
+  }
+
+  /* Subcard inside cards */
+  .subcard {
+    @apply rounded-xl p-4 border
+           bg-slate-50 border-slate-200
+           dark:bg-slate-800/30 dark:border-slate-700/30;
   }
 }
 
 @layer utilities {
-  .animate-delay-100 {
-    animation-delay: 100ms;
-  }
-
-  .animate-delay-200 {
-    animation-delay: 200ms;
-  }
-
-  .animate-delay-300 {
-    animation-delay: 300ms;
-  }
-
-  .animate-delay-400 {
-    animation-delay: 400ms;
-  }
+  .animate-delay-100 { animation-delay: 100ms; }
+  .animate-delay-200 { animation-delay: 200ms; }
+  .animate-delay-300 { animation-delay: 300ms; }
+  .animate-delay-400 { animation-delay: 400ms; }
 }
+
+/* Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in  { animation: fadeIn  0.6s ease-out forwards; }
+.animate-slide-up { animation: slideUp 0.6s ease-out forwards; }

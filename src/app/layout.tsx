@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
+import { ThemeProvider } from "@/context/ThemeContext";
 
 export const metadata: Metadata = {
   title: "Sherzod Musurmonov | Full Stack Engineer in Japan",
@@ -44,23 +45,14 @@ export const metadata: Metadata = {
       "Laravel + React + AWS で日本企業のシステム近代化を担当するフルスタックエンジニア",
     images: ["https://sherdev.netlify.app/og-image.png"],
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-    },
-  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="ja" className="scroll-smooth">
+    <html lang="ja" className="scroll-smooth dark">
       <head>
         <script
           type="application/ld+json"
@@ -73,16 +65,7 @@ export default function RootLayout({
               jobTitle: "Full Stack Engineer",
               url: "https://sherdev.netlify.app",
               email: "sherzodmusurmonov81@gmail.com",
-              knowsAbout: [
-                "Laravel",
-                "React",
-                "Next.js",
-                "TypeScript",
-                "AWS",
-                "Docker",
-                "PostgreSQL",
-                "OpenAI API",
-              ],
+              knowsAbout: ["Laravel", "React", "Next.js", "TypeScript", "AWS", "Docker", "Supabase", "OpenAI API"],
               knowsLanguage: [
                 { "@type": "Language", name: "Japanese", alternateName: "ja" },
                 { "@type": "Language", name: "English", alternateName: "en" },
@@ -99,7 +82,9 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <LanguageProvider>{children}</LanguageProvider>
+        <ThemeProvider>
+          <LanguageProvider>{children}</LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
