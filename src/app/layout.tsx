@@ -61,7 +61,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               name: "Sherzod Musurmonov",
-              alternateName: "シェルゾド・ムスルモノフ",
+              alternateName: "シェルゾト・ムスルモノフ",
               jobTitle: "Full Stack Engineer",
               url: "https://sherdev.netlify.app",
               email: "sherzodmusurmonov81@gmail.com",
