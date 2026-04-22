@@ -10,7 +10,7 @@ export const translations = {
       contact: "お問い合わせ",
     },
     hero: {
-      greeting: "シェルゾド・ムスルモノフ",
+      greeting: "シェルゾト・ムスルモノフ",
       title: "フルスタックエンジニア",
       subtitle:
         "日本企業で3年間、レガシーシステム近代化とAI統合に従事。SHIFT_JIS→UTF-8移行・SQL Server→PostgreSQL再設計・Laravel + OpenAI APIによる業務自動化を実装。PL/PMを目指して、現在はマルチテナントSaaSの設計・構築に注力中。",
