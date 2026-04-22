@@ -1,0 +1,216 @@
+export type Lang = "ja" | "en" | "uz";
+
+export const translations = {
+  ja: {
+    nav: {
+      about: "自己紹介",
+      skills: "技術スタック",
+      experience: "職務経歴",
+      projects: "プロジェクト",
+      contact: "お問い合わせ",
+    },
+    hero: {
+      greeting: "シェルゾド・ムスルモノフ",
+      title: "フルスタックエンジニア",
+      subtitle:
+        "日本企業で3年間、レガシーシステム近代化とAI統合に従事。SHIFT_JIS→UTF-8移行・SQL Server→PostgreSQL再設計・Laravel + OpenAI APIによる業務自動化を実装。PL/PMを目指して、現在はマルチテナントSaaSの設計・構築に注力中。",
+      cta_projects: "プロジェクトを見る",
+      cta_contact: "お問い合わせ",
+      available: "転職活動中",
+      location: "東京都在住",
+      languages: "日本語 ビジネスレベル｜英語 上級｜ウズベク語 母国語",
+    },
+    about: {
+      title: "自己紹介",
+      body: "ウズベキスタン出身のフルスタックエンジニアです。日本での3年間の実務経験を通じて、レガシーシステムの近代化・マイクロサービス設計・AI業務自動化に携わってきました。技術的な課題解決だけでなく、チームのプロセス改善にも積極的に取り組んでいます。",
+      vision_title: "キャリアビジョン",
+      vision_body:
+        "エンジニアとして培った技術力を基盤に、30歳までにPL/PMとしてプロダクト全体を牽引できるポジションを目指しています。現在は自社開発のSaaSプロダクトで設計・実装の両面を経験中です。",
+      learning_title: "学習中の技術",
+      learning: ["Kubernetes（進捗 30%）", "RAG / MCP パターン", "Go言語（マイクロサービス）"],
+    },
+    skills: {
+      title: "技術スタック",
+      subtitle: "実務・個人プロジェクトで継続的に使用している技術",
+      levels: {
+        daily: "実務で日常的に使用",
+        production: "実務経験あり",
+        years3: "実務経験3年",
+        learning: "学習中",
+      },
+    },
+    experience: {
+      title: "職務経歴",
+      subtitle: "日本での実務経験",
+    },
+    projects: {
+      title: "プロジェクト",
+      commercial_title: "💼 実務プロジェクト（商用）",
+      personal_title: "🔬 個人プロジェクト（技術検証・学習）",
+      status_wip: "開発中",
+      status_design: "設計段階",
+      github: "GitHub",
+      demo: "デモ",
+      situation: "課題",
+      task: "役割",
+      action: "実施",
+      result: "成果",
+    },
+    contact: {
+      title: "お問い合わせ",
+      subtitle: "採用・技術相談・コラボレーションなど、お気軽にご連絡ください。",
+      name: "お名前",
+      email: "メールアドレス",
+      message: "メッセージ",
+      send: "送信する",
+      or: "または",
+      direct_email: "メールで直接連絡",
+    },
+    footer: {
+      built_with: "Next.js 15 + TypeScript + Tailwind CSS で構築",
+      rights: "All rights reserved.",
+    },
+  },
+  en: {
+    nav: {
+      about: "About",
+      skills: "Skills",
+      experience: "Experience",
+      projects: "Projects",
+      contact: "Contact",
+    },
+    hero: {
+      greeting: "Sherzod Musurmonov",
+      title: "Full Stack Engineer",
+      subtitle:
+        "3 years in Japanese enterprise — legacy system modernization and AI integration. Specialized in SHIFT_JIS→UTF-8 migration, SQL Server→PostgreSQL redesign, and Laravel + OpenAI API business automation. Working toward PL/PM role while building multi-tenant SaaS.",
+      cta_projects: "View Projects",
+      cta_contact: "Contact Me",
+      available: "Open to work",
+      location: "Based in Tokyo",
+      languages: "Japanese Business｜English Advanced｜Uzbek Native",
+    },
+    about: {
+      title: "About Me",
+      body: "Full Stack Engineer from Uzbekistan with 3 years of hands-on experience in Japan. I specialize in legacy system modernization, microservices architecture, and AI-powered business automation. Beyond solving technical challenges, I actively contribute to team process improvements.",
+      vision_title: "Career Vision",
+      vision_body:
+        "Building on my engineering foundation, I aim to grow into a PL/PM role by age 30 — leading product development end-to-end. Currently deepening both design and implementation experience through independent SaaS projects.",
+      learning_title: "Currently Learning",
+      learning: ["Kubernetes (30% progress)", "RAG / MCP patterns", "Go (microservices)"],
+    },
+    skills: {
+      title: "Tech Stack",
+      subtitle: "Technologies I use consistently in production and personal projects",
+      levels: {
+        daily: "Daily use in production",
+        production: "Production experience",
+        years3: "3 years production experience",
+        learning: "Currently learning",
+      },
+    },
+    experience: {
+      title: "Experience",
+      subtitle: "Professional experience in Japan",
+    },
+    projects: {
+      title: "Projects",
+      commercial_title: "💼 Commercial Projects",
+      personal_title: "🔬 Personal Projects (R&D)",
+      status_wip: "In Development",
+      status_design: "Design Stage",
+      github: "GitHub",
+      demo: "Demo",
+      situation: "Situation",
+      task: "Role",
+      action: "Action",
+      result: "Result",
+    },
+    contact: {
+      title: "Contact",
+      subtitle: "Open to hiring inquiries, technical consulting, and collaboration.",
+      name: "Name",
+      email: "Email",
+      message: "Message",
+      send: "Send Message",
+      or: "or",
+      direct_email: "Email directly",
+    },
+    footer: {
+      built_with: "Built with Next.js 15 + TypeScript + Tailwind CSS",
+      rights: "All rights reserved.",
+    },
+  },
+  uz: {
+    nav: {
+      about: "Men haqimda",
+      skills: "Ko'nikmalar",
+      experience: "Tajriba",
+      projects: "Loyihalar",
+      contact: "Aloqa",
+    },
+    hero: {
+      greeting: "Sherzod Musurmonov",
+      title: "Full Stack Dasturchi",
+      subtitle:
+        "Yaponiyada 3 yil davomida eski tizimlarni modernizatsiya qilish va AI integratsiya bilan shug'ullandim. SHIFT_JIS→UTF-8 migratsiya, SQL Server→PostgreSQL qayta loyihalash va Laravel + OpenAI API bilan biznes avtomatizatsiyani joriy etdim. Hozir PL/PM yo'nalishida rivojlanmoqdaman.",
+      cta_projects: "Loyihalarni ko'rish",
+      cta_contact: "Bog'lanish",
+      available: "Ish izlamoqdaman",
+      location: "Tokio shahri",
+      languages: "Yaponcha Biznes darajasi｜Inglizcha Yuqori｜O'zbek Ona tili",
+    },
+    about: {
+      title: "Men Haqimda",
+      body: "O'zbekistondan kelgan Full Stack dasturchi. Yaponiyada 3 yillik amaliy tajribam davomida eski tizimlarni modernizatsiya qilish, mikroservis arxitekturasi va AI yordamida biznes jarayonlarini avtomatlashtirish bilan shug'ullandim.",
+      vision_title: "Karyera Maqsadi",
+      vision_body:
+        "30 yoshgacha PL/PM sifatida mahsulot ishlanmasini to'liq boshqarish maqsadim bor. Hozir mustaqil SaaS loyihalarda dizayn va implementatsiya tajribasini oshirib bormoqdaman.",
+      learning_title: "O'rganayotgan texnologiyalar",
+      learning: ["Kubernetes (30% tayyorlik)", "RAG / MCP naqshlari", "Go tili (mikroservislar)"],
+    },
+    skills: {
+      title: "Texnik Ko'nikmalar",
+      subtitle: "Ishlab chiqarish va shaxsiy loyihalarda doimiy ishlatadigan texnologiyalar",
+      levels: {
+        daily: "Kunlik ishlatiladi",
+        production: "Ishlab chiqarish tajribasi",
+        years3: "3 yillik ishlab chiqarish tajribasi",
+        learning: "O'rganilmoqda",
+      },
+    },
+    experience: {
+      title: "Ish Tajribasi",
+      subtitle: "Yaponiyada professional tajriba",
+    },
+    projects: {
+      title: "Loyihalar",
+      commercial_title: "💼 Tijorat Loyihalari",
+      personal_title: "🔬 Shaxsiy Loyihalar (Tadqiqot)",
+      status_wip: "Ishlanmoqda",
+      status_design: "Loyihalash bosqichida",
+      github: "GitHub",
+      demo: "Demo",
+      situation: "Vaziyat",
+      task: "Rol",
+      action: "Bajarilgan ishlar",
+      result: "Natijalar",
+    },
+    contact: {
+      title: "Bog'lanish",
+      subtitle: "Ish takliflari, texnik maslahat va hamkorlik uchun murojaat qiling.",
+      name: "Ism",
+      email: "Elektron pochta",
+      message: "Xabar",
+      send: "Yuborish",
+      or: "yoki",
+      direct_email: "To'g'ridan-to'g'ri yozing",
+    },
+    footer: {
+      built_with: "Next.js 15 + TypeScript + Tailwind CSS bilan qurilgan",
+      rights: "Barcha huquqlar himoyalangan.",
+    },
+  },
+} as const;
+
+export type Translations = typeof translations.ja;
