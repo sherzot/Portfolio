@@ -28,4 +28,5 @@ declare module "lucide-react" {
   export const Target: Icon;
   export const X: Icon;
   export const Zap: Icon;
+  export const Building2: Icon;
 }
