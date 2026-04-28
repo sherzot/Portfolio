@@ -176,18 +176,18 @@ export const experienceData = [
     achievements: {
       ja: [
         "コーポレートサイト刷新：チームが3名→1名に縮小する中、主担当として引き継ぎ。お問い合わせページ新設・派遣法対応コンテンツ追加・UI/UX改善を一人で推進 → サイトアクセス数 月間25%増加",
-        "新しごとナビ・マッチングシステムのリニューアル：会員登録フロー簡素化・エージェント管理画面新規開発・AWS EC2サーバー刷新・セキュリティ強化 → 応募数 0〜5件/日 → 最大8件/日（+300%）、ページ滞在時間25%向上、バグ発生率30%削減、稼働率99.9%達成",
-        "旧しごとナビ・基幹システム大規模修正：約20年前のASPシステム（SHIFT JIS環境）をUI/UX段階的刷新。SHIFT JIS→UTF-8移行後もデータ整合性100%維持 → 社内ユーザー操作時間30%短縮、継続利用率1.2倍に向上",
+        "新しごとナビ・マッチングシステムのEnd-to-End開発：要件定義・設計・開発・テスト・本番運用まで一貫して担当。会員登録フロー簡素化・エージェント管理画面新規開発・AWS EC2刷新・セキュリティ強化 → 応募数 0〜5件/日 → 最大8件/日（+300%）、稼働率99.9%達成",
+        "旧しごとナビ・基幹システム大規模修正：約20年前のASPシステム（SHIFT JIS環境）をUI/UX段階的刷新。SHIFT JIS→UTF-8移行後もデータ整合性100%維持 → 社内ユーザー操作時間30%短縮、継続利用率1.2倍向上",
       ],
       en: [
         "Corporate site renewal: Took over as sole developer after team shrank from 3 to 1. Created contact page, added labor law content, improved UI/UX → Monthly site traffic +25%",
-        "Shigoto Navi matching system overhaul: Simplified registration flow, built agent dashboard, upgraded AWS EC2, strengthened security → Applications 0–5/day → max 8/day (+300%), dwell time +25%, bug rate -30%, 99.9% uptime",
-        "Legacy system large-scale refactor: Gradually modernized 20-year-old ASP system (SHIFT JIS). Migrated to UTF-8 with 100% data integrity → Internal user operation time -30%, long-term user retention rate ×1.2",
+        "Shigoto Navi end-to-end rebuild: Led requirements, design, development, testing, and production operations. Simplified registration, built agent dashboard, upgraded AWS EC2 → Applications 0–5/day → max 8/day (+300%), 99.9% uptime",
+        "Legacy system large-scale refactor: Modernized 20-year-old ASP system (SHIFT JIS). Migrated to UTF-8 with 100% data integrity → Internal user operation time -30%, retention ×1.2",
       ],
       uz: [
-        "Korporativ sayt yangilanishi: Jamoa 3 kishidan 1 kishiga qisqarishi bilan yagona mas'ul sifatida qabul qildim. Aloqa sahifasi yaratdim, mehnat qonunchiligiga mos kontent qo'shdim → Oylik tashrif +25%",
-        "Shigoto Navi tizimini qayta ishladim: Ro'yxatdan o'tish jarayonini soddalashtirdim, agent boshqaruv paneli yaratdim, AWS EC2 yangiladim → Kunlik arizalar 0-5 dan maksimal 8 taga (+300%), 99.9% barqarorlik",
-        "Eski tizim katta refaktoring: 20 yillik ASP tizimini (SHIFT JIS) bosqichma-bosqich modernizatsiya. UTF-8 ga o'tish — ma'lumot yaxlitligi 100% → Ichki foydalanuvchilar operatsion vaqti -30%",
+        "Korporativ sayt yangilanishi: Jamoa 3 kishidan 1 kishiga qisqarishi bilan yagona mas'ul sifatida qabul qildim → Oylik tashrif +25%",
+        "Shigoto Navi End-to-End ishlanma: Talablardan, loyihalash, ishlanma, test va ishlab chiqarishgacha to'liq javobgar. Agent paneli, AWS EC2 yangilash → Arizalar +300%, 99.9% barqarorlik",
+        "Eski tizim refaktoring: 20 yillik ASP (SHIFT JIS) ni modernizatsiya. UTF-8 ga o'tish — ma'lumot yaxlitligi 100% → Operatsion vaqt -30%, davomiylik ×1.2",
       ],
     },
     stack: ["Laravel", "PHP", "JavaScript", "AWS EC2", "MySQL", "SQL Server", "Bootstrap5", "ASP", "Docker"],
@@ -216,18 +216,18 @@ export const experienceData = [
     achievements: {
       ja: [
         "公式Webサイト新規構築（WordPress/PHP/Linux）：要件定義〜運用まで一貫担当。Linuxサーバー環境整備・アクセス解析導入 → 公開3ヶ月で月間アクセス5,000件、問い合わせ件数2倍、検索流入30%増",
-        "オンライン教育プラットフォーム構築：PHP + MySQL + WordPressで学習ページ・ダッシュボードを新規実装。教師・生徒の学習進捗可視化、AWSで負荷テスト・セキュリティ強化（認証・アクセス制御）",
+        "オンライン教育プラットフォーム構築：PHP + MySQL + WordPressで学習ページ・ダッシュボードを新規実装。教師・生徒の学習進捗可視化、AWSで負荷テスト・セキュリティ強化",
         "求職者×企業マッチングプラットフォーム構築：求人検索・応募・面接予約・チャット機能を統合。管理者用ダッシュボード設計・高齢者にも使いやすいアクセシブルUIを実装",
       ],
       en: [
-        "Built official website from scratch (WordPress/PHP/Linux): End-to-end from requirements to operations. Set up Linux server, added analytics → 5,000 monthly visits in 3 months, inquiries ×2, search traffic +30%",
-        "Online education platform: Built learning pages & dashboards with PHP + MySQL + WordPress. Visualized teacher-student progress, ran AWS load tests, strengthened security (auth & access control)",
-        "Job matching platform: Integrated job search, applications, interview booking & chat. Designed admin dashboard with accessible UI for elderly users",
+        "Built official website from scratch (WordPress/PHP/Linux): End-to-end from requirements to operations → 5,000 monthly visits in 3 months, inquiries ×2, search traffic +30%",
+        "Online education platform: Built learning pages & dashboards with PHP + MySQL + WordPress. Visualized teacher-student progress, AWS load tests, security hardening",
+        "Job matching platform: Integrated job search, applications, interview booking & chat. Designed admin dashboard with accessible UI for all age groups",
       ],
       uz: [
-        "Rasmiy veb-sayt yaratish (WordPress/PHP/Linux): Talablardan operatsiyagacha to'liq javobgar. Linux server va analitika sozladim → 3 oyda oylik 5,000 tashrif, so'rovlar 2 baravar, qidiruv trafigi +30%",
-        "Onlayn ta'lim platformasi: PHP + MySQL + WordPress bilan o'quv sahifalar va boshqaruv paneli yaratdim. O'qituvchi-talaba progressni vizualizatsiya, AWS yuk testi va xavfsizlik mustahkamladim",
-        "Ish qidirish platformasi: Ish qidirish, ariza, suhbat bron qilish va chat funksiyalarini birlashtirdim. Admin boshqaruv paneli va qulaylikka yo'naltirilgan UI joriy etdim",
+        "Rasmiy veb-sayt yaratish (WordPress/PHP/Linux): Talablardan operatsiyagacha to'liq javobgar → 3 oyda 5,000 tashrif, so'rovlar 2 baravar, qidiruv trafigi +30%",
+        "Onlayn ta'lim platformasi: PHP + MySQL bilan o'quv sahifalar va boshqaruv paneli. O'qituvchi-talaba progressini vizualizatsiya, AWS xavfsizlik mustahkamlash",
+        "Ish qidirish platformasi: Qidiruv, ariza, suhbat bron va chat birlashtirdim. Admin paneli va qulay UI joriy etdim",
       ],
     },
     stack: ["WordPress", "PHP", "MySQL", "Linux", "AWS", "Python", "JavaScript"],
@@ -237,9 +237,9 @@ export const experienceData = [
 export const commercialProjectsData = [
   {
     id: "shigoto-navi",
-    title: "「新しごとナビ」求人マッチングシステム刷新",
-    titleEn: "Shigoto Navi — Job Matching System Rebuild",
-    titleUz: "Shigoto Navi — Ish Qidirish Tizimini Modernizatsiya",
+    title: "「新しごとナビ」求人マッチングシステム End-to-End開発",
+    titleEn: "Shigoto Navi — Job Matching System (End-to-End)",
+    titleUz: "Shigoto Navi — Ish Qidirish Tizimi (End-to-End Ishlanma)",
     github: null,
     demo: null,
     stack: ["Laravel", "PHP", "JavaScript", "MySQL", "AWS EC2", "Bootstrap5", "Docker"],
@@ -247,7 +247,7 @@ export const commercialProjectsData = [
       ja: {
         situation:
           "既存サイトで応募数が1日最大5件・時には0件。会員登録フローが複雑で離脱率が高く、利用者満足度が低下。50代以上ユーザーが多く急な仕様変更も困難な状況。",
-        task: "フルスタックエンジニアとして、要件定義〜本番移行まで3名体制で主担当。応募数増加・UX改善・安定稼働の3軸を同時に推進。",
+        task: "フルスタックエンジニアとして、要件定義〜本番移行まで主担当。応募数増加・UX改善・安定稼働の3軸を同時に推進。",
         action: [
           "会員登録フローを簡素化し、求人検索導線を再設計",
           "エージェント向け管理画面とダッシュボードを新規開発し、求人票更新業務を効率化",
@@ -265,7 +265,7 @@ export const commercialProjectsData = [
       en: {
         situation:
           "Existing site had max 5 applications/day, sometimes zero. Complex registration flow caused high drop-off. Majority of users were 50+, making sudden changes risky.",
-        task: "Lead developer in a team of 3, responsible from requirements through production migration. Three simultaneous goals: increase applications, improve UX, ensure stability.",
+        task: "Lead developer responsible from requirements through production migration. Three simultaneous goals: increase applications, improve UX, ensure stability.",
         action: [
           "Simplified registration flow and redesigned job search navigation",
           "Built new agent management dashboard to streamline job posting updates",
@@ -282,8 +282,8 @@ export const commercialProjectsData = [
       },
       uz: {
         situation:
-          "Mavjud saytda kuniga maksimal 5 ta ariza, ba'zida nol. Murakkab ro'yxatdan o'tish ko'p foydalanuvchi tark etishiga sabab bo'ldi. Foydalanuvchilarning ko'pchiligi 50+ yosh, keskin o'zgarishlar xavfli edi.",
-        task: "3 kishilik jamoada asosiy dasturchi, talablardan ishga tushirishgacha mas'ul. Uch maqsad: arizalarni oshirish, UX yaxshilash, barqarorlikni ta'minlash.",
+          "Mavjud saytda kuniga maksimal 5 ta ariza, ba'zida nol. Murakkab ro'yxatdan o'tish ko'p foydalanuvchi tark etishiga sabab bo'ldi. 50+ yoshli foydalanuvchilar ko'p, keskin o'zgarishlar xavfli.",
+        task: "Talablardan ishga tushirishgacha asosiy dasturchi. Uch maqsad: arizalarni oshirish, UX yaxshilash, barqarorlikni ta'minlash.",
         action: [
           "Ro'yxatdan o'tish jarayonini soddalashtirib, ish qidirish yo'nalishini qayta loyihalash",
           "Agent boshqaruv paneli va dashboard yaratib, ish e'lonlarini yangilash jarayonini optimallashtirish",
@@ -347,10 +347,10 @@ export const commercialProjectsData = [
       },
       uz: {
         situation:
-          "20 yillik ASP tizimi (SHIFT JIS muhiti). Eskirgan xavfsizlik va foydalanish qulayligi. Foydalanuvchilarning aksariyati o'rta yoshli, keskin UI o'zgarishlar xavfli.",
+          "20 yillik ASP tizimi (SHIFT JIS muhiti). Eskirgan xavfsizlik va foydalanish qulayligi. Foydalanuvchilarning aksariyati o'rta yoshli.",
         task: "Barqarorlikni saqlab, bosqichma-bosqich UI/UX modernizatsiyasini boshqardim va eski ma'lumotlar muvofiqligini ta'minladim.",
         action: [
-          "Eski ASP kodni saqlab, frontend va backend UI/UX ni bosqichma-bosqich yangiladim",
+          "Eski ASP kodni saqlab, UI/UX ni bosqichma-bosqich yangiladim",
           "Ish beruvchi va xodim ma'lumotlari boshqaruv sahifalarini qayta loyihaladim",
           "Forma kiritish va qidiruvni optimallashtirdim",
           "SHIFT JIS muhitini UTF-8 ga o'tkazdim, ma'lumotlar muvofiqligini ta'minladim",
@@ -361,6 +361,71 @@ export const commercialProjectsData = [
           "Tizim qoniqarlilik darajasi: ichki so'rovnoma +25%",
           "Eski ma'lumotlar yaxlitligi: migratsiyadan keyin 100%",
           "Uzoq muddatli foydalanuvchilar (10+ yil): davomiylik ×1.2",
+        ],
+      },
+    },
+  },
+  {
+    id: "monocenter-platform",
+    title: "ITセンター公式サイト・求人マッチングプラットフォーム構築",
+    titleEn: "IT Center Website & Job Matching Platform (End-to-End)",
+    titleUz: "IT Markazi Sayt va Ish Qidirish Platformasi (End-to-End)",
+    github: null,
+    demo: null,
+    stack: ["WordPress", "PHP", "MySQL", "Linux", "AWS", "Python", "JavaScript"],
+    star: {
+      ja: {
+        situation:
+          "政府支援のIT教育センター（サマルカンド）が公式Webサイトを持たず、オンライン認知度がほぼゼロ。求職者と企業をつなぐ仕組みも存在しなかった。",
+        task: "バックエンド・インフラリーダーとして、公式サイト・オンライン教育プラットフォーム・求人マッチングシステムの3つを要件定義〜本番運用まで一貫して担当。",
+        action: [
+          "WordPress/PHP/Linuxで公式サイトを新規構築。Linuxサーバー環境整備・アクセス解析導入",
+          "PHP + MySQL + WordPressでオンライン教育プラットフォームを開発。教師・生徒の学習進捗を可視化",
+          "AWSで負荷テスト・認証・アクセス制御を含むセキュリティ強化を実施",
+          "求人検索・応募・面接予約・チャット機能を統合した求人マッチングプラットフォームを構築",
+          "高齢者にも使いやすいアクセシブルUI・管理者向けダッシュボードを設計・実装",
+        ],
+        result: [
+          "公式サイト：公開3ヶ月で月間アクセス5,000件、問い合わせ件数2倍、検索流入30%増",
+          "オンライン教育プラットフォーム：全教師・生徒の学習進捗をリアルタイム可視化",
+          "求人マッチング：求職者の応募プロセスを完全デジタル化",
+          "AWS負荷テスト・セキュリティ強化：安定稼働・不正アクセスゼロを実現",
+        ],
+      },
+      en: {
+        situation:
+          "Government-supported IT center in Samarkand had no official website and near-zero online presence. No system existed to connect job seekers with companies.",
+        task: "As Backend & Infrastructure Lead, owned three systems end-to-end: official website, online education platform, and job matching platform — from requirements through production.",
+        action: [
+          "Built official website from scratch with WordPress/PHP/Linux; set up Linux server and analytics",
+          "Developed online education platform with PHP + MySQL; visualized teacher-student learning progress",
+          "Ran AWS load tests; implemented authentication and access control security hardening",
+          "Built job matching platform integrating job search, applications, interview booking, and chat",
+          "Designed accessible UI for all ages and admin dashboard for operations staff",
+        ],
+        result: [
+          "Official site: 5,000 monthly visits within 3 months, inquiries ×2, search traffic +30%",
+          "Education platform: real-time learning progress visibility for all teachers and students",
+          "Job matching: fully digitized application process for job seekers",
+          "AWS security: stable operation with zero unauthorized access incidents",
+        ],
+      },
+      uz: {
+        situation:
+          "Samarqanddagi hukumat IT markazi rasmiy veb-saytga ega emas edi va onlayn mavjudligi deyarli nol. Ish izlovchilarni kompaniyalar bilan bog'lovchi tizim yo'q edi.",
+        task: "Backend va Infra rahbari sifatida uchta tizimni End-to-End boshqardim: rasmiy sayt, onlayn ta'lim platformasi va ish qidirish platformasi.",
+        action: [
+          "WordPress/PHP/Linux bilan rasmiy sayt yaratdim; Linux server va analitika sozladim",
+          "PHP + MySQL bilan onlayn ta'lim platformasi yaratdim; o'qituvchi-talaba progressini vizualizatsiya",
+          "AWS yuk testi, autentifikatsiya va kirish nazoratini joriy etdim",
+          "Ish qidirish, ariza, suhbat bron va chat birlashtirgan platforma yaratdim",
+          "Barcha yoshlar uchun qulay UI va admin boshqaruv paneli loyihaladim",
+        ],
+        result: [
+          "Rasmiy sayt: 3 oyda oylik 5,000 tashrif, so'rovlar ×2, qidiruv trafigi +30%",
+          "Ta'lim platformasi: barcha o'qituvchi va talabalar uchun real vaqt progressi",
+          "Ish qidirish: ariza jarayonini to'liq raqamlashtirdim",
+          "AWS xavfsizlik: barqaror ishlash, nol ruxsatsiz kirish",
         ],
       },
     },
@@ -381,9 +446,9 @@ export const personalProjectsData = [
     demo: null,
     stack: ["Laravel 11", "Filament", "React", "TypeScript", "PostgreSQL", "Supabase", "Docker", "OpenAI API"],
     description: {
-      ja: "Laravel + FilamentによるマルチテナントCRM。AI機能（リード優先順位付け・自動メール生成）を統合中。目的：マルチテナントアーキテクチャとAI統合の技術検証。\n\n現在の進捗：認証・マルチテナント基盤完成、AI機能実装中。",
-      en: "Multi-tenant CRM built with Laravel + Filament. Integrating AI features (lead prioritization, automated email generation). Goal: validating multi-tenant architecture and AI integration patterns.\n\nCurrent: Auth & multi-tenant foundation complete, AI features in progress.",
-      uz: "Laravel + Filament bilan qurilgan ko'p ijarachilik CRM. AI xususiyatlari integratsiya qilinmoqda.\n\nHozirgi holat: Autentifikatsiya va ko'p ijarachilik asosi tayyor, AI funksiyalar ishlanmoqda.",
+      ja: "Laravel + FilamentによるマルチテナントCRM。AI機能（リード優先順位付け・自動メール生成）を統合中。\n\n現在の進捗：認証・マルチテナント基盤完成、AI機能実装中。",
+      en: "Multi-tenant CRM built with Laravel + Filament. Integrating AI features (lead prioritization, automated email generation).\n\nCurrent: Auth & multi-tenant foundation complete, AI features in progress.",
+      uz: "Laravel + Filament bilan ko'p ijarachilik CRM. AI xususiyatlari integratsiya qilinmoqda.\n\nHozirgi holat: Asosiy tuzilma tayyor, AI funksiyalar ishlanmoqda.",
     },
   },
   {
@@ -395,13 +460,13 @@ export const personalProjectsData = [
       uz: "AI yordamida Ish Qidirish Platformasi (Ishlanmoqda)",
     },
     status: "wip" as const,
-    github: "https://github.com/sherzot/JobMatcher",
+    github: "https://github.com/sherzot/jobmatcher-platform",
     demo: null,
     stack: ["Next.js 15", "TypeScript", "Laravel", "Supabase", "PostgreSQL", "OpenAI API", "Docker"],
     description: {
       ja: "Career OS + ATSワークフロー + AIマッチングを統合したプラットフォーム。求職者と企業のミスマッチを最小化することを目的とした技術検証プロジェクト。",
       en: "Platform integrating Career OS + ATS workflow + AI matching. A technical validation project aimed at minimizing candidate-company mismatch.",
-      uz: "Career OS + ATS ish jarayoni + AI moslashuvini birlashtirgan platforma. Nomzod va kompaniya o'rtasidagi nomuvofiqlikni minimallashtirish loyihasi.",
+      uz: "Career OS + ATS ish jarayoni + AI moslashuvini birlashtirgan platforma. Nomzod va kompaniya nomuvofiqligini minimallashtirish loyihasi.",
     },
   },
   {
@@ -413,13 +478,31 @@ export const personalProjectsData = [
       uz: "AI Biznes Yordamchisi (Loyihalash bosqichida)",
     },
     status: "design" as const,
-    github: "https://github.com/sherzot",
+    github: "https://github.com/sherzot/ai-business-concierge",
     demo: null,
     stack: ["Next.js 15", "TypeScript", "Go", "Supabase", "OpenAI API", "Claude API", "RAG", "MCP"],
     description: {
       ja: "RAG + MCPアーキテクチャを活用した業務特化型AIアシスタント。Claude Code + Go言語学習の実践プロジェクトとして設計中。",
       en: "Business-specialized AI assistant leveraging RAG + MCP architecture. Designed as a hands-on Claude Code + Go learning project.",
-      uz: "RAG + MCP arxitekturasidan foydalanadigan biznesga ixtisoslashgan AI yordamchisi. Claude Code + Go tili o'rganish loyihasi.",
+      uz: "RAG + MCP arxitekturasidan foydalanadigan biznesga ixtisoslashgan AI yordamchisi. Claude Code + Go o'rganish loyihasi.",
+    },
+  },
+  {
+    id: "notion-clone",
+    title: "Notion Clone",
+    subtitle: {
+      ja: "Notionクローン・ドキュメント管理ツール（開発中）",
+      en: "Notion-style Document Management Tool (In Development)",
+      uz: "Notion uslubidagi Hujjat Boshqaruv Vositasi (Ishlanmoqda)",
+    },
+    status: "wip" as const,
+    github: "https://github.com/sherzot/Notion",
+    demo: null,
+    stack: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS", "Tiptap", "PostgreSQL"],
+    description: {
+      ja: "NotionライクなブロックエディタとドキュメントDB機能を持つツールを自作。リアルタイムコラボ・ネスト構造・Supabase連携を技術検証中。",
+      en: "Building a Notion-style block editor with document DB features. Validating real-time collaboration, nested structures, and Supabase integration.",
+      uz: "Notion uslubidagi blok muharrir va hujjat DB funksiyali vosita. Real vaqt hamkorlik, ichki tuzilma va Supabase integratsiyasini tekshiryapman.",
     },
   },
 ];

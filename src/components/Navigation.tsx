@@ -80,7 +80,7 @@ export function Navigation() {
 
           {/* Right controls */}
           <div className="flex items-center gap-2">
-            {/* Resume — view only (no download attr) */}
+            {/* Resume — view only */}
             <a
               href={RESUME_FOLDER_URL}
               target="_blank"
@@ -112,7 +112,7 @@ export function Navigation() {
               ))}
             </div>
 
-            {/* Theme toggle: Sun = light mode'ga o'tish, Moon = dark mode'ga o'tish */}
+            {/* Theme toggle */}
             <button
               onClick={toggleTheme}
               className="p-2 rounded-xl transition-all duration-200

@@ -20,18 +20,14 @@ export function Hero() {
       className="relative min-h-screen flex flex-col justify-center px-4 sm:px-6 overflow-hidden"
     >
       {/* Background decorations */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        aria-hidden="true"
-      >
+      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-blue-500/5 blur-3xl" />
         <div className="absolute bottom-1/3 right-1/4 w-[400px] h-[400px] rounded-full bg-indigo-500/5 blur-3xl" />
-        {/* Grid pattern */}
         <div
           className="absolute inset-0 opacity-[0.015]"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
+              "linear-gradient(rgba(100,100,100,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(100,100,100,0.15) 1px, transparent 1px)",
             backgroundSize: "60px 60px",
           }}
         />
@@ -40,15 +36,19 @@ export function Hero() {
       <div className="relative max-w-6xl mx-auto w-full pt-24 pb-16">
         {/* Status badge */}
         <div className="animate-fade-in mb-8">
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full
+                           bg-emerald-50 border border-emerald-200 text-emerald-700
+                           dark:bg-emerald-500/10 dark:border-emerald-500/20 dark:text-emerald-400
+                           text-sm font-medium">
+            <span className="w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-pulse" />
             {t.hero.available}
           </span>
         </div>
 
         {/* Main heading */}
         <div className="animate-slide-up animate-delay-100">
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white leading-[1.1] mb-4">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight
+                         text-slate-900 dark:text-white leading-[1.1] mb-4">
             {t.hero.greeting}
           </h1>
           <div className="flex items-center gap-3 mb-8">
@@ -58,22 +58,24 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Subtitle — the differentiated pitch */}
+        {/* Subtitle */}
         <div className="animate-slide-up animate-delay-200 max-w-2xl">
-          <p className="text-slate-300 text-base sm:text-lg leading-relaxed mb-8 border-l-2 border-blue-500/50 pl-4">
+          <p className="text-slate-600 dark:text-slate-300 text-base sm:text-lg leading-relaxed mb-8
+                        border-l-2 border-blue-500/50 pl-4">
             {t.hero.subtitle}
           </p>
         </div>
 
         {/* Meta info */}
-        <div className="animate-slide-up animate-delay-300 flex flex-wrap items-center gap-4 text-sm text-slate-400 mb-10">
+        <div className="animate-slide-up animate-delay-300 flex flex-wrap items-center gap-4
+                        text-sm text-slate-500 dark:text-slate-400 mb-10">
           <span className="flex items-center gap-1.5">
-            <MapPin size={14} className="text-blue-400" />
+            <MapPin size={14} className="text-blue-600 dark:text-blue-400" />
             {t.hero.location}
           </span>
-          <span className="w-1 h-1 rounded-full bg-slate-600" />
+          <span className="w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-600" />
           <span className="flex items-center gap-1.5">
-            <Sparkles size={14} className="text-blue-400" />
+            <Sparkles size={14} className="text-blue-600 dark:text-blue-400" />
             {t.hero.languages}
           </span>
         </div>
@@ -101,8 +103,8 @@ export function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce opacity-40">
-        <ArrowDown size={20} className="text-slate-400" />
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce opacity-30 dark:opacity-40">
+        <ArrowDown size={20} className="text-slate-500 dark:text-slate-400" />
       </div>
     </section>
   );

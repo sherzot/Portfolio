@@ -15,7 +15,6 @@ export function Contact() {
     const form = e.currentTarget;
     const data = new FormData(form);
 
-    // Using Netlify Forms (free, no extra setup needed with netlify.toml)
     try {
       await fetch("/", {
         method: "POST",
@@ -39,13 +38,13 @@ export function Contact() {
 
         {status === "sent" ? (
           <div className="card p-8 text-center">
-            <CheckCircle size={48} className="text-emerald-400 mx-auto mb-4" />
-            <h3 className="text-lg font-semibold text-white mb-2">
+            <CheckCircle size={48} className="text-emerald-500 dark:text-emerald-400 mx-auto mb-4" />
+            <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">
               {t.contact.send}!
             </h3>
             <button
               onClick={() => setStatus("idle")}
-              className="mt-4 text-sm text-blue-400 hover:text-blue-300 transition-colors"
+              className="mt-4 text-sm text-blue-600 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300 transition-colors"
             >
               ← Back
             </button>
@@ -64,7 +63,7 @@ export function Contact() {
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-sm font-medium text-slate-300 mb-1.5"
+                  className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5"
                 >
                   {t.contact.name}
                 </label>
@@ -74,17 +73,18 @@ export function Contact() {
                   type="text"
                   required
                   autoComplete="name"
-                  className="w-full px-4 py-2.5 rounded-xl bg-slate-800/60 border border-slate-700/60
-                             text-slate-100 placeholder-slate-500 text-sm
-                             focus:outline-none focus:ring-2 focus:ring-blue-500/40 focus:border-blue-500/40
-                             transition-all"
+                  className="w-full px-4 py-2.5 rounded-xl text-sm transition-all
+                             bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400
+                             focus:outline-none focus:ring-2 focus:ring-blue-500/30 focus:border-blue-400
+                             dark:bg-slate-800/60 dark:border-slate-700/60 dark:text-slate-100 dark:placeholder-slate-500
+                             dark:focus:ring-blue-500/40 dark:focus:border-blue-500/40"
                 />
               </div>
 
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-slate-300 mb-1.5"
+                  className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5"
                 >
                   {t.contact.email}
                 </label>
@@ -94,17 +94,18 @@ export function Contact() {
                   type="email"
                   required
                   autoComplete="email"
-                  className="w-full px-4 py-2.5 rounded-xl bg-slate-800/60 border border-slate-700/60
-                             text-slate-100 placeholder-slate-500 text-sm
-                             focus:outline-none focus:ring-2 focus:ring-blue-500/40 focus:border-blue-500/40
-                             transition-all"
+                  className="w-full px-4 py-2.5 rounded-xl text-sm transition-all
+                             bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400
+                             focus:outline-none focus:ring-2 focus:ring-blue-500/30 focus:border-blue-400
+                             dark:bg-slate-800/60 dark:border-slate-700/60 dark:text-slate-100 dark:placeholder-slate-500
+                             dark:focus:ring-blue-500/40 dark:focus:border-blue-500/40"
                 />
               </div>
 
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-sm font-medium text-slate-300 mb-1.5"
+                  className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5"
                 >
                   {t.contact.message}
                 </label>
@@ -113,10 +114,11 @@ export function Contact() {
                   name="message"
                   required
                   rows={5}
-                  className="w-full px-4 py-2.5 rounded-xl bg-slate-800/60 border border-slate-700/60
-                             text-slate-100 placeholder-slate-500 text-sm resize-none
-                             focus:outline-none focus:ring-2 focus:ring-blue-500/40 focus:border-blue-500/40
-                             transition-all"
+                  className="w-full px-4 py-2.5 rounded-xl text-sm resize-none transition-all
+                             bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400
+                             focus:outline-none focus:ring-2 focus:ring-blue-500/30 focus:border-blue-400
+                             dark:bg-slate-800/60 dark:border-slate-700/60 dark:text-slate-100 dark:placeholder-slate-500
+                             dark:focus:ring-blue-500/40 dark:focus:border-blue-500/40"
                 />
               </div>
 
@@ -140,14 +142,14 @@ export function Contact() {
             </form>
 
             {/* Direct contact alternatives */}
-            <div className="mt-6 pt-6 border-t border-slate-800">
-              <p className="text-center text-xs text-slate-500 mb-4">
+            <div className="mt-6 pt-6 border-t border-slate-200 dark:border-slate-800">
+              <p className="text-center text-xs text-slate-400 dark:text-slate-500 mb-4">
                 {t.contact.or}
               </p>
               <div className="flex justify-center gap-4">
                 <a
                   href="mailto:sherzodmusurmonov81@gmail.com"
-                  className="flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors"
+                  className="flex items-center gap-2 text-sm text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors"
                 >
                   <Mail size={14} />
                   {t.contact.direct_email}
@@ -156,7 +158,7 @@ export function Contact() {
                   href="https://github.com/sherzot"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors"
+                  className="flex items-center gap-2 text-sm text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors"
                 >
                   <Github size={14} />
                   GitHub

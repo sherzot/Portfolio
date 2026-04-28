@@ -13,7 +13,7 @@ export const translations = {
       greeting: "シェルゾト・ムスルモノフ",
       title: "フルスタックエンジニア",
       subtitle:
-        "日本企業で3年間、レガシーシステム近代化とAI統合に従事。SHIFT_JIS→UTF-8移行・SQL Server→PostgreSQL再設計・Laravel + OpenAI APIによる業務自動化を実装。PL/PMを目指して、現在はマルチテナントSaaSの設計・構築に注力中。",
+        "ウズベキスタンのIT教育センター（1年6ヶ月）と日本（1年6ヶ月）で、合計3年以上にわたって自社サービス・プロダクト開発に従事。要件定義・システム設計・開発・テスト・本番運用まで一貫して担当。プライベートでもAI CRM・求人マッチング・業務自動化システムを設計・構築中。PL/PMとして30歳までにプロダクト全体をリードすることを目指しています。",
       cta_projects: "プロジェクトを見る",
       cta_contact: "お問い合わせ",
       available: "転職活動中",
@@ -22,12 +22,8 @@ export const translations = {
     },
     about: {
       title: "自己紹介",
-      body: "ウズベキスタン出身のフルスタックエンジニアです。日本での3年間の実務経験を通じて、レガシーシステムの近代化・マイクロサービス設計・AI業務自動化に携わってきました。技術的な課題解決だけでなく、チームのプロセス改善にも積極的に取り組んでいます。",
       vision_title: "キャリアビジョン",
-      vision_body:
-        "エンジニアとして培った技術力を基盤に、30歳までにPL/PMとしてプロダクト全体を牽引できるポジションを目指しています。現在は自社開発のSaaSプロダクトで設計・実装の両面を経験中です。",
       learning_title: "学習中の技術",
-      learning: ["Kubernetes（進捗 30%）", "RAG / MCP パターン", "Go言語（マイクロサービス）"],
     },
     skills: {
       title: "技術スタック",
@@ -35,13 +31,13 @@ export const translations = {
       levels: {
         daily: "実務で日常的に使用",
         production: "実務経験あり",
-        years3: "実務経験3年",
+        years3: "実務経験3年以上",
         learning: "学習中",
       },
     },
     experience: {
       title: "職務経歴",
-      subtitle: "日本での実務経験",
+      subtitle: "ウズベキスタン・日本での実務経験",
     },
     projects: {
       title: "プロジェクト",
@@ -83,7 +79,7 @@ export const translations = {
       greeting: "Sherzod Musurmonov",
       title: "Full Stack Engineer",
       subtitle:
-        "3 years in Japanese enterprise — legacy system modernization and AI integration. Specialized in SHIFT_JIS→UTF-8 migration, SQL Server→PostgreSQL redesign, and Laravel + OpenAI API business automation. Working toward PL/PM role while building multi-tenant SaaS.",
+        "3+ years building in-house products end-to-end — from requirements & system design through development, testing, and production. Experience spans an IT education center in Uzbekistan (1.5 yrs) and Japanese companies (1.5 yrs). Independently building AI systems (CRM, job matching, automation). Targeting a PL/PM role by age 30.",
       cta_projects: "View Projects",
       cta_contact: "Contact Me",
       available: "Open to work",
@@ -92,12 +88,8 @@ export const translations = {
     },
     about: {
       title: "About Me",
-      body: "Full Stack Engineer from Uzbekistan with 3 years of hands-on experience in Japan. I specialize in legacy system modernization, microservices architecture, and AI-powered business automation. Beyond solving technical challenges, I actively contribute to team process improvements.",
       vision_title: "Career Vision",
-      vision_body:
-        "Building on my engineering foundation, I aim to grow into a PL/PM role by age 30 — leading product development end-to-end. Currently deepening both design and implementation experience through independent SaaS projects.",
       learning_title: "Currently Learning",
-      learning: ["Kubernetes (30% progress)", "RAG / MCP patterns", "Go (microservices)"],
     },
     skills: {
       title: "Tech Stack",
@@ -105,13 +97,13 @@ export const translations = {
       levels: {
         daily: "Daily use in production",
         production: "Production experience",
-        years3: "3 years production experience",
+        years3: "3+ years production",
         learning: "Currently learning",
       },
     },
     experience: {
       title: "Experience",
-      subtitle: "Professional experience in Japan",
+      subtitle: "Professional experience in Uzbekistan & Japan",
     },
     projects: {
       title: "Projects",
@@ -153,7 +145,7 @@ export const translations = {
       greeting: "Sherzod Musurmonov",
       title: "Full Stack Dasturchi",
       subtitle:
-        "Yaponiyada 3 yil davomida eski tizimlarni modernizatsiya qilish va AI integratsiya bilan shug'ullandim. SHIFT_JIS→UTF-8 migratsiya, SQL Server→PostgreSQL qayta loyihalash va Laravel + OpenAI API bilan biznes avtomatizatsiyani joriy etdim. Hozir PL/PM yo'nalishida rivojlanmoqdaman.",
+        "3+ yil davomida o'z mahsulotlarini End-to-End qurdim — talablar, tizim dizayni, ishlanma, test va ishlab chiqarishgacha. O'zbekistonda 1.5 yil (IT markazi) va Yaponiyada 1.5 yil tajriba. Shaxsiy loyihalarda AI CRM, ish qidirish va biznes avtomatizatsiya tizimlari yaratmoqdaman. 30 yoshgacha PL/PM bo'lish maqsadim bor.",
       cta_projects: "Loyihalarni ko'rish",
       cta_contact: "Bog'lanish",
       available: "Ish izlamoqdaman",
@@ -162,12 +154,8 @@ export const translations = {
     },
     about: {
       title: "Men Haqimda",
-      body: "O'zbekistondan kelgan Full Stack dasturchi. Yaponiyada 3 yillik amaliy tajribam davomida eski tizimlarni modernizatsiya qilish, mikroservis arxitekturasi va AI yordamida biznes jarayonlarini avtomatlashtirish bilan shug'ullandim.",
       vision_title: "Karyera Maqsadi",
-      vision_body:
-        "30 yoshgacha PL/PM sifatida mahsulot ishlanmasini to'liq boshqarish maqsadim bor. Hozir mustaqil SaaS loyihalarda dizayn va implementatsiya tajribasini oshirib bormoqdaman.",
       learning_title: "O'rganayotgan texnologiyalar",
-      learning: ["Kubernetes (30% tayyorlik)", "RAG / MCP naqshlari", "Go tili (mikroservislar)"],
     },
     skills: {
       title: "Texnik Ko'nikmalar",
@@ -175,13 +163,13 @@ export const translations = {
       levels: {
         daily: "Kunlik ishlatiladi",
         production: "Ishlab chiqarish tajribasi",
-        years3: "3 yillik ishlab chiqarish tajribasi",
+        years3: "3+ yillik tajriba",
         learning: "O'rganilmoqda",
       },
     },
     experience: {
       title: "Ish Tajribasi",
-      subtitle: "Yaponiyada professional tajriba",
+      subtitle: "O'zbekiston va Yaponiyada professional tajriba",
     },
     projects: {
       title: "Loyihalar",

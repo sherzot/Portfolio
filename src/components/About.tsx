@@ -1,40 +1,40 @@
 "use client";
 
-import { BookOpen, Target, Zap } from "lucide-react";
+import { BookOpen, Target } from "lucide-react";
 import { useLang } from "@/context/LanguageContext";
 
 const aboutContent = {
   ja: {
-    body: "ウズベキスタン出身のフルスタックエンジニアです。サマルカンドの政府支援ITセンターでバックエンド・インフラリーダーとしてキャリアをスタートさせ（2021〜2022年）、その後来日。リス株式会社・株式会社renueにて約2年間、レガシーシステム近代化・マイクロサービス設計・AI業務自動化に従事してきました。技術的な課題解決だけでなく、チームプロセスの改善にも積極的に取り組んでいます。",
+    body: "ウズベキスタン出身のフルスタックエンジニアです。サマルカンドの政府支援ITセンターでバックエンド・インフラリーダーとして自社プロダクト開発に従事（2021〜2022年）、その後来日。リス株式会社・株式会社renueにて約2年間、求人マッチングシステムや基幹システムの要件定義〜設計〜開発〜テスト〜本番運用まで一貫して担当。プライベートでもAI CRM・求人マッチング・業務自動化システムを設計・構築中です。",
     vision:
       "エンジニアとして培った技術力を基盤に、30歳までにPL/PMとしてプロダクト全体を牽引できるポジションを目指しています。現在は自社開発のSaaSプロダクトで設計・実装の両面を経験中です。",
     learning: ["Kubernetes（進捗 30%）", "RAG / MCP パターン", "Go言語（マイクロサービス）"],
     stats: [
-      { label: "4+ years", sub: "総実務経験" },
+      { label: "3+ years", sub: "総実務経験" },
       { label: "3 languages", sub: "JP / EN / UZ" },
       { label: "99.9% SLA", sub: "本番環境で達成" },
       { label: "CI/CD", sub: "GitHub Actions" },
     ],
   },
   en: {
-    body: "Full Stack Engineer from Uzbekistan. Started my career as Backend & Infrastructure Lead at a government-supported IT center in Samarkand (2021–2022), then moved to Japan. Over the past ~2 years at Risu Co. and renue Inc., I've specialized in legacy system modernization, microservices architecture, and AI-powered business automation.",
+    body: "Full Stack Engineer from Uzbekistan. Started my career as Backend & Infrastructure Lead at a government-supported IT center in Samarkand (2021–2022), building in-house products end-to-end. Then moved to Japan and spent ~2 years at Risu Co. and renue Inc., owning the full cycle — requirements, system design, development, testing, and production operations. Independently building AI systems (CRM, job matching, automation) on the side.",
     vision:
       "Building on my engineering foundation, I aim to grow into a PL/PM role by age 30 — leading product development end-to-end. Currently deepening both design and implementation experience through independent SaaS projects.",
     learning: ["Kubernetes (30% progress)", "RAG / MCP patterns", "Go (microservices)"],
     stats: [
-      { label: "4+ years", sub: "Total exp." },
+      { label: "3+ years", sub: "Total exp." },
       { label: "3 languages", sub: "JP / EN / UZ" },
       { label: "99.9% SLA", sub: "Achieved in prod" },
       { label: "CI/CD", sub: "GitHub Actions" },
     ],
   },
   uz: {
-    body: "O'zbekistondan Full Stack dasturchi. Samarqanddagi hukumat qo'llab-quvvatlagan IT markazida Backend va Infra rahbari sifatida (2021-2022) ishlab, keyin Yaponiyaga ko'chib keldim. Risu va renue kompaniyalarida ~2 yil davomida eski tizimlarni modernizatsiya, mikroservis arxitekturasi va AI avtomatizatsiya bilan shug'ullandim.",
+    body: "O'zbekistondan Full Stack dasturchi. Samarqanddagi hukumat qo'llab-quvvatlagan IT markazida Backend va Infra rahbari sifatida o'z mahsulotlarini End-to-End qurdim (2021-2022). Keyin Yaponiyaga ko'chib, Risu va renue kompaniyalarida ~2 yil talablardan, tizim dizayni, ishlanma, test va ishlab chiqarishgacha to'liq javobgar bo'ldim. Shaxsiy loyihalarda AI CRM, ish qidirish va biznes avtomatizatsiya tizimlari yaratmoqdaman.",
     vision:
       "30 yoshgacha PL/PM sifatida mahsulot ishlanmasini to'liq boshqarish maqsadim bor. Hozir mustaqil SaaS loyihalarda dizayn va implementatsiya tajribasini oshirmoqdaman.",
     learning: ["Kubernetes (30% tayyorlik)", "RAG / MCP naqshlari", "Go tili (mikroservislar)"],
     stats: [
-      { label: "4+ yil", sub: "Jami tajriba" },
+      { label: "3+ yil", sub: "Jami tajriba" },
       { label: "3 til", sub: "JP / EN / UZ" },
       { label: "99.9% SLA", sub: "Ishlab chiqarishda" },
       { label: "CI/CD", sub: "GitHub Actions" },
