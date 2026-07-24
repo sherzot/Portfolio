@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="18" fill="#060B18"/>
+  <path
+    d="M45 17.5H25C18.2 17.5 14 21.3 14 27S18.2 36.5 25 36.5H39C45.8 36.5 50 40.3 50 46S45.8 54.5 39 54.5H17"
+    stroke="url(#sher-gradient)"
+    stroke-width="6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <defs>
+    <linearGradient id="sher-gradient" x1="14" y1="18" x2="49" y2="53" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset=".52" stop-color="#60A5FA"/>
+      <stop offset="1" stop-color="#2563EB"/>
+    </linearGradient>
+  </defs>
+</svg>

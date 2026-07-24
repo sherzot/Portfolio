@@ -2,6 +2,7 @@
 
 import { Github, Mail } from "lucide-react";
 import { useLang } from "@/context/LanguageContext";
+import { BrandMark } from "@/components/BrandMark";
 
 export function Footer() {
   const { t } = useLang();
@@ -10,11 +11,14 @@ export function Footer() {
     <footer className="border-t border-slate-200 dark:border-slate-800/60 py-10 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="text-center sm:text-left">
-            <p className="text-sm font-semibold text-slate-900 dark:text-white mb-1">
-              Sherzod Musurmonov
-            </p>
-            <p className="text-xs text-slate-400 dark:text-slate-500">{t.footer.built_with}</p>
+          <div className="flex items-center gap-3 text-center sm:text-left">
+            <BrandMark className="h-10 w-10 text-slate-900 dark:text-white" />
+            <div>
+              <p className="text-sm font-semibold tracking-wide text-slate-900 dark:text-white mb-1">
+                SHER<span className="text-blue-600 dark:text-blue-400">.</span>
+              </p>
+              <p className="text-xs text-slate-400 dark:text-slate-500">{t.footer.built_with}</p>
+            </div>
           </div>
 
           <div className="flex items-center gap-3">

@@ -6,6 +6,7 @@ import { useLang } from "@/context/LanguageContext";
 import { useTheme } from "@/context/ThemeContext";
 import { RESUME_FOLDER_URL } from "@/lib/resume";
 import type { Lang } from "@/lib/i18n";
+import { BrandMark } from "@/components/BrandMark";
 
 const langLabels: Record<Lang, string> = {
   ja: "日本語",
@@ -58,9 +59,13 @@ export function Navigation() {
           {/* Logo */}
           <button
             onClick={() => scrollTo("#hero")}
-            className="text-sm font-bold tracking-wider text-slate-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+            className="group inline-flex items-center gap-2 text-slate-900 dark:text-white transition-transform duration-200 hover:-translate-y-0.5"
+            aria-label="Sherzod Musurmonov — Back to top"
           >
-            SM<span className="text-blue-600 dark:text-blue-400">.</span>
+            <BrandMark className="h-9 w-9 transition-transform duration-300 ease-out group-hover:scale-[1.04]" />
+            <span className="hidden min-[420px]:inline translate-y-px text-sm font-bold leading-none tracking-[0.16em]">
+              SHER<span className="text-blue-600 dark:text-blue-400">.</span>
+            </span>
           </button>
 
           {/* Desktop nav links */}

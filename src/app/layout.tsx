@@ -29,6 +29,10 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Sherzod Musurmonov" }],
   creator: "Sherzod Musurmonov",
+  icons: {
+    icon: "/sher-favicon.svg",
+    shortcut: "/sher-favicon.svg",
+  },
   openGraph: {
     type: "profile",
     locale: "ja_JP",
