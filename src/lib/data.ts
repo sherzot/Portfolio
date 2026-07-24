@@ -38,9 +38,14 @@ export const skillsData = [
         tags: ["PostgreSQL", "Auth", "Realtime", "Edge Functions"],
       },
       {
-        name: "Go",
-        level: "learning" as const,
-        tags: ["microservices", "net/http"],
+        name: "Kotlin",
+        level: "production" as const,
+        tags: ["JVM", "null safety", "service development"],
+      },
+      {
+        name: "Spring Boot",
+        level: "production" as const,
+        tags: ["REST API", "service design", "JVM"],
       },
     ],
   },
