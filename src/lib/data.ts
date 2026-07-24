@@ -75,12 +75,27 @@ export const skillsData = [
       {
         name: "Kubernetes",
         level: "learning" as const,
-        tags: ["k8s", "Helm", "30% progress"],
+        tags: ["k8s", "Helm"],
       },
       {
         name: "GitHub Actions",
         level: "production" as const,
         tags: ["CI/CD", "auto-deploy", "Lighthouse"],
+      },
+    ],
+  },
+  {
+    category: { ja: "アーキテクチャ・設計", en: "Architecture & Design", uz: "Arxitektura va dizayn" },
+    items: [
+      {
+        name: "Clean Architecture / DDD",
+        level: "production" as const,
+        tags: ["REST API", "domain modeling", "secure system design"],
+      },
+      {
+        name: "SaaS system design",
+        level: "years3" as const,
+        tags: ["multi-tenant", "async processing", "auditability"],
       },
     ],
   },
@@ -112,6 +127,46 @@ export const skillsData = [
 ];
 
 export const experienceData = [
+  {
+    period: {
+      ja: "2026年06月 〜 現在",
+      en: "Jun 2026 – Present",
+      uz: "2026-yil Iyun – Hozir",
+    },
+    company: {
+      ja: "株式会社Trabox（Visional Group）",
+      en: "Trabox Co., Ltd. — Visional Group",
+      uz: "Trabox Co., Ltd. — Visional Group",
+    },
+    companyInfo: {
+      ja: "Finto金融サービス事業",
+      en: "Finto financial services business",
+      uz: "Finto moliyaviy xizmatlar biznesi",
+    },
+    role: {
+      ja: "フルスタックエンジニア",
+      en: "Full-Stack Engineer",
+      uz: "Full-Stack Engineer",
+    },
+    achievements: {
+      ja: [
+        "金融サービス関連プロダクトのフロントエンド・バックエンド開発に従事",
+        "システム設計、クラウドインフラ、production operation、security、reliability、maintainabilityを重視した設計・実装",
+        "CSV upload historyやfile lifecycleなど、公開可能な範囲でデータライフサイクルと安全なアクセス制御に関する課題を検討",
+      ],
+      en: [
+        "Working on frontend and backend development for financial services products",
+        "Contributing to system design, cloud infrastructure, production operations, security, reliability, and maintainability",
+        "Exploring public-safe engineering concerns such as CSV upload history, file lifecycle, and authorization-based access",
+      ],
+      uz: [
+        "Moliyaviy xizmatlar mahsulotlarida frontend va backend development bilan ishlayapman",
+        "System design, cloud infrastructure, production operation, security, reliability va maintainability yo‘nalishlariga hissa qo‘shyapman",
+        "CSV upload history, file lifecycle va authorization-based access kabi public-safe engineering masalalarini ko‘rib chiqyapman",
+      ],
+    },
+    stack: ["Frontend", "Backend", "Cloud", "Security", "Production Engineering"],
+  },
   {
     period: {
       ja: "2026年01月 〜 2026年02月",
@@ -433,6 +488,24 @@ export const commercialProjectsData = [
 ];
 
 export const personalProjectsData = [
+  {
+    id: "enterprise-engineering-framework",
+    title: "Enterprise Engineering Framework",
+    subtitle: {
+      ja: "AI支援開発のためのEngineering Framework（開発中）",
+      en: "Engineering framework for structured AI-assisted development (Active Development)",
+      uz: "AI-assisted development uchun engineering framework (Active Development)",
+    },
+    status: "wip" as const,
+    github: null,
+    demo: null,
+    stack: ["Claude Code", "Codex", "MCP", "Architecture", "Quality Gates"],
+    description: {
+      ja: "Claude CodeをStaff / Principal Engineer水準の規律で活用するためのarchitecture-firstなworkflow。要件、設計、quality gate、code review、security、context managementを公開可能な範囲で整理しています。",
+      en: "An architecture-first workflow for using Claude Code with Staff / Principal Engineer discipline. It organizes requirements, design, quality gates, review, security, and context management within a public-safe scope.",
+      uz: "Claude Code’dan Staff / Principal Engineer intizomi bilan foydalanish uchun architecture-first workflow. Requirements, design, quality gate, review, security va context management public-safe doirada tartiblanadi.",
+    },
+  },
   {
     id: "trustflow-crm",
     title: "TrustFlow CRM",

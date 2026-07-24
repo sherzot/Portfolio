@@ -5,10 +5,10 @@ import { useLang } from "@/context/LanguageContext";
 
 const aboutContent = {
   ja: {
-    body: "ウズベキスタン出身のフルスタックエンジニアです。サマルカンドの政府支援ITセンターでバックエンド・インフラリーダーとして自社プロダクト開発に従事（2021〜2022年）、その後来日。リス株式会社・株式会社renueにて約2年間、求人マッチングシステムや基幹システムの要件定義〜設計〜開発〜テスト〜本番運用まで一貫して担当。プライベートでもAI CRM・求人マッチング・業務自動化システムを設計・構築中です。",
+    body: "株式会社Trabox（Visional Group）のFinto金融サービス事業でFull-Stack Engineerとして働いています。フロントエンドからバックエンド、クラウドインフラ、セキュリティ、production operationまで、プロダクトを長く運用できる形にすることを重視しています。",
     vision:
-      "エンジニアとして培った技術力を基盤に、30歳までにPL/PMとしてプロダクト全体を牽引できるポジションを目指しています。現在は自社開発のSaaSプロダクトで設計・実装の両面を経験中です。",
-    learning: ["Kubernetes（進捗 30%）", "RAG / MCP パターン", "Go言語（マイクロサービス）"],
+      "フルスタック開発とシステム設計の経験を基盤に、技術とプロダクトの両面からチームをリードできるProject Leader / Project Managerを目指しています。hands-onの技術力を保ちながら、要件・設計・運用をつなぐ力を伸ばしています。",
+    learning: ["AI agent / MCP patterns", "Multi-tenant SaaS design", "Go and cloud architecture"],
     stats: [
       { label: "3+ years", sub: "総実務経験" },
       { label: "3 languages", sub: "JP / EN / UZ" },
@@ -17,10 +17,10 @@ const aboutContent = {
     ],
   },
   en: {
-    body: "Full Stack Engineer from Uzbekistan. Started my career as Backend & Infrastructure Lead at a government-supported IT center in Samarkand (2021–2022), building in-house products end-to-end. Then moved to Japan and spent ~2 years at Risu Co. and renue Inc., owning the full cycle — requirements, system design, development, testing, and production operations. Independently building AI systems (CRM, job matching, automation) on the side.",
+    body: "I work as a Full-Stack Engineer in the Finto financial services business at Trabox Co., Ltd. (Visional Group). My scope spans frontend, backend, cloud infrastructure, security, and production operations, with a focus on systems that remain maintainable after launch.",
     vision:
-      "Building on my engineering foundation, I aim to grow into a PL/PM role by age 30 — leading product development end-to-end. Currently deepening both design and implementation experience through independent SaaS projects.",
-    learning: ["Kubernetes (30% progress)", "RAG / MCP patterns", "Go (microservices)"],
+      "Building on full-stack development and system design experience, I aim to grow into a Project Leader / Project Manager who can lead from both the technical and product sides while keeping strong hands-on engineering ability.",
+    learning: ["AI agent / MCP patterns", "Multi-tenant SaaS design", "Go and cloud architecture"],
     stats: [
       { label: "3+ years", sub: "Total exp." },
       { label: "3 languages", sub: "JP / EN / UZ" },
@@ -29,10 +29,10 @@ const aboutContent = {
     ],
   },
   uz: {
-    body: "O'zbekistondan Full Stack dasturchi. Samarqanddagi hukumat qo'llab-quvvatlagan IT markazida Backend va Infra rahbari sifatida o'z mahsulotlarini End-to-End qurdim (2021-2022). Keyin Yaponiyaga ko'chib, Risu va renue kompaniyalarida ~2 yil talablardan, tizim dizayni, ishlanma, test va ishlab chiqarishgacha to'liq javobgar bo'ldim. Shaxsiy loyihalarda AI CRM, ish qidirish va biznes avtomatizatsiya tizimlari yaratmoqdaman.",
+    body: "Trabox Co., Ltd. (Visional Group) tarkibidagi Finto moliyaviy xizmatlar biznesida Full-Stack Engineer bo‘lib ishlayman. Frontend, backend, cloud infrastructure, security va production operation yo‘nalishlarini birlashtirib, maintainable va ishonchli tizimlar ustida ishlayman.",
     vision:
-      "30 yoshgacha PL/PM sifatida mahsulot ishlanmasini to'liq boshqarish maqsadim bor. Hozir mustaqil SaaS loyihalarda dizayn va implementatsiya tajribasini oshirmoqdaman.",
-    learning: ["Kubernetes (30% tayyorlik)", "RAG / MCP naqshlari", "Go tili (mikroservislar)"],
+      "Full-stack development va system design tajribamga tayangan holda, texnik va product tomonlarini birlashtirib jamoani boshqara oladigan Project Leader / Project Manager bo‘lishni maqsad qilganman. Shu bilan birga hands-on texnik kompetensiyani saqlayman.",
+    learning: ["AI agent / MCP patterns", "Multi-tenant SaaS design", "Go va cloud architecture"],
     stats: [
       { label: "3+ yil", sub: "Jami tajriba" },
       { label: "3 til", sub: "JP / EN / UZ" },

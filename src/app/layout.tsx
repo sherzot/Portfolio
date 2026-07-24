@@ -4,17 +4,25 @@ import { LanguageProvider } from "@/context/LanguageContext";
 import { ThemeProvider } from "@/context/ThemeContext";
 
 export const metadata: Metadata = {
-  title: "Sherzod Musurmonov | Full Stack Engineer in Japan",
+  metadataBase: new URL("https://sherdev.netlify.app"),
+  title: "Sherzod Musurmonov | Full-Stack Engineer in Tokyo",
   description:
-    "Laravel + React + AWS で日本企業のシステム近代化を担当するフルスタックエンジニア。3年の実務経験、PL/PM志向。",
+    "Sherzod Musurmonov — Tokyo-based Full-Stack Engineer working across product development, cloud architecture, and AI-enabled SaaS systems.",
+  alternates: { canonical: "https://sherdev.netlify.app/" },
   keywords: [
     "Full Stack Engineer",
+    "Go",
+    "NestJS",
     "Laravel",
     "React",
     "Next.js",
     "TypeScript",
     "AWS",
     "Docker",
+    "Kubernetes",
+    "Supabase",
+    "PostgreSQL",
+    "AI agents",
     "Japan",
     "フルスタックエンジニア",
     "東京",
@@ -26,24 +34,15 @@ export const metadata: Metadata = {
     locale: "ja_JP",
     url: "https://sherdev.netlify.app",
     siteName: "Sherzod Musurmonov Portfolio",
-    title: "Sherzod Musurmonov | Full Stack Engineer in Japan",
+    title: "Sherzod Musurmonov | Full-Stack Engineer in Tokyo",
     description:
-      "Laravel + React + AWS で日本企業のシステム近代化を担当するフルスタックエンジニア",
-    images: [
-      {
-        url: "https://sherdev.netlify.app/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Sherzod Musurmonov Portfolio",
-      },
-    ],
+      "Full-stack product engineering across web platforms, cloud architecture, and AI-enabled SaaS systems.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sherzod Musurmonov | Full Stack Engineer in Japan",
+    title: "Sherzod Musurmonov | Full-Stack Engineer in Tokyo",
     description:
-      "Laravel + React + AWS で日本企業のシステム近代化を担当するフルスタックエンジニア",
-    images: ["https://sherdev.netlify.app/og-image.png"],
+      "Full-stack product engineering across web platforms, cloud architecture, and AI-enabled SaaS systems.",
   },
   robots: { index: true, follow: true },
 };
@@ -64,7 +63,7 @@ export default function RootLayout({
               alternateName: "シェルゾト・ムスルモノフ",
               jobTitle: "Full Stack Engineer",
               url: "https://sherdev.netlify.app",
-              email: "sherzodmusurmonov81@gmail.com",
+              email: "sherzoddeveloper@gmail.com",
               knowsAbout: ["Laravel", "React", "Next.js", "TypeScript", "AWS", "Docker", "Supabase", "OpenAI API"],
               knowsLanguage: [
                 { "@type": "Language", name: "Japanese", alternateName: "ja" },

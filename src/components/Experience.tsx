@@ -6,12 +6,14 @@ import { experienceData } from "@/lib/data";
 import type { Lang } from "@/lib/i18n";
 
 const companyColors = [
+  "from-lime-500/10 to-emerald-500/10 border-lime-500/20 dark:from-lime-500/10 dark:to-emerald-500/10 dark:border-lime-500/20",
   "from-violet-500/10 to-purple-500/10 border-violet-500/20 dark:from-violet-500/10 dark:to-purple-500/10 dark:border-violet-500/20",
   "from-blue-500/10 to-cyan-500/10 border-blue-500/20 dark:from-blue-500/10 dark:to-cyan-500/10 dark:border-blue-500/20",
   "from-emerald-500/10 to-teal-500/10 border-emerald-500/20 dark:from-emerald-500/10 dark:to-teal-500/10 dark:border-emerald-500/20",
 ];
 
 const iconColors = [
+  "text-lime-700 dark:text-lime-400 bg-lime-50 dark:bg-lime-500/10 border-lime-200 dark:border-lime-500/20",
   "text-violet-600 dark:text-violet-400 bg-violet-50 dark:bg-violet-500/10 border-violet-200 dark:border-violet-500/20",
   "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-500/10 border-blue-200 dark:border-blue-500/20",
   "text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-500/10 border-emerald-200 dark:border-emerald-500/20",
@@ -39,7 +41,7 @@ export function Experience() {
               <div key={exp.company.en} className="relative sm:pl-16">
                 {/* Timeline dot */}
                 <div className={`absolute left-4 top-6 w-5 h-5 rounded-full border-2 border-white dark:border-[#060b18] shadow-sm hidden sm:flex items-center justify-center ${
-                  idx === 0 ? "bg-violet-500" : idx === 1 ? "bg-blue-500" : "bg-emerald-500"
+                    idx === 0 ? "bg-lime-500" : idx === 1 ? "bg-violet-500" : idx === 2 ? "bg-blue-500" : "bg-emerald-500"
                 }`}>
                   <div className="w-2 h-2 rounded-full bg-white/80" />
                 </div>

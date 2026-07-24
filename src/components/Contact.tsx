@@ -148,7 +148,7 @@ export function Contact() {
               </p>
               <div className="flex justify-center gap-4">
                 <a
-                  href="mailto:sherzodmusurmonov81@gmail.com"
+                  href="mailto:sherzoddeveloper@gmail.com"
                   className="flex items-center gap-2 text-sm text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors"
                 >
                   <Mail size={14} />

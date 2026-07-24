@@ -19,7 +19,7 @@ export function Footer() {
 
           <div className="flex items-center gap-3">
             <a
-              href="mailto:sherzodmusurmonov81@gmail.com"
+              href="mailto:sherzoddeveloper@gmail.com"
               className="p-2.5 rounded-xl border transition-all
                          border-slate-200 text-slate-400 hover:text-slate-900 hover:border-slate-300
                          dark:border-slate-800 dark:text-slate-500 dark:hover:text-white dark:hover:border-slate-700"

@@ -216,6 +216,10 @@ function PersonalCard({
 export function Projects() {
   const { t, lang } = useLang();
   const l = lang as Lang;
+  const projectOrder = ["enterprise-engineering-framework", "ai-concierge", "jobmatcher", "trustflow-crm", "notion-clone"];
+  const orderedPersonalProjects = [...personalProjectsData].sort(
+    (a, b) => projectOrder.indexOf(a.id) - projectOrder.indexOf(b.id),
+  );
 
   return (
     <section id="projects" className="py-24 px-4 sm:px-6 section-alt">
@@ -256,7 +260,7 @@ export function Projects() {
             <span className="flex-1 h-px bg-slate-200 dark:bg-slate-800" />
           </h3>
           <div className="grid sm:grid-cols-2 gap-5">
-            {personalProjectsData.map((project) => (
+            {orderedPersonalProjects.map((project) => (
               <PersonalCard
                 key={project.id}
                 project={project}
