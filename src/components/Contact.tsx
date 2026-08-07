@@ -70,7 +70,7 @@ export function Contact() {
             {status === "sent" ? (
               <div className="flex min-h-[360px] flex-col justify-center border-y border-[var(--line)] py-12" role="status" aria-live="polite">
                 <Check size={34} className="mb-6 text-[var(--accent)]" />
-                <h3 className="text-3xl font-semibold tracking-[-0.035em] text-[var(--ink)]">{t.contact.sent_title}</h3>
+                <h3 className="text-[1.625rem] font-semibold leading-[1.25] tracking-[-0.03em] text-[var(--ink)]">{t.contact.sent_title}</h3>
                 <p className="mt-4 max-w-lg text-sm leading-6 text-[var(--muted)]">{t.contact.sent_body}</p>
                 <button type="button" onClick={() => setStatus("idle")} className="text-link mt-8 self-start">
                   {t.contact.back}

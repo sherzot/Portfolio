@@ -51,7 +51,7 @@ export function About() {
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-7">
             <p className="section-kicker !text-[var(--accent-inverse)]">{t.about.kicker}</p>
-            <h2 className="max-w-4xl text-[2rem] font-semibold leading-[1.08] tracking-[-0.04em] text-[var(--canvas)] sm:text-5xl sm:leading-[1.04] lg:text-6xl">
+            <h2 className="section-title !text-[var(--canvas)]">
               {t.about.title}
             </h2>
             <p className="mt-8 max-w-2xl text-base leading-8 text-[var(--inverse-text-soft)] sm:text-lg">

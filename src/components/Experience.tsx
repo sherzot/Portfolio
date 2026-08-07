@@ -31,7 +31,7 @@ export function Experience() {
               </div>
 
               <div className="min-w-0 pr-2 md:col-span-4 xl:pr-0">
-                <h3 className="text-2xl font-semibold leading-tight tracking-[-0.025em] text-[var(--ink)]">
+                <h3 className="text-xl font-semibold leading-[1.3] tracking-[-0.02em] text-[var(--ink)] sm:text-[1.375rem]">
                   {experience.role[lang]}
                 </h3>
                 <p className="mt-3 text-sm font-semibold text-[var(--accent)]">{experience.company[lang]}</p>

@@ -203,7 +203,7 @@ export function Hero() {
           <p className="hero-reveal hero-delay-1 mb-3 text-sm font-semibold tracking-[0.08em] text-[var(--accent)] sm:mb-5">
             {t.hero.name}
           </p>
-          <h1 className="hero-reveal hero-delay-1 max-w-[760px] whitespace-pre-line text-[2.25rem] font-semibold leading-[1.12] tracking-[-0.045em] text-[var(--ink)] sm:text-[clamp(3.25rem,5.5vw,5rem)] sm:leading-[1.08] sm:tracking-[-0.055em]">
+          <h1 className="hero-reveal hero-delay-1 max-w-[660px] whitespace-pre-line text-[1.875rem] font-semibold leading-[1.2] tracking-[-0.035em] text-[var(--ink)] sm:text-[clamp(2.375rem,3.8vw,3.5rem)] sm:leading-[1.17] sm:tracking-[-0.045em]">
             {t.hero.title}
           </h1>
 

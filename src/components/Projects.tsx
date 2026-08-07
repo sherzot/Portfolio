@@ -122,7 +122,7 @@ function CaseStudy({
         <div className="mb-7 flex items-center justify-between">
           <span className="eyebrow">0{index + 1} / {t.projects.commercial_title}</span>
         </div>
-        <h3 className="max-w-xl text-[1.75rem] font-semibold leading-tight tracking-[-0.03em] text-[var(--ink)] sm:text-4xl">
+        <h3 className="max-w-xl text-2xl font-semibold leading-[1.28] tracking-[-0.025em] text-[var(--ink)] sm:text-[1.875rem] sm:leading-[1.24]">
           {title}
         </h3>
 
@@ -202,7 +202,7 @@ export function Projects() {
           <div className="grid gap-8 lg:grid-cols-12">
             <div className="lg:col-span-4">
               <p className="section-kicker">Labs</p>
-              <h3 className="text-3xl font-semibold tracking-[-0.035em] text-[var(--ink)]">
+              <h3 className="text-[1.625rem] font-semibold leading-[1.24] tracking-[-0.03em] text-[var(--ink)]">
                 {t.projects.labs_title}
               </h3>
               <p className="mt-4 max-w-sm text-sm leading-6 text-[var(--muted)]">
@@ -218,7 +218,7 @@ export function Projects() {
                         <span className="h-1.5 w-1.5 rounded-full bg-[var(--accent)]" />
                         <span className="eyebrow">{t.projects.active}</span>
                       </div>
-                      <h4 className="text-2xl font-semibold tracking-[-0.025em] text-[var(--ink)]">
+                      <h4 className="text-xl font-semibold leading-[1.3] tracking-[-0.02em] text-[var(--ink)] sm:text-[1.375rem]">
                         {project.title}
                       </h4>
                       <p className="mt-3 max-w-2xl whitespace-pre-line text-sm leading-6 text-[var(--muted)]">
