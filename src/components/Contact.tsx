@@ -1,172 +1,125 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, Send, Github, CheckCircle } from "lucide-react";
+import { ArrowUpRight, Check, Mail, Send } from "lucide-react";
 import { useLang } from "@/context/LanguageContext";
+
+type FormStatus = "idle" | "sending" | "sent" | "error";
+
+const fieldClassName =
+  "w-full border-0 border-b border-[var(--line)] bg-transparent px-0 py-3 text-base text-[var(--ink)] outline-none transition-colors placeholder:text-[var(--faint)] focus:border-[var(--accent)] focus:ring-0";
 
 export function Contact() {
   const { t } = useLang();
-  const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
+  const [status, setStatus] = useState<FormStatus>("idle");
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (status === "sending") return;
+
     setStatus("sending");
+    const form = event.currentTarget;
+    const payload = new URLSearchParams();
 
-    const form = e.currentTarget;
-    const data = new FormData(form);
+    new FormData(form).forEach((value, key) => {
+      if (typeof value === "string") payload.append(key, value);
+    });
+
+    const controller = new AbortController();
+    const timeoutId = window.setTimeout(() => controller.abort(), 10_000);
 
     try {
-      await fetch("/", {
+      const response = await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(data as unknown as Record<string, string>).toString(),
+        body: payload.toString(),
+        signal: controller.signal,
       });
-      setStatus("sent");
+
+      if (!response.ok) throw new Error(`Contact form returned ${response.status}`);
+
       form.reset();
+      setStatus("sent");
     } catch {
-      setStatus("idle");
+      setStatus("error");
+    } finally {
+      window.clearTimeout(timeoutId);
     }
   };
 
   return (
-    <section id="contact" className="py-24 px-4 sm:px-6">
-      <div className="max-w-2xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="section-title">{t.contact.title}</h2>
-          <p className="section-subtitle">{t.contact.subtitle}</p>
-        </div>
+    <section id="contact" className="section-space">
+      <div className="page-shell">
+        <div className="grid gap-14 lg:grid-cols-12 lg:gap-20">
+          <div className="lg:col-span-5">
+            <p className="section-kicker">{t.contact.kicker}</p>
+            <h2 className="section-title">{t.contact.title}</h2>
+            <p className="section-subtitle">{t.contact.subtitle}</p>
 
-        {status === "sent" ? (
-          <div className="card p-8 text-center">
-            <CheckCircle size={48} className="text-emerald-500 dark:text-emerald-400 mx-auto mb-4" />
-            <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">
-              {t.contact.send}!
-            </h3>
-            <button
-              onClick={() => setStatus("idle")}
-              className="mt-4 text-sm text-blue-600 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300 transition-colors"
-            >
-              ← Back
-            </button>
-          </div>
-        ) : (
-          <div className="card p-6 sm:p-8">
-            <form
-              name="contact"
-              method="POST"
-              data-netlify="true"
-              onSubmit={handleSubmit}
-              className="space-y-5"
-            >
-              <input type="hidden" name="form-name" value="contact" />
-
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5"
-                >
-                  {t.contact.name}
-                </label>
-                <input
-                  id="name"
-                  name="name"
-                  type="text"
-                  required
-                  autoComplete="name"
-                  className="w-full px-4 py-2.5 rounded-xl text-sm transition-all
-                             bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400
-                             focus:outline-none focus:ring-2 focus:ring-blue-500/30 focus:border-blue-400
-                             dark:bg-slate-800/60 dark:border-slate-700/60 dark:text-slate-100 dark:placeholder-slate-500
-                             dark:focus:ring-blue-500/40 dark:focus:border-blue-500/40"
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5"
-                >
-                  {t.contact.email}
-                </label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  required
-                  autoComplete="email"
-                  className="w-full px-4 py-2.5 rounded-xl text-sm transition-all
-                             bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400
-                             focus:outline-none focus:ring-2 focus:ring-blue-500/30 focus:border-blue-400
-                             dark:bg-slate-800/60 dark:border-slate-700/60 dark:text-slate-100 dark:placeholder-slate-500
-                             dark:focus:ring-blue-500/40 dark:focus:border-blue-500/40"
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5"
-                >
-                  {t.contact.message}
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  rows={5}
-                  className="w-full px-4 py-2.5 rounded-xl text-sm resize-none transition-all
-                             bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400
-                             focus:outline-none focus:ring-2 focus:ring-blue-500/30 focus:border-blue-400
-                             dark:bg-slate-800/60 dark:border-slate-700/60 dark:text-slate-100 dark:placeholder-slate-500
-                             dark:focus:ring-blue-500/40 dark:focus:border-blue-500/40"
-                />
-              </div>
-
-              <button
-                type="submit"
-                disabled={status === "sending"}
-                className="w-full btn-primary justify-center disabled:opacity-60 disabled:cursor-not-allowed"
-              >
-                {status === "sending" ? (
-                  <span className="flex items-center gap-2">
-                    <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                    Sending...
-                  </span>
-                ) : (
-                  <>
-                    <Send size={16} />
-                    {t.contact.send}
-                  </>
-                )}
-              </button>
-            </form>
-
-            {/* Direct contact alternatives */}
-            <div className="mt-6 pt-6 border-t border-slate-200 dark:border-slate-800">
-              <p className="text-center text-xs text-slate-400 dark:text-slate-500 mb-4">
-                {t.contact.or}
-              </p>
-              <div className="flex justify-center gap-4">
-                <a
-                  href="mailto:sherzoddeveloper@gmail.com"
-                  className="flex items-center gap-2 text-sm text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors"
-                >
-                  <Mail size={14} />
-                  {t.contact.direct_email}
-                </a>
-                <a
-                  href="https://github.com/sherzot"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors"
-                >
-                  <Github size={14} />
-                  GitHub
-                </a>
-              </div>
+            <div className="mt-10 border-t border-[var(--line)] pt-6">
+              <a href="mailto:sherzoddeveloper@gmail.com" className="group inline-flex max-w-full items-center gap-2 text-sm font-semibold text-[var(--ink)] sm:gap-3 sm:text-base">
+                <Mail size={17} className="shrink-0 text-[var(--accent)]" />
+                <span className="break-all">sherzoddeveloper@gmail.com</span>
+                <ArrowUpRight size={15} className="hidden shrink-0 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 sm:block" />
+              </a>
+              <p className="mt-3 text-xs leading-5 text-[var(--faint)]">{t.contact.response_time}</p>
             </div>
           </div>
-        )}
+
+          <div className="lg:col-span-7">
+            {status === "sent" ? (
+              <div className="flex min-h-[360px] flex-col justify-center border-y border-[var(--line)] py-12" role="status" aria-live="polite">
+                <Check size={34} className="mb-6 text-[var(--accent)]" />
+                <h3 className="text-3xl font-semibold tracking-[-0.035em] text-[var(--ink)]">{t.contact.sent_title}</h3>
+                <p className="mt-4 max-w-lg text-sm leading-6 text-[var(--muted)]">{t.contact.sent_body}</p>
+                <button type="button" onClick={() => setStatus("idle")} className="text-link mt-8 self-start">
+                  {t.contact.back}
+                  <ArrowUpRight size={14} />
+                </button>
+              </div>
+            ) : (
+              <form
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                onSubmit={handleSubmit}
+                className="border-t border-[var(--line)]"
+                aria-busy={status === "sending"}
+              >
+                <input type="hidden" name="form-name" value="contact" />
+
+                <div className="grid gap-7 border-b border-[var(--line)] py-7 sm:grid-cols-2 sm:gap-10">
+                  <div>
+                    <label htmlFor="name" className="eyebrow block">{t.contact.name}</label>
+                    <input id="name" name="name" type="text" required autoComplete="name" className={fieldClassName} />
+                  </div>
+                  <div>
+                    <label htmlFor="email" className="eyebrow block">{t.contact.email}</label>
+                    <input id="email" name="email" type="email" required autoComplete="email" className={fieldClassName} />
+                  </div>
+                </div>
+
+                <div className="border-b border-[var(--line)] py-7">
+                  <label htmlFor="message" className="eyebrow block">{t.contact.message}</label>
+                  <textarea id="message" name="message" required rows={6} className={`${fieldClassName} resize-none`} />
+                </div>
+
+                <div className="flex flex-col items-start justify-between gap-5 pt-7 sm:flex-row sm:items-center">
+                  <div aria-live="polite" aria-atomic="true">
+                    {status === "sending" && <p className="sr-only">{t.contact.sending}</p>}
+                    {status === "error" && (
+                      <p className="max-w-md text-sm leading-6 text-[var(--accent)]" role="alert">{t.contact.error}</p>
+                    )}
+                  </div>
+                  <button type="submit" disabled={status === "sending"} className="btn-primary shrink-0 disabled:cursor-not-allowed disabled:opacity-60">
+                    <Send size={16} />
+                    {status === "sending" ? t.contact.sending : t.contact.send}
+                  </button>
+                </div>
+              </form>
+            )}
+          </div>
+        </div>
       </div>
     </section>
   );

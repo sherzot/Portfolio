@@ -1,113 +1,93 @@
 "use client";
 
-import { BookOpen, Target } from "lucide-react";
 import { useLang } from "@/context/LanguageContext";
 
 const aboutContent = {
   ja: {
-    body: "株式会社Trabox（Visional Group）のFinto金融サービス事業でFull-Stack Engineerとして働いています。フロントエンドからバックエンド、クラウドインフラ、セキュリティ、production operationまで、プロダクトを長く運用できる形にすることを重視しています。",
+    body:
+      "良いプロダクトは、コードだけで完成しないと考えています。利用者の業務、変更しやすい設計、安全な運用までを一つのシステムとして捉え、複雑さを整理して実装へつなげることを大切にしています。",
     vision:
-      "フルスタック開発とシステム設計の経験を基盤に、技術とプロダクトの両面からチームをリードできるProject Leader / Project Managerを目指しています。hands-onの技術力を保ちながら、要件・設計・運用をつなぐ力を伸ばしています。",
-    learning: ["AI agent / MCP patterns", "Multi-tenant SaaS design", "Go and cloud architecture"],
-    stats: [
-      { label: "3+ years", sub: "総実務経験" },
-      { label: "3 languages", sub: "JP / EN / UZ" },
-      { label: "99.9% SLA", sub: "本番環境で達成" },
-      { label: "CI/CD", sub: "GitHub Actions" },
+      "hands-onの技術力を保ちながら、要件・設計・開発・運用を横断してチームをリードできるProject Leader / Project Managerを目指しています。",
+    learning: ["AI agent / MCP patterns", "Multi-tenant SaaS design", "Go / cloud architecture"],
+    facts: [
+      { value: "3+", label: "プロフェッショナル開発経験" },
+      { value: "3", label: "日本語・英語・ウズベク語" },
+      { value: "E2E", label: "要件定義から運用まで" },
     ],
   },
   en: {
-    body: "I work as a Full-Stack Engineer in the Finto financial services business at Trabox Co., Ltd. (Visional Group). My scope spans frontend, backend, cloud infrastructure, security, and production operations, with a focus on systems that remain maintainable after launch.",
+    body:
+      "I believe a good product is more than its code. I treat user workflows, adaptable architecture, secure delivery, and long-term operations as one system—then turn that complexity into clear engineering decisions.",
     vision:
-      "Building on full-stack development and system design experience, I aim to grow into a Project Leader / Project Manager who can lead from both the technical and product sides while keeping strong hands-on engineering ability.",
-    learning: ["AI agent / MCP patterns", "Multi-tenant SaaS design", "Go and cloud architecture"],
-    stats: [
-      { label: "3+ years", sub: "Total exp." },
-      { label: "3 languages", sub: "JP / EN / UZ" },
-      { label: "99.9% SLA", sub: "Achieved in prod" },
-      { label: "CI/CD", sub: "GitHub Actions" },
+      "My next step is leading teams across requirements, design, delivery, and operations as a Project Leader / Project Manager while remaining a strong hands-on engineer.",
+    learning: ["AI agent / MCP patterns", "Multi-tenant SaaS design", "Go / cloud architecture"],
+    facts: [
+      { value: "3+", label: "Years in professional engineering" },
+      { value: "3", label: "Japanese / English / Uzbek" },
+      { value: "E2E", label: "Requirements through operations" },
     ],
   },
   uz: {
-    body: "Trabox Co., Ltd. (Visional Group) tarkibidagi Finto moliyaviy xizmatlar biznesida Full-Stack Engineer bo‘lib ishlayman. Frontend, backend, cloud infrastructure, security va production operation yo‘nalishlarini birlashtirib, maintainable va ishonchli tizimlar ustida ishlayman.",
+    body:
+      "Yaxshi mahsulot faqat koddan iborat emas. Foydalanuvchi jarayonlari, o‘zgarishga mos arxitektura, xavfsiz yetkazib berish va uzoq muddatli ekspluatatsiyani yagona tizim sifatida ko‘rib, murakkablikni aniq texnik qarorlarga aylantiraman.",
     vision:
-      "Full-stack development va system design tajribamga tayangan holda, texnik va product tomonlarini birlashtirib jamoani boshqara oladigan Project Leader / Project Manager bo‘lishni maqsad qilganman. Shu bilan birga hands-on texnik kompetensiyani saqlayman.",
-    learning: ["AI agent / MCP patterns", "Multi-tenant SaaS design", "Go va cloud architecture"],
-    stats: [
-      { label: "3+ yil", sub: "Jami tajriba" },
-      { label: "3 til", sub: "JP / EN / UZ" },
-      { label: "99.9% SLA", sub: "Ishlab chiqarishda" },
-      { label: "CI/CD", sub: "GitHub Actions" },
+      "Amaliy texnik ko‘nikmalarimni saqlagan holda, talablar, dizayn, ishlab chiqish va ekspluatatsiya bo‘ylab jamoani boshqara oladigan Project Leader / Project Manager bo‘lish — keyingi maqsadim.",
+    learning: ["AI agent / MCP patterns", "Multi-tenant SaaS design", "Go / cloud architecture"],
+    facts: [
+      { value: "3+", label: "Professional muhandislik tajribasi" },
+      { value: "3", label: "Yapon, ingliz va o‘zbek tillari" },
+      { value: "E2E", label: "Talabdan ekspluatatsiyagacha" },
     ],
   },
-};
+} as const;
 
 export function About() {
   const { t, lang } = useLang();
-  const content = aboutContent[lang as keyof typeof aboutContent];
+  const content = aboutContent[lang];
 
   return (
-    <section id="about" className="py-24 px-4 sm:px-6">
-      <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 items-start">
-          {/* Left */}
-          <div>
-            <h2 className="section-title mb-4">{t.about.title}</h2>
-            <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-base mb-8">
+    <section id="about" className="section-space border-y border-[var(--line)] bg-[var(--ink)] text-[var(--canvas)]">
+      <div className="page-shell">
+        <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-7">
+            <p className="section-kicker !text-[var(--accent-inverse)]">{t.about.kicker}</p>
+            <h2 className="max-w-4xl text-[2rem] font-semibold leading-[1.08] tracking-[-0.04em] text-[var(--canvas)] sm:text-5xl sm:leading-[1.04] lg:text-6xl">
+              {t.about.title}
+            </h2>
+            <p className="mt-8 max-w-2xl text-base leading-8 text-[var(--inverse-text-soft)] sm:text-lg">
               {content.body}
             </p>
-
-            {/* Career Vision */}
-            <div className="card p-6 mb-4">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-8 h-8 rounded-lg bg-blue-50 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/20 flex items-center justify-center">
-                  <Target size={16} className="text-blue-600 dark:text-blue-400" />
-                </div>
-                <h3 className="font-semibold text-slate-900 dark:text-white text-sm">
-                  {t.about.vision_title}
-                </h3>
-              </div>
-              <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
-                {content.vision}
-              </p>
-            </div>
           </div>
 
-          {/* Right */}
-          <div className="space-y-4">
-            {/* Learning */}
-            <div className="card p-6">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-8 h-8 rounded-lg bg-indigo-50 dark:bg-indigo-500/10 border border-indigo-200 dark:border-indigo-500/20 flex items-center justify-center">
-                  <BookOpen size={16} className="text-indigo-600 dark:text-indigo-400" />
-                </div>
-                <h3 className="font-semibold text-slate-900 dark:text-white text-sm">
-                  {t.about.learning_title}
-                </h3>
-              </div>
-              <ul className="space-y-3">
-                {content.learning.map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
-                    <span className="w-1.5 h-1.5 rounded-full bg-indigo-500 dark:bg-indigo-400 shrink-0" />
+          <div className="flex flex-col justify-end lg:col-span-5">
+            <div className="border-t border-[var(--inverse-line)] pt-6">
+              <p className="eyebrow !text-[var(--inverse-text-faint)]">{t.about.vision_title}</p>
+              <p className="mt-4 text-sm leading-7 text-[var(--inverse-text-soft)]">{content.vision}</p>
+            </div>
+            <div className="mt-8 border-t border-[var(--inverse-line)] pt-6">
+              <p className="eyebrow !text-[var(--inverse-text-faint)]">{t.about.learning_title}</p>
+              <ul className="mt-4 space-y-3">
+                {content.learning.map((item) => (
+                  <li key={item} className="flex items-center gap-3 text-sm text-[var(--inverse-text-soft)]">
+                    <span className="h-px w-5 bg-[var(--accent-inverse)]" />
                     {item}
                   </li>
                 ))}
               </ul>
             </div>
-
-            {/* Stats */}
-            <div className="grid grid-cols-2 gap-4">
-              {content.stats.map((stat, i) => (
-                <div key={i} className="card p-4 text-center">
-                  <div className="text-lg font-bold text-slate-900 dark:text-white mb-0.5">
-                    {stat.label}
-                  </div>
-                  <div className="text-xs text-slate-400 dark:text-slate-500">{stat.sub}</div>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
+
+        <dl className="mt-16 grid border-t border-[var(--inverse-line)] sm:grid-cols-3 lg:mt-24">
+          {content.facts.map((fact) => (
+            <div key={fact.label} className="border-b border-[var(--inverse-line)] py-7 sm:border-b-0 sm:border-r sm:px-7 sm:first:pl-0 sm:last:border-r-0">
+              <dt className="text-4xl font-semibold tracking-[-0.04em] text-[var(--canvas)]">{fact.value}</dt>
+              <dd className="mt-2 text-xs uppercase leading-5 tracking-[0.12em] text-[var(--inverse-text-faint)]">
+                {fact.label}
+              </dd>
+            </div>
+          ))}
+        </dl>
       </div>
     </section>
   );

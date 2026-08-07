@@ -1,278 +1,249 @@
 "use client";
 
-import { useState } from "react";
-import { Github, ExternalLink, ChevronDown, ChevronUp, Clock, FlaskConical } from "lucide-react";
+import { ArrowUpRight, Github } from "lucide-react";
 import { useLang } from "@/context/LanguageContext";
 import { commercialProjectsData, personalProjectsData } from "@/lib/data";
 import type { Lang } from "@/lib/i18n";
 
-function StarCard({
-  project,
-  lang,
-  t,
-}: {
-  project: (typeof commercialProjectsData)[0];
-  lang: Lang;
-  t: {
-    situation: string;
-    task: string;
-    action: string;
-    result: string;
-    github: string;
-    demo: string;
-  };
-}) {
-  const [expanded, setExpanded] = useState(false);
-  const star = project.star[lang];
-  const title =
-    lang === "ja"
-      ? project.title
-      : lang === "en"
-      ? project.titleEn
-      : project.titleUz;
+const visualMetrics: Record<
+  string,
+  { primary: string; primaryLabel: Record<Lang, string>; secondary: string; secondaryLabel: Record<Lang, string> }
+> = {
+  "shigoto-navi": {
+    primary: "+300%",
+    primaryLabel: { ja: "応募数", en: "Applications", uz: "Arizalar" },
+    secondary: "99.9%",
+    secondaryLabel: { ja: "稼働率", en: "Uptime", uz: "Barqarorlik" },
+  },
+  "legacy-modernization": {
+    primary: "−30%",
+    primaryLabel: { ja: "操作時間", en: "Operation time", uz: "Operatsion vaqt" },
+    secondary: "100%",
+    secondaryLabel: { ja: "データ整合性", en: "Data integrity", uz: "Data yaxlitligi" },
+  },
+  "monocenter-platform": {
+    primary: "5,000",
+    primaryLabel: { ja: "月間アクセス", en: "Monthly visits", uz: "Oylik tashrif" },
+    secondary: "×2",
+    secondaryLabel: { ja: "問い合わせ", en: "Inquiries", uz: "So‘rovlar" },
+  },
+};
+
+function CaseStudyVisual({ projectId, lang }: { projectId: string; lang: Lang }) {
+  const { t } = useLang();
+  const metric = visualMetrics[projectId];
+  const isMigration = projectId === "legacy-modernization";
+  const isPlatform = projectId === "monocenter-platform";
 
   return (
-    <div className="card p-6 sm:p-8">
-      {/* Header */}
-      <div className="flex flex-wrap items-start justify-between gap-3 mb-5">
-        <div>
-          <h3 className="text-lg font-bold text-slate-900 dark:text-white leading-snug">{title}</h3>
-        </div>
-        <div className="flex gap-2 shrink-0">
-          {project.github && (
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-secondary py-1.5 px-3 text-xs"
-            >
-              <Github size={14} />
-              {t.github}
-            </a>
-          )}
-        </div>
+    <div className="group/visual relative aspect-[4/3] overflow-hidden bg-[var(--ink)] text-[var(--canvas)]">
+      <div
+        className="absolute inset-0 opacity-[0.16]"
+        style={{
+          backgroundImage:
+            "linear-gradient(var(--canvas) 1px, transparent 1px), linear-gradient(90deg, var(--canvas) 1px, transparent 1px)",
+          backgroundSize: "40px 40px",
+        }}
+      />
+      <div className="absolute inset-x-0 top-0 flex items-center justify-between border-b border-[var(--inverse-line)] px-5 py-4 text-[11px] font-semibold uppercase tracking-[0.14em] sm:px-7">
+        <span>Case / {projectId.replaceAll("-", " ")}</span>
+        <span className="text-[var(--accent-inverse)]">{t.projects.production}</span>
       </div>
 
-      {/* Stack */}
-      <div className="flex flex-wrap gap-1.5 mb-5">
-        {project.stack.map((tech) => (
-          <span key={tech} className="badge">{tech}</span>
-        ))}
+      <div className="absolute inset-x-5 bottom-5 top-16 sm:inset-x-7 sm:bottom-7 sm:top-20">
+        <svg viewBox="0 0 520 300" className="h-full w-full" aria-hidden="true">
+          <g fill="none" stroke="currentColor" strokeWidth="1.5" className="text-[var(--inverse-structure)]">
+            {isMigration ? (
+              <>
+                <rect x="26" y="92" width="150" height="112" rx="3" />
+                <rect x="344" y="92" width="150" height="112" rx="3" />
+                <path d="M176 148H344" stroke="var(--accent-inverse)" strokeWidth="3" />
+                <path d="M318 134L344 148L318 162" stroke="var(--accent-inverse)" strokeWidth="3" />
+                <path d="M64 124H138M64 148H122M64 172H145M382 124H456M382 148H438M382 172H462" />
+              </>
+            ) : isPlatform ? (
+              <>
+                <circle cx="260" cy="148" r="48" stroke="var(--accent-inverse)" strokeWidth="3" />
+                <circle cx="90" cy="70" r="28" />
+                <circle cx="430" cy="70" r="28" />
+                <circle cx="90" cy="226" r="28" />
+                <circle cx="430" cy="226" r="28" />
+                <path d="M114 84L218 128M406 84L302 128M114 212L218 168M406 212L302 168" />
+              </>
+            ) : (
+              <>
+                <path d="M28 228C110 220 112 180 188 178S272 106 348 112S424 58 492 52" stroke="var(--accent-inverse)" strokeWidth="4" />
+                <path d="M28 248H492M28 248V44" />
+                <circle cx="188" cy="178" r="7" fill="var(--accent-inverse)" stroke="none" />
+                <circle cx="348" cy="112" r="7" fill="var(--accent-inverse)" stroke="none" />
+                <circle cx="492" cy="52" r="7" fill="var(--accent-inverse)" stroke="none" />
+              </>
+            )}
+          </g>
+        </svg>
       </div>
 
-      {/* STAR — collapsible */}
-      <div>
-        <div className="grid sm:grid-cols-2 gap-4">
-          {/* Situation */}
-          <div className="subcard">
-            <div className="text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-2">
-              {t.situation}
-            </div>
-            <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">{star.situation}</p>
-          </div>
-
-          {/* Role */}
-          <div className="subcard">
-            <div className="text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-2">
-              {t.task}
-            </div>
-            <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">{star.task}</p>
-          </div>
-        </div>
-
-        {/* Action + Result — expandable */}
-        <button
-          onClick={() => setExpanded(!expanded)}
-          className="mt-4 flex items-center gap-2 text-xs text-blue-600 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300 transition-colors"
-        >
-          {expanded ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
-          {expanded ? "Collapse" : `${t.action} / ${t.result}`}
-        </button>
-
-        {expanded && (
-          <div className="mt-4 grid sm:grid-cols-2 gap-4">
-            {/* Action */}
-            <div className="subcard">
-              <div className="text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-2">
-                {t.action}
-              </div>
-              <ul className="space-y-1.5">
-                {star.action.map((a, i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm text-slate-600 dark:text-slate-300">
-                    <span className="text-blue-600 dark:text-blue-400 mt-0.5 shrink-0">→</span>
-                    {a}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Result */}
-            <div className="subcard">
-              <div className="text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-2">
-                {t.result}
-              </div>
-              <ul className="space-y-1.5">
-                {star.result.map((r, i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm text-emerald-700 dark:text-emerald-300">
-                    <span className="text-emerald-600 dark:text-emerald-400 mt-0.5 shrink-0">✓</span>
-                    {r}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        )}
+      <div className="absolute bottom-5 left-5 sm:bottom-7 sm:left-7">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--inverse-text-faint)]">
+          {metric.primaryLabel[lang]}
+        </p>
+        <p className="mt-1 text-4xl font-semibold tracking-[-0.05em] sm:text-5xl">{metric.primary}</p>
+      </div>
+      <div className="absolute bottom-5 right-5 text-right sm:bottom-7 sm:right-7">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--inverse-text-faint)]">
+          {metric.secondaryLabel[lang]}
+        </p>
+        <p className="mt-1 text-2xl font-semibold tracking-[-0.04em] sm:text-3xl">{metric.secondary}</p>
       </div>
     </div>
   );
 }
 
-function PersonalCard({
+function CaseStudy({
   project,
   lang,
-  t,
+  index,
 }: {
-  project: (typeof personalProjectsData)[0];
+  project: (typeof commercialProjectsData)[number];
   lang: Lang;
-  t: {
-    status_wip: string;
-    status_design: string;
-    github: string;
-    demo: string;
-  };
+  index: number;
 }) {
+  const { t } = useLang();
+  const star = project.star[lang];
+  const title = lang === "ja" ? project.title : lang === "en" ? project.titleEn : project.titleUz;
+
   return (
-    <div className="card p-6">
-      {/* Header */}
-      <div className="flex items-start justify-between gap-3 mb-3">
-        <div>
-          <h3 className="text-base font-bold text-slate-900 dark:text-white mb-1">{project.title}</h3>
-          <div className="flex items-center gap-2">
-            {project.status === "wip" ? (
-              <span className="inline-flex items-center gap-1.5 text-xs
-                               text-amber-700 bg-amber-50 border border-amber-200
-                               dark:text-amber-400 dark:bg-amber-500/10 dark:border-amber-500/20
-                               px-2.5 py-1 rounded-full font-medium">
-                <Clock size={10} />
-                {t.status_wip}
-              </span>
-            ) : (
-              <span className="inline-flex items-center gap-1.5 text-xs
-                               text-slate-500 bg-slate-100 border border-slate-200
-                               dark:text-slate-400 dark:bg-slate-700/40 dark:border-slate-700
-                               px-2.5 py-1 rounded-full font-medium">
-                <FlaskConical size={10} />
-                {t.status_design}
-              </span>
-            )}
+    <article className="grid gap-8 border-t border-[var(--line)] py-12 lg:grid-cols-12 lg:gap-12 lg:py-20">
+      <div className={`lg:col-span-6 ${index % 2 === 1 ? "lg:order-2" : ""}`}>
+        <CaseStudyVisual projectId={project.id} lang={lang} />
+      </div>
+
+      <div className={`flex flex-col justify-center lg:col-span-6 ${index % 2 === 1 ? "lg:order-1" : ""}`}>
+        <div className="mb-7 flex items-center justify-between">
+          <span className="eyebrow">0{index + 1} / {t.projects.commercial_title}</span>
+        </div>
+        <h3 className="max-w-xl text-[1.75rem] font-semibold leading-tight tracking-[-0.03em] text-[var(--ink)] sm:text-4xl">
+          {title}
+        </h3>
+
+        <div className="mt-8 grid gap-6 sm:grid-cols-2">
+          <div>
+            <p className="eyebrow mb-2">{t.projects.problem}</p>
+            <p className="text-sm leading-6 text-[var(--muted)]">{star.situation}</p>
+          </div>
+          <div>
+            <p className="eyebrow mb-2">{t.projects.role}</p>
+            <p className="text-sm leading-6 text-[var(--muted)]">{star.task}</p>
           </div>
         </div>
-        <div className="flex gap-2 shrink-0">
-          {project.github && (
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 rounded-lg border
-                         border-slate-200 text-slate-500 hover:text-slate-900 hover:border-slate-300
-                         dark:border-slate-700/60 dark:text-slate-400 dark:hover:text-white dark:hover:border-slate-600
-                         transition-all"
-              aria-label="GitHub"
-            >
-              <Github size={14} />
-            </a>
-          )}
-          {project.demo && (
-            <a
-              href={project.demo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 rounded-lg border
-                         border-slate-200 text-slate-500 hover:text-slate-900 hover:border-slate-300
-                         dark:border-slate-700/60 dark:text-slate-400 dark:hover:text-white dark:hover:border-slate-600
-                         transition-all"
-              aria-label="Demo"
-            >
-              <ExternalLink size={14} />
-            </a>
-          )}
-        </div>
-      </div>
 
-      <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-4 whitespace-pre-line">
-        {project.description[lang]}
-      </p>
+        <details className="group mt-8 border-y border-[var(--line)]">
+          <summary className="flex cursor-pointer list-none items-center justify-between py-4 text-sm font-semibold text-[var(--ink)] marker:content-none">
+            <span className="group-open:hidden">{t.projects.details}</span>
+            <span className="hidden group-open:inline">{t.projects.close}</span>
+            <span className="text-xl font-light text-[var(--accent)] transition-transform group-open:rotate-45">+</span>
+          </summary>
+          <div className="grid gap-7 pb-7 pt-2 sm:grid-cols-2">
+            <div>
+              <p className="eyebrow mb-3">{t.projects.approach}</p>
+              <ul className="space-y-2.5">
+                {star.action.map((item) => (
+                  <li key={item} className="flex gap-3 text-sm leading-6 text-[var(--muted)]">
+                    <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[var(--accent)]" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <p className="eyebrow mb-3">{t.projects.result}</p>
+              <ul className="space-y-2.5">
+                {star.result.map((item) => (
+                  <li key={item} className="flex gap-3 text-sm font-medium leading-6 text-[var(--ink)]">
+                    <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[var(--accent)]" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </details>
 
-      {/* Stack */}
-      <div className="flex flex-wrap gap-1.5">
-        {project.stack.map((tech) => (
-          <span key={tech} className="badge">{tech}</span>
-        ))}
+        <p className="mt-5 text-[11px] font-medium uppercase leading-5 tracking-[0.12em] text-[var(--faint)]">
+          {project.stack.join("  /  ")}
+        </p>
       </div>
-    </div>
+    </article>
   );
 }
 
 export function Projects() {
   const { t, lang } = useLang();
-  const l = lang as Lang;
-  const projectOrder = ["enterprise-engineering-framework", "ai-concierge", "jobmatcher", "trustflow-crm", "notion-clone"];
-  const orderedPersonalProjects = [...personalProjectsData].sort(
-    (a, b) => projectOrder.indexOf(a.id) - projectOrder.indexOf(b.id),
+  const selectedLabs = personalProjectsData.filter((project) =>
+    ["jobmatcher", "trustflow-crm"].includes(project.id),
   );
 
   return (
-    <section id="projects" className="py-24 px-4 sm:px-6 section-alt">
-      <div className="max-w-6xl mx-auto">
-        <div className="mb-12">
+    <section id="projects" className="section-space">
+      <div className="page-shell">
+        <header className="mb-8 lg:mb-12">
+          <p className="section-kicker">{t.projects.kicker}</p>
           <h2 className="section-title">{t.projects.title}</h2>
-        </div>
+          <p className="section-subtitle">{t.projects.subtitle}</p>
+        </header>
 
-        {/* Commercial projects */}
-        <div className="mb-14">
-          <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-widest mb-6 flex items-center gap-3">
-            {t.projects.commercial_title}
-            <span className="flex-1 h-px bg-slate-200 dark:bg-slate-800" />
-          </h3>
-          <div className="space-y-6">
-            {commercialProjectsData.map((project) => (
-              <StarCard
-                key={project.id}
-                project={project}
-                lang={l}
-                t={{
-                  situation: t.projects.situation,
-                  task: t.projects.task,
-                  action: t.projects.action,
-                  result: t.projects.result,
-                  github: t.projects.github,
-                  demo: t.projects.demo,
-                }}
-              />
-            ))}
-          </div>
-        </div>
-
-        {/* Personal projects */}
         <div>
-          <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-widest mb-6 flex items-center gap-3">
-            {t.projects.personal_title}
-            <span className="flex-1 h-px bg-slate-200 dark:bg-slate-800" />
-          </h3>
-          <div className="grid sm:grid-cols-2 gap-5">
-            {orderedPersonalProjects.map((project) => (
-              <PersonalCard
-                key={project.id}
-                project={project}
-                lang={l}
-                t={{
-                  status_wip: t.projects.status_wip,
-                  status_design: t.projects.status_design,
-                  github: t.projects.github,
-                  demo: t.projects.demo,
-                }}
-              />
-            ))}
+          {commercialProjectsData.map((project, index) => (
+            <CaseStudy key={project.id} project={project} lang={lang} index={index} />
+          ))}
+        </div>
+
+        <div className="border-t border-[var(--line)] pt-14 lg:pt-20">
+          <div className="grid gap-8 lg:grid-cols-12">
+            <div className="lg:col-span-4">
+              <p className="section-kicker">Labs</p>
+              <h3 className="text-3xl font-semibold tracking-[-0.035em] text-[var(--ink)]">
+                {t.projects.labs_title}
+              </h3>
+              <p className="mt-4 max-w-sm text-sm leading-6 text-[var(--muted)]">
+                {t.projects.labs_subtitle}
+              </p>
+            </div>
+            <div className="lg:col-span-8">
+              {selectedLabs.map((project) => (
+                <article key={project.id} className="group border-b border-[var(--line)] py-7 first:border-t">
+                  <div className="flex items-start justify-between gap-5">
+                    <div>
+                      <div className="mb-3 flex items-center gap-3">
+                        <span className="h-1.5 w-1.5 rounded-full bg-[var(--accent)]" />
+                        <span className="eyebrow">{t.projects.active}</span>
+                      </div>
+                      <h4 className="text-2xl font-semibold tracking-[-0.025em] text-[var(--ink)]">
+                        {project.title}
+                      </h4>
+                      <p className="mt-3 max-w-2xl whitespace-pre-line text-sm leading-6 text-[var(--muted)]">
+                        {project.description[lang].split("\n")[0]}
+                      </p>
+                      <p className="mt-4 text-[11px] font-semibold uppercase leading-5 tracking-[0.1em] text-[var(--faint)]">
+                        {project.stack.slice(0, 6).join(" / ")}
+                      </p>
+                    </div>
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-1 inline-flex shrink-0 items-center gap-2 rounded-full border border-[var(--line)] p-3 text-[var(--ink)] transition-all hover:border-[var(--accent)] hover:text-[var(--accent)]"
+                        aria-label={`${project.title} — ${t.projects.source}`}
+                      >
+                        <Github size={16} />
+                        <ArrowUpRight size={14} />
+                      </a>
+                    )}
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </div>

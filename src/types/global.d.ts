@@ -9,10 +9,13 @@ declare module "lucide-react" {
   type Icon = FC<IconProps>;
 
   export const ArrowDown: Icon;
+  export const ArrowDownRight: Icon;
+  export const ArrowUpRight: Icon;
   export const BookOpen: Icon;
   export const Briefcase: Icon;
   export const Building2: Icon;
   export const Calendar: Icon;
+  export const Check: Icon;
   export const CheckCircle: Icon;
   export const CheckCircle2: Icon;
   export const ChevronDown: Icon;

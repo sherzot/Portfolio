@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f4f3ef"/>
+  <path d="M0 92H1200M820 0V630" stroke="#d9d9d4"/>
+  <circle cx="1002" cy="315" r="184" fill="none" stroke="#111318" stroke-width="2"/>
+  <circle cx="1002" cy="315" r="106" fill="#111318"/>
+  <path d="M858 209C918 112 1086 112 1146 209M1146 421C1086 518 918 518 858 421" fill="none" stroke="#315ef5" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="1002" cy="131" r="7" fill="#315ef5"/>
+  <circle cx="1186" cy="315" r="7" fill="#315ef5"/>
+  <circle cx="1002" cy="499" r="7" fill="#315ef5"/>
+  <circle cx="818" cy="315" r="7" fill="#315ef5"/>
+  <text x="70" y="64" fill="#111318" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="4">SHER<tspan fill="#315ef5">.</tspan></text>
+  <text x="70" y="188" fill="#315ef5" font-family="Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="3">TOKYO · FULL-STACK ENGINEER</text>
+  <text x="70" y="280" fill="#111318" font-family="Arial, sans-serif" font-size="72" font-weight="700" letter-spacing="-3">Sherzod</text>
+  <text x="70" y="356" fill="#111318" font-family="Arial, sans-serif" font-size="72" font-weight="700" letter-spacing="-3">Musurmonov</text>
+  <text x="70" y="438" fill="#686b73" font-family="Arial, sans-serif" font-size="27">Product engineering from requirements</text>
+  <text x="70" y="476" fill="#686b73" font-family="Arial, sans-serif" font-size="27">through production operations.</text>
+  <text x="1002" y="304" fill="#f4f3ef" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="3">DURABLE</text>
+  <text x="1002" y="340" fill="#f4f3ef" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="700">PRODUCT</text>
+  <text x="70" y="570" fill="#92969f" font-family="Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="2">PRODUCT · CLOUD · SECURITY · OPERATIONS</text>
+</svg>

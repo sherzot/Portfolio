@@ -1,53 +1,34 @@
 "use client";
 
-import { Github, Mail } from "lucide-react";
-import { useLang } from "@/context/LanguageContext";
+import { ArrowUpRight, Github, Mail } from "lucide-react";
 import { BrandMark } from "@/components/BrandMark";
+import { useLang } from "@/context/LanguageContext";
 
 export function Footer() {
   const { t } = useLang();
 
   return (
-    <footer className="border-t border-slate-200 dark:border-slate-800/60 py-10 px-4 sm:px-6">
-      <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3 text-center sm:text-left">
-            <BrandMark className="h-10 w-10 text-slate-900 dark:text-white" />
-            <div>
-              <p className="text-sm font-semibold tracking-wide text-slate-900 dark:text-white mb-1">
-                SHER<span className="text-blue-600 dark:text-blue-400">.</span>
-              </p>
-              <p className="text-xs text-slate-400 dark:text-slate-500">{t.footer.built_with}</p>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <a
-              href="mailto:sherzoddeveloper@gmail.com"
-              className="p-2.5 rounded-xl border transition-all
-                         border-slate-200 text-slate-400 hover:text-slate-900 hover:border-slate-300
-                         dark:border-slate-800 dark:text-slate-500 dark:hover:text-white dark:hover:border-slate-700"
-              aria-label="Email"
-            >
-              <Mail size={16} />
-            </a>
-            <a
-              href="https://github.com/sherzot"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2.5 rounded-xl border transition-all
-                         border-slate-200 text-slate-400 hover:text-slate-900 hover:border-slate-300
-                         dark:border-slate-800 dark:text-slate-500 dark:hover:text-white dark:hover:border-slate-700"
-              aria-label="GitHub"
-            >
-              <Github size={16} />
-            </a>
+    <footer className="border-t border-[var(--line)] py-9">
+      <div className="page-shell flex flex-col gap-7 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex items-center gap-3">
+          <BrandMark className="h-9 w-9 text-[var(--ink)]" />
+          <div>
+            <p className="text-xs font-bold tracking-[0.18em] text-[var(--ink)]">SHER<span className="text-[var(--accent)]">.</span></p>
+            <p className="mt-1 text-[11px] uppercase leading-5 tracking-[0.1em] text-[var(--faint)]">{t.footer.note}</p>
           </div>
         </div>
 
-        <div className="mt-8 pt-6 border-t border-slate-200/80 dark:border-slate-800/40 text-center">
-          <p className="text-xs text-slate-400 dark:text-slate-600">
-            © {new Date().getFullYear()} Sherzod Musurmonov. {t.footer.rights}
+        <div className="flex items-center gap-5">
+          <a href="mailto:sherzoddeveloper@gmail.com" className="text-link" aria-label="Email">
+            <Mail size={15} />
+            <ArrowUpRight size={12} />
+          </a>
+          <a href="https://github.com/sherzot" target="_blank" rel="noopener noreferrer" className="text-link" aria-label="GitHub">
+            <Github size={15} />
+            <ArrowUpRight size={12} />
+          </a>
+          <p className="text-[11px] uppercase tracking-[0.08em] text-[var(--faint)]">
+            © {new Date().getFullYear()} {t.footer.rights}
           </p>
         </div>
       </div>

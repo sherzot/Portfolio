@@ -1,174 +1,150 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { Menu, X, Sun, Moon, FileText } from "lucide-react";
+import { useEffect, useState } from "react";
+import { ArrowUpRight, Menu, Moon, Sun, X } from "lucide-react";
+import { BrandMark } from "@/components/BrandMark";
 import { useLang } from "@/context/LanguageContext";
 import { useTheme } from "@/context/ThemeContext";
 import { RESUME_FOLDER_URL } from "@/lib/resume";
 import type { Lang } from "@/lib/i18n";
-import { BrandMark } from "@/components/BrandMark";
 
-const langLabels: Record<Lang, string> = {
-  ja: "日本語",
-  en: "English",
-  uz: "O'zbek",
-};
+const languages: Lang[] = ["ja", "en", "uz"];
 
 export function Navigation() {
   const { t, lang, setLang } = useLang();
   const { theme, toggleTheme } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setIsScrolled(window.scrollY > 20);
+    const onScroll = () => setIsScrolled(window.scrollY > 16);
+    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   const navLinks = [
-    { href: "#about",      label: t.nav.about },
-    { href: "#skills",     label: t.nav.skills },
+    { href: "#projects", label: t.nav.projects },
     { href: "#experience", label: t.nav.experience },
-    { href: "#projects",   label: t.nav.projects },
-    { href: "#contact",    label: t.nav.contact },
+    { href: "#skills", label: t.nav.skills },
+    { href: "#about", label: t.nav.about },
+    { href: "#contact", label: t.nav.contact },
   ];
-
-  const langs: Lang[] = ["ja", "en", "uz"];
-
-  const scrollTo = (href: string) => {
-    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
-    setIsMobileOpen(false);
-  };
-
-  const resumeLabel =
-    lang === "ja" ? "履歴書" : lang === "en" ? "Resume" : "Rezyume";
-  const resumeLabelFull =
-    lang === "ja" ? "履歴書・職務経歴書" : lang === "en" ? "Resume / CV" : "Rezyume / CV";
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      aria-label={t.nav.primary}
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white/95 dark:bg-[#060b18]/95 backdrop-blur-md border-b border-slate-200 dark:border-white/5 shadow-sm dark:shadow-xl dark:shadow-black/20"
+          ? "border-b border-[var(--line)] bg-[var(--canvas-glass)] backdrop-blur-xl"
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <button
-            onClick={() => scrollTo("#hero")}
-            className="group inline-flex items-center gap-2 text-slate-900 dark:text-white transition-transform duration-200 hover:-translate-y-0.5"
-            aria-label="Sherzod Musurmonov — Back to top"
-          >
-            <BrandMark className="h-9 w-9 transition-transform duration-300 ease-out group-hover:scale-[1.04]" />
-            <span className="hidden min-[420px]:inline translate-y-px text-sm font-bold leading-none tracking-[0.16em]">
-              SHER<span className="text-blue-600 dark:text-blue-400">.</span>
-            </span>
-          </button>
+      <div className="page-shell flex h-[68px] items-center justify-between">
+        <a
+          href="#hero"
+          className="group inline-flex items-center gap-2.5"
+          aria-label={t.nav.home}
+        >
+          <BrandMark className="h-9 w-9 text-[var(--ink)] transition-transform duration-300 group-hover:-rotate-3" />
+          <span className="text-xs font-bold tracking-[0.2em] text-[var(--ink)]">
+            SHER<span className="text-[var(--accent)]">.</span>
+          </span>
+        </a>
 
-          {/* Desktop nav links */}
-          <div className="hidden md:flex items-center gap-1">
-            {navLinks.map((link) => (
+        <div className="hidden items-center gap-7 lg:flex">
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="text-xs font-semibold text-[var(--muted)] transition-colors hover:text-[var(--ink)]"
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+
+        <div className="flex items-center gap-1 sm:gap-2">
+          <div className="hidden items-center sm:flex" role="group" aria-label={t.nav.language}>
+            {languages.map((item) => (
               <button
-                key={link.href}
-                onClick={() => scrollTo(link.href)}
-                className="px-4 py-2 text-sm rounded-lg transition-all duration-200
-                           text-slate-600 hover:text-slate-900 hover:bg-slate-100
-                           dark:text-slate-400 dark:hover:text-white dark:hover:bg-white/5"
+                key={item}
+                type="button"
+                onClick={() => setLang(item)}
+                aria-pressed={lang === item}
+                className={`min-w-9 px-2 py-2 text-[11px] font-bold uppercase tracking-[0.08em] transition-colors ${
+                  lang === item ? "text-[var(--accent)]" : "text-[var(--faint)] hover:text-[var(--ink)]"
+                }`}
               >
-                {link.label}
+                {item}
               </button>
             ))}
           </div>
 
-          {/* Right controls */}
-          <div className="flex items-center gap-2">
-            {/* Resume — view only */}
-            <a
-              href={RESUME_FOLDER_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium
-                         border border-blue-200 text-blue-700 hover:bg-blue-50 transition-all
-                         dark:border-blue-500/30 dark:text-blue-400 dark:hover:bg-blue-500/10"
-              title={resumeLabelFull}
-            >
-              <FileText size={13} />
-              <span className="hidden lg:inline">{resumeLabel}</span>
-            </a>
-
-            {/* Language switcher */}
-            <div className="flex items-center gap-0.5 bg-slate-100 dark:bg-white/5 rounded-xl p-1">
-              {langs.map((l) => (
-                <button
-                  key={l}
-                  onClick={() => setLang(l)}
-                  className={`px-2.5 py-1 text-xs font-medium rounded-lg transition-all duration-200 ${
-                    lang === l
-                      ? "bg-blue-600 dark:bg-blue-500 text-white shadow-sm"
-                      : "text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
-                  }`}
-                  aria-label={`Switch to ${langLabels[l]}`}
-                >
-                  {l.toUpperCase()}
-                </button>
-              ))}
-            </div>
-
-            {/* Theme toggle */}
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-xl transition-all duration-200
-                         text-slate-500 hover:text-slate-900 hover:bg-slate-100
-                         dark:text-slate-400 dark:hover:text-white dark:hover:bg-white/5"
-              aria-label="Toggle light/dark mode"
-            >
-              {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
-            </button>
-
-            {/* Mobile toggle */}
-            <button
-              onClick={() => setIsMobileOpen(!isMobileOpen)}
-              className="md:hidden p-2 rounded-lg transition-colors
-                         text-slate-500 hover:text-slate-900 hover:bg-slate-100
-                         dark:text-slate-400 dark:hover:text-white dark:hover:bg-white/5"
-              aria-label="Toggle mobile menu"
-              aria-expanded={isMobileOpen}
-            >
-              {isMobileOpen ? <X size={18} /> : <Menu size={18} />}
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Mobile menu */}
-      {isMobileOpen && (
-        <div className="md:hidden border-b border-slate-200 dark:border-white/5 px-4 pb-4
-                        bg-white/98 dark:bg-[#060b18]/98 backdrop-blur-lg">
-          {navLinks.map((link) => (
-            <button
-              key={link.href}
-              onClick={() => scrollTo(link.href)}
-              className="block w-full text-left px-4 py-3 text-sm rounded-lg transition-all
-                         text-slate-700 hover:text-slate-900 hover:bg-slate-100
-                         dark:text-slate-300 dark:hover:text-white dark:hover:bg-white/5"
-            >
-              {link.label}
-            </button>
-          ))}
-          {/* Resume link in mobile */}
           <a
             href={RESUME_FOLDER_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-3 text-sm rounded-lg transition-all
-                       text-blue-600 dark:text-blue-400 hover:bg-slate-100 dark:hover:bg-white/5"
+            className="hidden items-center gap-1 text-xs font-semibold text-[var(--ink)] transition-colors hover:text-[var(--accent)] md:inline-flex"
           >
-            <FileText size={14} />
-            {resumeLabelFull}
+            {t.nav.resume}
+            <ArrowUpRight size={13} />
           </a>
+
+          <button
+            type="button"
+            onClick={toggleTheme}
+            className="rounded-full p-2.5 text-[var(--muted)] transition-colors hover:bg-[var(--surface)] hover:text-[var(--ink)]"
+            aria-label={t.nav.theme}
+          >
+            {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setIsOpen((current) => !current)}
+            className="rounded-full p-2.5 text-[var(--ink)] lg:hidden"
+            aria-label={isOpen ? t.nav.menu_close : t.nav.menu_open}
+            aria-expanded={isOpen}
+            aria-controls="mobile-navigation"
+          >
+            {isOpen ? <X size={18} /> : <Menu size={18} />}
+          </button>
+        </div>
+      </div>
+
+      {isOpen && (
+        <div id="mobile-navigation" className="border-t border-[var(--line)] bg-[var(--canvas)] px-5 pb-6 pt-3 lg:hidden">
+          <div className="mx-auto max-w-[1280px]">
+            {navLinks.map((link, index) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className="flex w-full items-center justify-between border-b border-[var(--line)] py-4 text-left text-lg font-semibold text-[var(--ink)]"
+              >
+                <span>{link.label}</span>
+                <span className="text-xs text-[var(--faint)]">0{index + 1}</span>
+              </a>
+            ))}
+            <div className="mt-5 flex items-center gap-2 sm:hidden" role="group" aria-label={t.nav.language}>
+              {languages.map((item) => (
+                <button
+                  key={item}
+                  type="button"
+                  onClick={() => setLang(item)}
+                  aria-pressed={lang === item}
+                  className={`rounded-full border px-4 py-2 text-xs font-bold uppercase ${
+                    lang === item
+                      ? "border-[var(--accent)] text-[var(--accent)]"
+                      : "border-[var(--line)] text-[var(--muted)]"
+                  }`}
+                >
+                  {item}
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
       )}
     </nav>
